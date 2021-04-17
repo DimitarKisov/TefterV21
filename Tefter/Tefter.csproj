@@ -319,7 +319,6 @@
     <Compile Include="DbEntities\Helper\JsonData.cs" />
     <Compile Include="DbEntities\OilAndFilter.cs" />
     <Compile Include="DbEntities\OtherService.cs" />
-    <Compile Include="DbEntities\s.cs" />
     <Compile Include="HomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>

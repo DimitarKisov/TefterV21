@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Tefter.DbEntities;
-
-namespace Tefter
+﻿namespace Tefter
 {
+    using System;
+    using System.Drawing;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using System.Windows.Forms;
+    using Tefter.DbEntities;
+
     public partial class CreateNewServiceBookFormOne : Form
     {
         public static string made = null;
@@ -29,7 +24,7 @@ namespace Tefter
         public CreateNewServiceBookFormOne()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.Manual;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Location = new Point(0, 0);
         }
 
