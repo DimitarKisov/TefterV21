@@ -100,7 +100,7 @@
             {
                 emptyOrWrongFields.Add("Регистрационен номер");
             }
-            if (string.IsNullOrWhiteSpace(CurrentKilometers_TextBox.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(kilometers))
             {
                 emptyOrWrongFields.Add("Км");
             }
@@ -203,7 +203,6 @@
             car.CarData = carData;
 
             dbContext.Cars.Add(car);
-            dbContext.SaveChanges();
 
             this.Hide();
             var secondForm = new CreateNewServiceBookFormTwo(car, dbContext);

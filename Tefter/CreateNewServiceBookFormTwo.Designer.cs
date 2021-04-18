@@ -43,12 +43,12 @@
             this.AirFilter_TextBox = new System.Windows.Forms.TextBox();
             this.CoupeFilter_TextBox = new System.Windows.Forms.TextBox();
             this.DateMadeChanges_DatePicker = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Oil_Label = new System.Windows.Forms.Label();
             this.Oil_TextBox = new System.Windows.Forms.TextBox();
             this.NextToNewServiceBookFormThree_Button = new FontAwesome.Sharp.IconButton();
             this.BackButton = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.OilAndFilters_PictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.OilAndFilters_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ChangeOilAndFilters_Label
@@ -66,7 +66,7 @@
             // 
             this.DateMadeChanges_Label.AutoSize = true;
             this.DateMadeChanges_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateMadeChanges_Label.Location = new System.Drawing.Point(27, 86);
+            this.DateMadeChanges_Label.Location = new System.Drawing.Point(12, 118);
             this.DateMadeChanges_Label.Name = "DateMadeChanges_Label";
             this.DateMadeChanges_Label.Size = new System.Drawing.Size(71, 33);
             this.DateMadeChanges_Label.TabIndex = 29;
@@ -76,7 +76,7 @@
             // 
             this.CurrentKilometers_Label.AutoSize = true;
             this.CurrentKilometers_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentKilometers_Label.Location = new System.Drawing.Point(27, 194);
+            this.CurrentKilometers_Label.Location = new System.Drawing.Point(12, 234);
             this.CurrentKilometers_Label.Name = "CurrentKilometers_Label";
             this.CurrentKilometers_Label.Size = new System.Drawing.Size(52, 33);
             this.CurrentKilometers_Label.TabIndex = 30;
@@ -86,7 +86,7 @@
             // 
             this.OilFilter_Label.AutoSize = true;
             this.OilFilter_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OilFilter_Label.Location = new System.Drawing.Point(27, 311);
+            this.OilFilter_Label.Location = new System.Drawing.Point(12, 350);
             this.OilFilter_Label.Name = "OilFilter_Label";
             this.OilFilter_Label.Size = new System.Drawing.Size(206, 33);
             this.OilFilter_Label.TabIndex = 32;
@@ -96,7 +96,7 @@
             // 
             this.NextOilChangeKilometers_Label.AutoSize = true;
             this.NextOilChangeKilometers_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NextOilChangeKilometers_Label.Location = new System.Drawing.Point(27, 253);
+            this.NextOilChangeKilometers_Label.Location = new System.Drawing.Point(12, 292);
             this.NextOilChangeKilometers_Label.Name = "NextOilChangeKilometers_Label";
             this.NextOilChangeKilometers_Label.Size = new System.Drawing.Size(308, 33);
             this.NextOilChangeKilometers_Label.TabIndex = 31;
@@ -106,7 +106,7 @@
             // 
             this.CoupeFilter_Label.AutoSize = true;
             this.CoupeFilter_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoupeFilter_Label.Location = new System.Drawing.Point(27, 495);
+            this.CoupeFilter_Label.Location = new System.Drawing.Point(12, 524);
             this.CoupeFilter_Label.Name = "CoupeFilter_Label";
             this.CoupeFilter_Label.Size = new System.Drawing.Size(173, 33);
             this.CoupeFilter_Label.TabIndex = 34;
@@ -116,7 +116,7 @@
             // 
             this.FuelFilter_Label.AutoSize = true;
             this.FuelFilter_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FuelFilter_Label.Location = new System.Drawing.Point(27, 371);
+            this.FuelFilter_Label.Location = new System.Drawing.Point(12, 408);
             this.FuelFilter_Label.Name = "FuelFilter_Label";
             this.FuelFilter_Label.Size = new System.Drawing.Size(214, 33);
             this.FuelFilter_Label.TabIndex = 33;
@@ -126,7 +126,7 @@
             // 
             this.AirFilter_Label.AutoSize = true;
             this.AirFilter_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AirFilter_Label.Location = new System.Drawing.Point(27, 432);
+            this.AirFilter_Label.Location = new System.Drawing.Point(12, 466);
             this.AirFilter_Label.Name = "AirFilter_Label";
             this.AirFilter_Label.Size = new System.Drawing.Size(236, 33);
             this.AirFilter_Label.TabIndex = 35;
@@ -135,79 +135,70 @@
             // CurrentKilometers_TextBox
             // 
             this.CurrentKilometers_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(341, 194);
+            this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(341, 234);
             this.CurrentKilometers_TextBox.Multiline = true;
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
-            this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 35);
+            this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
             this.CurrentKilometers_TextBox.TabIndex = 37;
             // 
             // NextOilChangeKilometers_TextBox
             // 
             this.NextOilChangeKilometers_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NextOilChangeKilometers_TextBox.Location = new System.Drawing.Point(341, 253);
+            this.NextOilChangeKilometers_TextBox.Location = new System.Drawing.Point(341, 292);
             this.NextOilChangeKilometers_TextBox.Multiline = true;
             this.NextOilChangeKilometers_TextBox.Name = "NextOilChangeKilometers_TextBox";
-            this.NextOilChangeKilometers_TextBox.Size = new System.Drawing.Size(170, 35);
+            this.NextOilChangeKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
             this.NextOilChangeKilometers_TextBox.TabIndex = 38;
             // 
             // OilFilter_TextBox
             // 
             this.OilFilter_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OilFilter_TextBox.Location = new System.Drawing.Point(341, 311);
+            this.OilFilter_TextBox.Location = new System.Drawing.Point(341, 350);
             this.OilFilter_TextBox.Multiline = true;
             this.OilFilter_TextBox.Name = "OilFilter_TextBox";
-            this.OilFilter_TextBox.Size = new System.Drawing.Size(170, 35);
+            this.OilFilter_TextBox.Size = new System.Drawing.Size(170, 38);
             this.OilFilter_TextBox.TabIndex = 39;
             // 
             // FuelFilter_TextBox
             // 
             this.FuelFilter_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FuelFilter_TextBox.Location = new System.Drawing.Point(341, 371);
+            this.FuelFilter_TextBox.Location = new System.Drawing.Point(341, 408);
             this.FuelFilter_TextBox.Multiline = true;
             this.FuelFilter_TextBox.Name = "FuelFilter_TextBox";
-            this.FuelFilter_TextBox.Size = new System.Drawing.Size(170, 35);
+            this.FuelFilter_TextBox.Size = new System.Drawing.Size(170, 38);
             this.FuelFilter_TextBox.TabIndex = 40;
             // 
             // AirFilter_TextBox
             // 
             this.AirFilter_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AirFilter_TextBox.Location = new System.Drawing.Point(341, 432);
+            this.AirFilter_TextBox.Location = new System.Drawing.Point(341, 466);
             this.AirFilter_TextBox.Multiline = true;
             this.AirFilter_TextBox.Name = "AirFilter_TextBox";
-            this.AirFilter_TextBox.Size = new System.Drawing.Size(170, 35);
+            this.AirFilter_TextBox.Size = new System.Drawing.Size(170, 38);
             this.AirFilter_TextBox.TabIndex = 41;
             // 
             // CoupeFilter_TextBox
             // 
             this.CoupeFilter_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoupeFilter_TextBox.Location = new System.Drawing.Point(341, 495);
+            this.CoupeFilter_TextBox.Location = new System.Drawing.Point(341, 524);
             this.CoupeFilter_TextBox.Multiline = true;
             this.CoupeFilter_TextBox.Name = "CoupeFilter_TextBox";
-            this.CoupeFilter_TextBox.Size = new System.Drawing.Size(170, 35);
+            this.CoupeFilter_TextBox.Size = new System.Drawing.Size(170, 38);
             this.CoupeFilter_TextBox.TabIndex = 42;
             // 
             // DateMadeChanges_DatePicker
             // 
             this.DateMadeChanges_DatePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateMadeChanges_DatePicker.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateMadeChanges_DatePicker.Location = new System.Drawing.Point(311, 89);
+            this.DateMadeChanges_DatePicker.Location = new System.Drawing.Point(295, 118);
             this.DateMadeChanges_DatePicker.Name = "DateMadeChanges_DatePicker";
-            this.DateMadeChanges_DatePicker.Size = new System.Drawing.Size(200, 30);
+            this.DateMadeChanges_DatePicker.Size = new System.Drawing.Size(216, 30);
             this.DateMadeChanges_DatePicker.TabIndex = 43;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ImageLocation = "C:\\Users\\mitko\\Desktop\\Tefter\\Tefter\\Images\\BODEGON-STEP.jpg";
-            this.pictureBox1.Location = new System.Drawing.Point(597, 89);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 392);
-            this.pictureBox1.TabIndex = 44;
-            this.pictureBox1.TabStop = false;
             // 
             // Oil_Label
             // 
             this.Oil_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Oil_Label.Location = new System.Drawing.Point(27, 136);
+            this.Oil_Label.Location = new System.Drawing.Point(12, 176);
             this.Oil_Label.Name = "Oil_Label";
             this.Oil_Label.Size = new System.Drawing.Size(103, 33);
             this.Oil_Label.TabIndex = 45;
@@ -216,10 +207,10 @@
             // Oil_TextBox
             // 
             this.Oil_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Oil_TextBox.Location = new System.Drawing.Point(341, 136);
+            this.Oil_TextBox.Location = new System.Drawing.Point(341, 176);
             this.Oil_TextBox.Multiline = true;
             this.Oil_TextBox.Name = "Oil_TextBox";
-            this.Oil_TextBox.Size = new System.Drawing.Size(170, 35);
+            this.Oil_TextBox.Size = new System.Drawing.Size(170, 38);
             this.Oil_TextBox.TabIndex = 46;
             // 
             // NextToNewServiceBookFormThree_Button
@@ -230,7 +221,7 @@
             this.NextToNewServiceBookFormThree_Button.IconChar = FontAwesome.Sharp.IconChar.None;
             this.NextToNewServiceBookFormThree_Button.IconColor = System.Drawing.Color.Black;
             this.NextToNewServiceBookFormThree_Button.IconSize = 16;
-            this.NextToNewServiceBookFormThree_Button.Location = new System.Drawing.Point(727, 491);
+            this.NextToNewServiceBookFormThree_Button.Location = new System.Drawing.Point(752, 533);
             this.NextToNewServiceBookFormThree_Button.Name = "NextToNewServiceBookFormThree_Button";
             this.NextToNewServiceBookFormThree_Button.Rotation = 0D;
             this.NextToNewServiceBookFormThree_Button.Size = new System.Drawing.Size(170, 41);
@@ -256,16 +247,27 @@
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // OilAndFilters_PictureBox
+            // 
+            this.OilAndFilters_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.OilAndFilters_PictureBox.Image = global::Tefter.Properties.Resources.OilAndFilters;
+            this.OilAndFilters_PictureBox.InitialImage = null;
+            this.OilAndFilters_PictureBox.Location = new System.Drawing.Point(565, 118);
+            this.OilAndFilters_PictureBox.Name = "OilAndFilters_PictureBox";
+            this.OilAndFilters_PictureBox.Size = new System.Drawing.Size(357, 386);
+            this.OilAndFilters_PictureBox.TabIndex = 49;
+            this.OilAndFilters_PictureBox.TabStop = false;
+            // 
             // CreateNewServiceBookFormTwo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ClientSize = new System.Drawing.Size(934, 573);
+            this.Controls.Add(this.OilAndFilters_PictureBox);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.NextToNewServiceBookFormThree_Button);
             this.Controls.Add(this.Oil_TextBox);
             this.Controls.Add(this.Oil_Label);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.DateMadeChanges_DatePicker);
             this.Controls.Add(this.CoupeFilter_TextBox);
             this.Controls.Add(this.AirFilter_TextBox);
@@ -281,11 +283,11 @@
             this.Controls.Add(this.CurrentKilometers_Label);
             this.Controls.Add(this.DateMadeChanges_Label);
             this.Controls.Add(this.ChangeOilAndFilters_Label);
-            this.MaximumSize = new System.Drawing.Size(950, 600);
+            this.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "CreateNewServiceBookFormTwo";
             this.Text = "Смяна на масло и филтри";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OilAndFilters_PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,10 +311,10 @@
         private System.Windows.Forms.TextBox AirFilter_TextBox;
         private System.Windows.Forms.TextBox CoupeFilter_TextBox;
         private System.Windows.Forms.DateTimePicker DateMadeChanges_DatePicker;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Oil_Label;
         private System.Windows.Forms.TextBox Oil_TextBox;
         private FontAwesome.Sharp.IconButton NextToNewServiceBookFormThree_Button;
         private FontAwesome.Sharp.IconButton BackButton;
+        private System.Windows.Forms.PictureBox OilAndFilters_PictureBox;
     }
 }

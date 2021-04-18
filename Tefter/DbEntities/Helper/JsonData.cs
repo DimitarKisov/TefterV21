@@ -4,6 +4,22 @@
 
     public class JsonData
     {
+        public JsonData()
+        {
+        }
+
+        public JsonData(DateTime date, string kilometers, string oil, string nextChange, string oilFilter, string fuelFilter, string airFilter, string coupeFilter)
+        {
+            Date = date;
+            Kilometers = kilometers;
+            Oil = oil;
+            NextChange = nextChange;
+            OilFilter = oilFilter;
+            FuelFilter = fuelFilter;
+            AirFilter = airFilter;
+            CoupeFilter = coupeFilter;
+        }
+
         /// <summary>
         /// Дата
         /// </summary>
@@ -12,7 +28,7 @@
         /// <summary>
         /// Километри
         /// </summary>
-        public int Kilometers { get; set; }
+        public string Kilometers { get; set; }
 
         /// <summary>
         /// Масло

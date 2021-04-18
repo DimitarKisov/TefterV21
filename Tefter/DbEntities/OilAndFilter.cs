@@ -5,6 +5,15 @@
 
     public class OilAndFilter : JsonBase
     {
+        public OilAndFilter()
+        {
+        }
+
+        public OilAndFilter(string data)
+        {
+            Data = data;
+        }
+
         public int Id { get; set; }
 
         public string Data { get; set; }

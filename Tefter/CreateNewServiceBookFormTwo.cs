@@ -1,29 +1,24 @@
 ﻿namespace Tefter
 {
+    using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
     using System.Drawing;
+    using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
     using System.Windows.Forms;
     using Tefter.DbEntities;
+    using Tefter.DbEntities.Helper;
 
     public partial class CreateNewServiceBookFormTwo : Form
     {
-        private static DateTime dateMadeChanges = DateTime.Now;
-        private static string oil = null;
-        private static int currentKilometers = -1;
-        private static int nextOilChangeKilometers = -1;
-        private static string oilFilter = null;
-        private static string fuelFilter = null;
-        private static string airFilter = null;
-        private static string coupeFilter = null;
-
         private ApplicationDbContext dbContext;
 
         public CreateNewServiceBookFormTwo(Car car, ApplicationDbContext dbContext)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.Manual;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Location = new Point(0, 0);
 
             Car = car;
@@ -34,61 +29,61 @@
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            dateMadeChanges = DateMadeChanges_DatePicker.Value;
-            oil = Oil_TextBox.Text.Trim();
-            oilFilter = OilFilter_TextBox.Text.Trim();
-            fuelFilter = FuelFilter_TextBox.Text.Trim();
-            airFilter = AirFilter_TextBox.Text.Trim();
-            coupeFilter = CoupeFilter_TextBox.Text.Trim();
+            var dateMadeChanges = DateMadeChanges_DatePicker.Value;
+            var oil = Oil_TextBox.Text.Trim();
+            var kilemeters = CurrentKilometers_TextBox.Text.Trim();
+            var nextOilChangeKilometers = NextOilChangeKilometers_TextBox.Text.Trim();
+            var oilFilter = OilFilter_TextBox.Text.Trim();
+            var fuelFilter = FuelFilter_TextBox.Text.Trim();
+            var airFilter = AirFilter_TextBox.Text.Trim();
+            var coupeFilter = CoupeFilter_TextBox.Text.Trim();
 
-            var emptyRequiredInfo = false;
             var sb = new StringBuilder();
-            sb.Append("Моля попълнете следните полета: ");
+            var emptyOrWrongFields = new List<string>();
 
-            if (string.IsNullOrWhiteSpace(CurrentKilometers_TextBox.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(kilemeters))
             {
-                sb.AppendLine("Км, ");
-                emptyRequiredInfo = true;
+                emptyOrWrongFields.Add("Км");
             }
-            if (string.IsNullOrWhiteSpace(NextOilChangeKilometers_TextBox.Text.Trim()))
+            if (string.IsNullOrWhiteSpace(nextOilChangeKilometers))
             {
-                sb.AppendLine("Следваща смяна на (км), ");
-                emptyRequiredInfo = true;
+                emptyOrWrongFields.Add("Следваща смяна на (км)");
             }
 
-            if (emptyRequiredInfo)
+            if (emptyOrWrongFields.Count() > 0)
             {
-                MessageBox.Show(string.Join("", sb.ToString()));
+                sb.AppendLine("Моля попълнете следните полета: ");
+                sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+                MessageBox.Show(sb.ToString());
                 return;
             }
 
-            currentKilometers = int.Parse(CurrentKilometers_TextBox.Text.Replace(" ", string.Empty));
-            nextOilChangeKilometers = int.Parse(NextOilChangeKilometers_TextBox.Text.Replace(" ", string.Empty));
+            var currentKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
+            var nextOilChangeKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
 
-            var currentKilometersRegex = new Regex("^([0-9]+)$");
-            var nextOilChangeKilometersRegex = new Regex("^([0-9]+)$");
-
-            sb.Clear();
-            sb.Append("Моля въведете коректни данни за следните полета: ");
-            var wrongDateInserted = false;
-
-            
-            if (!currentKilometersRegex.IsMatch(currentKilometers.ToString()))
+            if (!currentKilometersRegex.IsMatch(kilemeters))
             {
-                sb.Append("Км, ");
-                wrongDateInserted = true;
+                emptyOrWrongFields.Add("Км");
             }
-            if (!nextOilChangeKilometersRegex.IsMatch(nextOilChangeKilometers.ToString()))
+            if (!nextOilChangeKilometersRegex.IsMatch(nextOilChangeKilometers))
             {
-                sb.Append("Следваща смяна на (км)");
-                wrongDateInserted = true;
+                emptyOrWrongFields.Add("Следваща смяна на (км)");
             }
 
-            if (wrongDateInserted)
+            if (emptyOrWrongFields.Count() > 0)
             {
-                MessageBox.Show(string.Join("", sb.ToString()));
+                sb.AppendLine("Моля въведете коректни данни за следните полета: ");
+                sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+                MessageBox.Show(sb.ToString());
                 return;
             }
+
+            var jsonData = new JsonData(dateMadeChanges, kilemeters, oil, nextOilChangeKilometers, oilFilter, fuelFilter, airFilter, coupeFilter);
+
+            var data = JsonConvert.SerializeObject(jsonData);
+            var oilAndFilters = new OilAndFilter(data);
+
+            Car.OilAndFilters.Add(oilAndFilters);
 
             this.Hide();
             var thirdForm = new CreateNewServiceBookFormThree();
