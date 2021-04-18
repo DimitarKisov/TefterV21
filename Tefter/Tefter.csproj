@@ -316,7 +316,8 @@
     <Compile Include="DbEntities\CarExtras.cs" />
     <Compile Include="DbEntities\Enums\FuelType.cs" />
     <Compile Include="DbEntities\Helper\JsonBase.cs" />
-    <Compile Include="DbEntities\Helper\JsonData.cs" />
+    <Compile Include="DbEntities\Helper\OilAndFiltersJsonData.cs" />
+    <Compile Include="DbEntities\Helper\OtherServicesJsonData.cs" />
     <Compile Include="DbEntities\OilAndFilter.cs" />
     <Compile Include="DbEntities\OtherService.cs" />
     <Compile Include="HomePageForm.cs">
@@ -337,6 +338,14 @@
     <Compile Include="Migrations\20210418081347_PropertiesChanged.cs" />
     <Compile Include="Migrations\20210418081347_PropertiesChanged.designer.cs">
       <DependentUpon>20210418081347_PropertiesChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210418155804_ChangedOtherServicesPropTypes.cs" />
+    <Compile Include="Migrations\20210418155804_ChangedOtherServicesPropTypes.designer.cs">
+      <DependentUpon>20210418155804_ChangedOtherServicesPropTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210418181239_ChangedOtherServiceProperties.cs" />
+    <Compile Include="Migrations\20210418181239_ChangedOtherServiceProperties.designer.cs">
+      <DependentUpon>20210418181239_ChangedOtherServiceProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

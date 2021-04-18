@@ -262,7 +262,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 573);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(934, 575);
             this.Controls.Add(this.OilAndFilters_PictureBox);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.NextToNewServiceBookFormThree_Button);
@@ -283,8 +284,8 @@
             this.Controls.Add(this.CurrentKilometers_Label);
             this.Controls.Add(this.DateMadeChanges_Label);
             this.Controls.Add(this.ChangeOilAndFilters_Label);
-            this.MaximumSize = new System.Drawing.Size(1000, 1000);
-            this.MinimumSize = new System.Drawing.Size(950, 600);
+            this.MaximumSize = new System.Drawing.Size(950, 614);
+            this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "CreateNewServiceBookFormTwo";
             this.Text = "Смяна на масло и филтри";
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFilters_PictureBox)).EndInit();

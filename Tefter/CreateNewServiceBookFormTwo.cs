@@ -20,9 +20,9 @@
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Location = new Point(0, 0);
+            this.dbContext = dbContext;
 
             Car = car;
-            this.dbContext = dbContext;
         }
 
         public Car Car { get; set; }
@@ -31,7 +31,7 @@
         {
             var dateMadeChanges = DateMadeChanges_DatePicker.Value;
             var oil = Oil_TextBox.Text.Trim();
-            var kilemeters = CurrentKilometers_TextBox.Text.Trim();
+            var kilometers = CurrentKilometers_TextBox.Text.Trim();
             var nextOilChangeKilometers = NextOilChangeKilometers_TextBox.Text.Trim();
             var oilFilter = OilFilter_TextBox.Text.Trim();
             var fuelFilter = FuelFilter_TextBox.Text.Trim();
@@ -41,7 +41,7 @@
             var sb = new StringBuilder();
             var emptyOrWrongFields = new List<string>();
 
-            if (string.IsNullOrWhiteSpace(kilemeters))
+            if (string.IsNullOrWhiteSpace(kilometers))
             {
                 emptyOrWrongFields.Add("Км");
             }
@@ -61,7 +61,7 @@
             var currentKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
             var nextOilChangeKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
 
-            if (!currentKilometersRegex.IsMatch(kilemeters))
+            if (!currentKilometersRegex.IsMatch(kilometers))
             {
                 emptyOrWrongFields.Add("Км");
             }
@@ -78,15 +78,14 @@
                 return;
             }
 
-            var jsonData = new JsonData(dateMadeChanges, kilemeters, oil, nextOilChangeKilometers, oilFilter, fuelFilter, airFilter, coupeFilter);
-
+            var jsonData = new OilAndFiltersJsonData(dateMadeChanges, kilometers, oil, nextOilChangeKilometers, oilFilter, fuelFilter, airFilter, coupeFilter);
             var data = JsonConvert.SerializeObject(jsonData);
             var oilAndFilters = new OilAndFilter(data);
 
             Car.OilAndFilters.Add(oilAndFilters);
 
             this.Hide();
-            var thirdForm = new CreateNewServiceBookFormThree();
+            var thirdForm = new CreateNewServiceBookFormThree(Car, dbContext);
             thirdForm.Show();
         }
 

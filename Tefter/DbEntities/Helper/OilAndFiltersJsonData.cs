@@ -2,13 +2,13 @@
 {
     using System;
 
-    public class JsonData
+    public class OilAndFiltersJsonData
     {
-        public JsonData()
+        public OilAndFiltersJsonData()
         {
         }
 
-        public JsonData(DateTime date, string kilometers, string oil, string nextChange, string oilFilter, string fuelFilter, string airFilter, string coupeFilter)
+        public OilAndFiltersJsonData(DateTime date, string kilometers, string oil, string nextChange, string oilFilter, string fuelFilter, string airFilter, string coupeFilter)
         {
             Date = date;
             Kilometers = kilometers;
