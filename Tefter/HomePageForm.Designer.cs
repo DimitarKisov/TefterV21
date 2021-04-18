@@ -28,22 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SearchServiceBook_TextBox = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePageForm));
             this.CreateNewServiceBook_Button = new System.Windows.Forms.Button();
             this.SearchButton = new FontAwesome.Sharp.IconButton();
+            this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // SearchServiceBook_TextBox
-            // 
-            this.SearchServiceBook_TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.SearchServiceBook_TextBox.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchServiceBook_TextBox.Location = new System.Drawing.Point(70, 95);
-            this.SearchServiceBook_TextBox.Multiline = true;
-            this.SearchServiceBook_TextBox.Name = "SearchServiceBook_TextBox";
-            this.SearchServiceBook_TextBox.Size = new System.Drawing.Size(426, 79);
-            this.SearchServiceBook_TextBox.TabIndex = 0;
-            this.SearchServiceBook_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.SearchServiceBook_TextBox.TextChanged += new System.EventHandler(this.SearchServiceBook_TextBox_TextChanged);
             // 
             // CreateNewServiceBook_Button
             // 
@@ -59,6 +48,7 @@
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.SystemColors.Control;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SearchButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.SearchButton.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.SearchButton.IconColor = System.Drawing.Color.Black;
@@ -71,14 +61,30 @@
             this.SearchButton.UseVisualStyleBackColor = false;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // Search_TextBox
+            // 
+            this.Search_TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.Search_TextBox.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_TextBox.ForeColor = System.Drawing.Color.DarkGray;
+            this.Search_TextBox.Location = new System.Drawing.Point(70, 95);
+            this.Search_TextBox.Multiline = true;
+            this.Search_TextBox.Name = "Search_TextBox";
+            this.Search_TextBox.Size = new System.Drawing.Size(426, 79);
+            this.Search_TextBox.TabIndex = 4;
+            this.Search_TextBox.Text = "РЕГИСТРАЦИОНЕН НОМЕР";
+            this.Search_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Search_TextBox.Enter += new System.EventHandler(this.Search_TextBox_Enter);
+            this.Search_TextBox.Leave += new System.EventHandler(this.Search_TextBox_Leave);
+            // 
             // HomePageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 406);
+            this.Controls.Add(this.Search_TextBox);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.CreateNewServiceBook_Button);
-            this.Controls.Add(this.SearchServiceBook_TextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HomePageForm";
             this.Text = "Начало";
             this.ResumeLayout(false);
@@ -87,10 +93,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox SearchServiceBook_TextBox;
         private System.Windows.Forms.Button CreateNewServiceBook_Button;
         private FontAwesome.Sharp.IconButton SearchButton;
+        private System.Windows.Forms.TextBox Search_TextBox;
     }
 }
 

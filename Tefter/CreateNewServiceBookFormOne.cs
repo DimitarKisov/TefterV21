@@ -194,7 +194,6 @@
                 return;
             }
 
-            carId = carId.ToUpper();
             var car = new Car(carId);
             var carData = new CarData(brand, model, color, chassisNumber, engineNumber, workingVolumeCubicCm, firstRegistration, firstRegistrationInBG, fuelType, kilometers, owner, egn, bulstat, phoneNumber, address);
             var carExtras = new CarExtras(abs, asd, ebs, esp, fourByFour, airConditioning, climatronic, hatch, alarm, immobilizer, centralLocking, electronicGlass, electronicMirrors, automatic, electronicPacket, steeringWheelHydraulics, stereo, cdChanger, amplifier, others);

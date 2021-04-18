@@ -17,7 +17,7 @@
         public CreateNewServiceBookFormThree(Car car, ApplicationDbContext dbContext)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.Manual;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Location = new Point(0, 0);
             this.dbContext = dbContext;
 
@@ -76,6 +76,10 @@
 
             Car.OtherServices.Add(otherServices);
             dbContext.SaveChanges();
+
+            this.Close();
+            var homePageForm = new HomePageForm();
+            homePageForm.Show();
         }
     }
 }

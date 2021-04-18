@@ -16,7 +16,7 @@
         public HomePageForm()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.Manual;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Location = new Point(0, 0);
 
             var connString = GetConnectionString();
@@ -28,13 +28,6 @@
             }
         }
         
-
-        private void SearchServiceBook_TextBox_TextChanged(object sender, EventArgs e)
-        {
-            var font = new Font("Times New Roman", 30.0f);
-            SearchServiceBook_TextBox.Font = font;
-        }
-
         private void CreateNewServiceBook_Button_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -96,6 +89,26 @@
             var connectionString = configuration.GetSection("ConnectionString")["DefaultConnection"];
 
             return connectionString;
+        }
+
+        private void Search_TextBox_Leave(object sender, EventArgs e)
+        {
+            if (Search_TextBox.Text == "")
+            {
+                Search_TextBox.Text = "РЕГИСТРАЦИОНЕН НОМЕР";
+            }
+            Search_TextBox.Font = new Font("Times New Roman", 26);
+            Search_TextBox.ForeColor = Color.DarkGray;
+        }
+
+        private void Search_TextBox_Enter(object sender, EventArgs e)
+        {
+            if (Search_TextBox.Text == "РЕГИСТРАЦИОНЕН НОМЕР")
+            {
+                Search_TextBox.Text = null;
+            }
+            Search_TextBox.Font = new Font("Times New Roman", 48);
+            Search_TextBox.ForeColor = Color.Black;
         }
     }
 }

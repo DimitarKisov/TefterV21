@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewServiceBookFormOne));
             this.Made_Label = new System.Windows.Forms.Label();
             this.Made_TextBox = new System.Windows.Forms.TextBox();
             this.Model_Label = new System.Windows.Forms.Label();
@@ -179,6 +180,7 @@
             // 
             // PlateNumber_TextBox
             // 
+            this.PlateNumber_TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.PlateNumber_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlateNumber_TextBox.Location = new System.Drawing.Point(324, 350);
             this.PlateNumber_TextBox.Name = "PlateNumber_TextBox";
@@ -725,7 +727,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(992, 911);
             this.Controls.Add(this.Others_TextBox);
             this.Controls.Add(this.Others_Label);
@@ -787,6 +789,7 @@
             this.Controls.Add(this.Model_Label);
             this.Controls.Add(this.Made_TextBox);
             this.Controls.Add(this.Made_Label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1008, 1050);
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "CreateNewServiceBookFormOne";
