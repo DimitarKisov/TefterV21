@@ -330,6 +330,14 @@
     <Compile Include="Migrations\20210417152413_Initial.designer.cs">
       <DependentUpon>20210417152413_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20210418080120_Second.cs" />
+    <Compile Include="Migrations\20210418080120_Second.designer.cs">
+      <DependentUpon>20210418080120_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210418081347_PropertiesChanged.cs" />
+    <Compile Include="Migrations\20210418081347_PropertiesChanged.designer.cs">
+      <DependentUpon>20210418081347_PropertiesChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

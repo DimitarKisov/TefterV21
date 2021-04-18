@@ -1,26 +1,17 @@
 ﻿namespace Tefter
 {
     using System;
+    using System.Collections.Generic;
     using System.Drawing;
+    using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
     using System.Windows.Forms;
     using Tefter.DbEntities;
+    using Tefter.DbEntities.Enums;
 
     public partial class CreateNewServiceBookFormOne : Form
     {
-        public static string made = null;
-        public static string model = null;
-        public static string color = null;
-        public static string chassisNumber = null;
-        public static string engineNumber = null;
-        public static string plateNumber = null;
-        public static DateTime firstRegistration = DateTime.Now;
-        public static DateTime firstRegistrationInBG = DateTime.Now;
-        public static string ownerName = string.Empty;
-        public static int currentKilometers = -1;
-        public static int fuelType = -1;
-
         public CreateNewServiceBookFormOne()
         {
             InitializeComponent();
@@ -50,128 +41,165 @@
 
         private void NextToNewServiceBookFormTwo_Button_Click(object sender, EventArgs e)
         {
-            //Регистрационен номер
-            var carId = PlateNumber_TextBox.Text.Trim();
+            #region CarData
+            var carId = PlateNumber_TextBox.Text.Trim(); //Регистрационен номер
             var brand = Made_TextBox.Text.Trim();
             var model = Model_TextBox.Text.Trim();
             var color = Color_TextBox.Text.Trim();
             var chassisNumber = ChassisNumber_TextBox.Text.Trim();
             var engineNumber = EngineNumber_TextBox.Text.Trim();
-            plateNumber = PlateNumber_TextBox.Text.Trim();
-            firstRegistration = FirstDateRegister_DatePicker.Value;
-            firstRegistrationInBG = FirstDateRegisterBG_DatePicker.Value;
-            ownerName = OwnerName_TextBox.Text.Trim();
-            
-            var emptyRequiredInfo = false;
+            var workingVolumeCubicCm = WorkingVolumeCubicCm_TextBox.Text.Trim();
+            var firstRegistration = FirstDateRegister_DatePicker.Value;
+            var firstRegistrationInBG = FirstDateRegisterBG_DatePicker.Value;
+            var kilometers = CurrentKilometers_TextBox.Text.Trim();
+            var owner = OwnerName_TextBox.Text.Trim();
+            var egn = Egn_TextBox.Text.Trim();
+            var bulstat = Bulstat_TextBox.Text.Trim();
+            var phoneNumber = PhoneNumber_TextBox.Text.Trim();
+            var address = Address_TextBox.Text.Trim();
+            #endregion
+
+            #region CarExtras
+            var abs = Abs_CheckBox.Checked;
+            var asd = Asd_CheckBox.Checked;
+            var ebs = Ebs_CheckBox.Checked;
+            var arb = Arb_CheckBox.Checked;
+            var esp = Esp_CheckBox.Checked;
+            var fourByFour = FourByFour_CheckBox.Checked;
+            var airConditioning = AirConditioning_CheckBox;
+            var climatronic = Climatronic_CheckBox.Checked;
+            var hatch = Hatch_CheckBox.Checked;
+            var alarm = Alarm_CheckBox.Checked;
+            var immobilizer = Immobilizer_CheckBox.Checked;
+            var centralLocking = CentralLocking_CheckBox.Checked;
+            var electronicGlass = ElectronicGlass_CheckBox;
+            var electronicMirrors = ElectronicMirror_CheckBox.Checked;
+            var automatic = Automatic_CheckBox.Checked;
+            var electronicPacket = ElectronicPacket_CheckBox.Checked;
+            var steeringWheelHydraulics = SteeringWheelHydraulics_CheckBox.Checked;
+            var stereo = Stereo_CheckBox.Checked;
+            var cdChanger = CdChanger_CheckBox.Checked;
+            var amplifier = Amplifier_CheckBox.Checked;
+            var others = Others_TextBox.Text.Trim();
+            #endregion
+
             var sb = new StringBuilder();
-            sb.Append("Моля попълнете следните полета: ");
-            
-            if (string.IsNullOrWhiteSpace(made))
+            var emptyOrWrongFields = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(brand))
             {
-                sb.AppendLine("Марка, ");
-                emptyRequiredInfo = true;
+                emptyOrWrongFields.Add("Марка");
             }
             if (string.IsNullOrWhiteSpace(model))
             {
-                sb.AppendLine("Модел, ");
-                emptyRequiredInfo = true;
+                emptyOrWrongFields.Add("Модел");
             }
-            if (string.IsNullOrWhiteSpace(plateNumber))
+            if (string.IsNullOrWhiteSpace(carId))
             {
-                sb.AppendLine("Регистрационен номер, ");
-                emptyRequiredInfo = true;
+                emptyOrWrongFields.Add("Регистрационен номер");
             }
             if (string.IsNullOrWhiteSpace(CurrentKilometers_TextBox.Text.Trim()))
             {
-                sb.AppendLine("Км, ");
-                emptyRequiredInfo = true;
+                emptyOrWrongFields.Add("Км");
             }
-            if (string.IsNullOrWhiteSpace(ownerName))
+            if (string.IsNullOrWhiteSpace(owner))
             {
-                sb.AppendLine("Собственик, ");
-                emptyRequiredInfo = true;
+                emptyOrWrongFields.Add("Собственик");
             }
 
+            var fuelType = FuelType.Diesel;
             if (FuelType_Diesel_RadioButton.Checked)
             {
-                fuelType = 0;
+                fuelType = FuelType.Diesel;
             }
             else if (FuelType_Gasoline_RadioButton.Checked)
             {
-                fuelType = 1;
+                fuelType = FuelType.Gasoline;
             }
             else if (FuelType_Gas_RadioButton.Checked)
             {
-                fuelType = 2;
+                fuelType = FuelType.Gasoline;
             }
             else if (FuelType_Methane_RadioButton.Checked)
             {
-                fuelType = 3;
+                fuelType = FuelType.Methane;
             }
             else
             {
-                sb.Append("Вид на двигател");
-                emptyRequiredInfo = true;
+                emptyOrWrongFields.Add("Вид двигател");
             }
 
-            if (emptyRequiredInfo)
+            if (emptyOrWrongFields.Count() > 0)
             {
-                MessageBox.Show(string.Join(";", sb.ToString()));
+                sb.AppendLine("Моля попълнете следните полета: ");
+                sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+                MessageBox.Show(sb.ToString());
                 return;
             }
 
-            currentKilometers = int.Parse(CurrentKilometers_TextBox.Text.Replace(" ", string.Empty));
-            plateNumber = plateNumber.ToUpper();
-
-            var madeRegex = new Regex("^([А-Я][а-я]*)$");
+            var brandRegex = new Regex("^([А-Я][а-я]*)$");
             var modelRegex = new Regex("^([А-Я][а-я]*)$");
+            var colorRegex = new Regex("^([А-Я][а-я]*)$");
+            var workingVolumeCubicCmRegex = new Regex("^[0-9]*$");
             var plateNumberRegex = new Regex("^[А-а-Я-я]{2}[0-9]{4}[А-а-Я-я]{2}$");
-            var currentKilometersRegex = new Regex("^([0-9]+)$");
-            var ownerNameRegex = new Regex("^(([А-Я][а-я]+)|([А-Я][а-я]+ [А-Я][а-я]+ [А-Я][а-я]+)|[А-Я][а-я]+ [А-Я][а-я]+)$");
-
-            sb.Clear();
-            sb.Append("Моля въведете коректни данни за следните полета: ");
-            var wrongDateInserted = false;
-
-            if (!madeRegex.IsMatch(made))
+            var kilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
+            var ownerRegex = new Regex("^(([А-Я][а-я]+)|([А-Я][а-я]+ [А-Я][а-я]+ [А-Я][а-я]+)|[А-Я][а-я]+ [А-Я][а-я]+)$");
+            var egnRegex = new Regex("^[0-9]{10}$");
+            var phoneNumberRegex = new Regex("^([0-9]{10})$|([0-9{12}]{12})$");
+            
+            if (!brandRegex.IsMatch(brand))
             {
-                sb.Append("Марка, ");
-                wrongDateInserted = true;
+                emptyOrWrongFields.Add("Марка");
             }
             if (!modelRegex.IsMatch(model))
             {
-                sb.Append("Модел, ");
-                wrongDateInserted = true;
+                emptyOrWrongFields.Add("Модел");
             }
-            if (!plateNumberRegex.IsMatch(plateNumber))
+            if (!colorRegex.IsMatch(color))
             {
-                sb.Append("Регистрационен номер, ");
-                wrongDateInserted = true;
+                emptyOrWrongFields.Add("Цвят");
             }
-            if (!currentKilometersRegex.IsMatch(currentKilometers.ToString()))
+            if (!workingVolumeCubicCmRegex.IsMatch(workingVolumeCubicCm))
             {
-                sb.Append("Км, ");
-                wrongDateInserted = true;
+                emptyOrWrongFields.Add("Работен обем куб. см");
             }
-            if (!ownerNameRegex.IsMatch(ownerName))
+            if (!plateNumberRegex.IsMatch(carId))
             {
-                sb.Append("Собственик, ");
-                wrongDateInserted = true;
+                emptyOrWrongFields.Add("Регистрационен номер");
+            }
+            if (!kilometersRegex.IsMatch(kilometers))
+            {
+                emptyOrWrongFields.Add("Км");
+            }
+            if (!ownerRegex.IsMatch(owner))
+            {
+                emptyOrWrongFields.Add("Собственик");
+            }
+            if (!egnRegex.IsMatch(egn) && !string.IsNullOrWhiteSpace(egn))
+            {
+                emptyOrWrongFields.Add("ЕГН");
+            }
+            if (!phoneNumberRegex.IsMatch(phoneNumber) && !string.IsNullOrWhiteSpace(phoneNumber))
+            {
+                emptyOrWrongFields.Add("Тел");
             }
 
-            if (wrongDateInserted)
+            if (emptyOrWrongFields.Count() > 0)
             {
-                MessageBox.Show(string.Join("", sb.ToString()));
+                sb.AppendLine("Моля въведете коректни данни за следните полета: ");
+                sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+                MessageBox.Show(sb.ToString());
                 return;
             }
 
-            var info = new Info()
-            {
-                Made = made
-            };
+            carId = carId.ToUpper();
+            var car = new Car(carId);
+            var carData = new CarData(brand, model, color, chassisNumber, engineNumber, workingVolumeCubicCm, firstRegistration, firstRegistrationInBG, fuelType, kilometers, owner, egn, bulstat, phoneNumber, address);
+
+            car.CarData = carData;
 
             this.Hide();
-            var secondForm = new CreateNewServiceBookFormTwo(info);
+            var secondForm = new CreateNewServiceBookFormTwo(car);
             secondForm.Show();
         }
 

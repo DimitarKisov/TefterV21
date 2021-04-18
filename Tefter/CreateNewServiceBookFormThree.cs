@@ -16,20 +16,21 @@ namespace Tefter
         public static DateTime otherServicesDateMadeChanges = DateTime.Now;
         public static int currentKilometers = -1;
         public static string changesMadeDescription = string.Empty;
-        private Info info;
 
-        public CreateNewServiceBookFormThree(Info info)
+        public CreateNewServiceBookFormThree()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(0, 0);
-            this.info = info;
+
         }
+
+        public Car Car { get; set; }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            var secondForm = new CreateNewServiceBookFormTwo(info);
+            var secondForm = new CreateNewServiceBookFormTwo(Car);
             secondForm.Show();
         }
 

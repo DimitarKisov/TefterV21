@@ -22,15 +22,17 @@ namespace Tefter
         private static string fuelFilter = null;
         private static string airFilter = null;
         private static string coupeFilter = null;
-        private Info info;
 
-        public CreateNewServiceBookFormTwo(Info info)
+        public CreateNewServiceBookFormTwo(Car car)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(0, 0);
-            this.info = info;
+
+            Car = car;
         }
+
+        public Car Car { get; set; }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -90,10 +92,8 @@ namespace Tefter
                 return;
             }
 
-            info.Oil = oil;
-
             this.Hide();
-            var thirdForm = new CreateNewServiceBookFormThree(info);
+            var thirdForm = new CreateNewServiceBookFormThree();
             thirdForm.Show();
         }
 

@@ -5,6 +5,29 @@
 
     public class CarData
     {
+        public CarData()
+        {
+        }
+
+        public CarData(string brand, string model, string color, string chassisNumber, string engineNumber, string workingVolumeCubicCm, DateTime firstRegisterDate, DateTime firstRegisterDateInBg, FuelType fuelType, string kilometers, string owner, string egn, string bulstat, string phoneNumber, string address)
+        {
+            Brand = brand;
+            Model = model;
+            Color = color;
+            ChassisNumber = chassisNumber;
+            EngineNumber = engineNumber;
+            WorkingVolumeCubicCm = workingVolumeCubicCm;
+            FirstRegisterDate = firstRegisterDate;
+            FirstRegisterDateInBg = firstRegisterDateInBg;
+            FuelType = fuelType;
+            Kilometers = kilometers;
+            Owner = owner;
+            Egn = egn;
+            Bulstat = bulstat;
+            PhoneNumber = phoneNumber;
+            Address = address;
+        }
+
         public int Id { get; set; }
 
         /// <summary>
@@ -35,7 +58,7 @@
         /// <summary>
         /// Работен обем кубични сантиметри
         /// </summary>
-        public int WorkingVolumeCubicCm { get; set; }
+        public string WorkingVolumeCubicCm { get; set; }
 
         /// <summary>
         /// Дата на първа регистрация
@@ -55,7 +78,7 @@
         /// <summary>
         /// Километри
         /// </summary>
-        public int Kilometers { get; set; }
+        public string Kilometers { get; set; }
 
         /// <summary>
         /// Собственик

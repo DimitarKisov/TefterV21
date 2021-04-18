@@ -6,6 +6,10 @@
 
     public class Car
     {
+        public Car()
+        {
+        }
+
         public Car(string plateNumber)
         {
             Id = plateNumber;
