@@ -12,11 +12,13 @@
 
     public partial class CreateNewServiceBookFormOne : Form
     {
+        private ApplicationDbContext dbContext;
         public CreateNewServiceBookFormOne()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Location = new Point(0, 0);
+            dbContext = new ApplicationDbContext();
         }
 
         private void CreateNewServiceBookFormOne_Load(object sender, EventArgs e)
@@ -66,13 +68,13 @@
             var arb = Arb_CheckBox.Checked;
             var esp = Esp_CheckBox.Checked;
             var fourByFour = FourByFour_CheckBox.Checked;
-            var airConditioning = AirConditioning_CheckBox;
+            var airConditioning = AirConditioning_CheckBox.Checked;
             var climatronic = Climatronic_CheckBox.Checked;
             var hatch = Hatch_CheckBox.Checked;
             var alarm = Alarm_CheckBox.Checked;
             var immobilizer = Immobilizer_CheckBox.Checked;
             var centralLocking = CentralLocking_CheckBox.Checked;
-            var electronicGlass = ElectronicGlass_CheckBox;
+            var electronicGlass = ElectronicGlass_CheckBox.Checked;
             var electronicMirrors = ElectronicMirror_CheckBox.Checked;
             var automatic = Automatic_CheckBox.Checked;
             var electronicPacket = ElectronicPacket_CheckBox.Checked;
@@ -195,11 +197,16 @@
             carId = carId.ToUpper();
             var car = new Car(carId);
             var carData = new CarData(brand, model, color, chassisNumber, engineNumber, workingVolumeCubicCm, firstRegistration, firstRegistrationInBG, fuelType, kilometers, owner, egn, bulstat, phoneNumber, address);
+            var carExtras = new CarExtras(abs, asd, ebs, esp, fourByFour, airConditioning, climatronic, hatch, alarm, immobilizer, centralLocking, electronicGlass, electronicMirrors, automatic, electronicPacket, steeringWheelHydraulics, stereo, cdChanger, amplifier, others);
 
+            carData.CarExtras = carExtras;
             car.CarData = carData;
 
+            dbContext.Cars.Add(car);
+            dbContext.SaveChanges();
+
             this.Hide();
-            var secondForm = new CreateNewServiceBookFormTwo(car);
+            var secondForm = new CreateNewServiceBookFormTwo(car, dbContext);
             secondForm.Show();
         }
 

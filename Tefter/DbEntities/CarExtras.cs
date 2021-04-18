@@ -2,6 +2,34 @@
 {
     public class CarExtras
     {
+        public CarExtras()
+        {
+        }
+
+        public CarExtras(bool abs, bool asd, bool ebs, bool esp, bool fourByFour, bool airConditioning, bool climatronic, bool hatch, bool alarm, bool immobilizier, bool centralLocking, bool electronicGlass, bool electronicMirrors, bool automatic, bool electronicPacket, bool steeringWheelHydraulics, bool stereo, bool cdChanger, bool amplifier, string other)
+        {
+            Abs = abs;
+            Asd = asd;
+            Ebs = ebs;
+            Esp = esp;
+            FourByFour = fourByFour;
+            AirConditioning = airConditioning;
+            Climatronic = climatronic;
+            Hatch = hatch;
+            Alarm = alarm;
+            Immobilizer = immobilizier;
+            CentralLocking = centralLocking;
+            ElectronicGlass = electronicGlass;
+            ElectronicMirrors = electronicMirrors;
+            Automatic = automatic;
+            ElectronicPacket = electronicPacket;
+            SteeringWheelHydraulics = steeringWheelHydraulics;
+            Stereo = stereo;
+            CdChanger = cdChanger;
+            Amplifier = amplifier;
+            Other = other;
+        }
+
         public int Id { get; set; }
 
         public bool Abs { get; set; }

@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Tefter.DbEntities;
-
-namespace Tefter
+﻿namespace Tefter
 {
+    using System;
+    using System.Drawing;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using System.Windows.Forms;
+    using Tefter.DbEntities;
+
     public partial class CreateNewServiceBookFormTwo : Form
     {
         private static DateTime dateMadeChanges = DateTime.Now;
@@ -23,13 +18,16 @@ namespace Tefter
         private static string airFilter = null;
         private static string coupeFilter = null;
 
-        public CreateNewServiceBookFormTwo(Car car)
+        private ApplicationDbContext dbContext;
+
+        public CreateNewServiceBookFormTwo(Car car, ApplicationDbContext dbContext)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(0, 0);
 
             Car = car;
+            this.dbContext = dbContext;
         }
 
         public Car Car { get; set; }
