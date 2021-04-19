@@ -93,6 +93,7 @@
             // 
             // Others_TextBox
             // 
+            this.Others_TextBox.Enabled = false;
             this.Others_TextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Others_TextBox.Location = new System.Drawing.Point(777, 844);
             this.Others_TextBox.Multiline = true;
@@ -112,6 +113,7 @@
             // Amplifier_CheckBox
             // 
             this.Amplifier_CheckBox.AutoSize = true;
+            this.Amplifier_CheckBox.Enabled = false;
             this.Amplifier_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Amplifier_CheckBox.Location = new System.Drawing.Point(661, 803);
             this.Amplifier_CheckBox.Name = "Amplifier_CheckBox";
@@ -123,6 +125,7 @@
             // CdChanger_CheckBox
             // 
             this.CdChanger_CheckBox.AutoSize = true;
+            this.CdChanger_CheckBox.Enabled = false;
             this.CdChanger_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CdChanger_CheckBox.Location = new System.Drawing.Point(661, 762);
             this.CdChanger_CheckBox.Name = "CdChanger_CheckBox";
@@ -134,6 +137,7 @@
             // Stereo_CheckBox
             // 
             this.Stereo_CheckBox.AutoSize = true;
+            this.Stereo_CheckBox.Enabled = false;
             this.Stereo_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Stereo_CheckBox.Location = new System.Drawing.Point(374, 967);
             this.Stereo_CheckBox.Name = "Stereo_CheckBox";
@@ -145,6 +149,7 @@
             // SteeringWheelHydraulics_CheckBox
             // 
             this.SteeringWheelHydraulics_CheckBox.AutoSize = true;
+            this.SteeringWheelHydraulics_CheckBox.Enabled = false;
             this.SteeringWheelHydraulics_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SteeringWheelHydraulics_CheckBox.Location = new System.Drawing.Point(374, 926);
             this.SteeringWheelHydraulics_CheckBox.Name = "SteeringWheelHydraulics_CheckBox";
@@ -156,6 +161,7 @@
             // ElectronicPacket_CheckBox
             // 
             this.ElectronicPacket_CheckBox.AutoSize = true;
+            this.ElectronicPacket_CheckBox.Enabled = false;
             this.ElectronicPacket_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ElectronicPacket_CheckBox.Location = new System.Drawing.Point(374, 885);
             this.ElectronicPacket_CheckBox.Name = "ElectronicPacket_CheckBox";
@@ -167,6 +173,7 @@
             // Automatic_CheckBox
             // 
             this.Automatic_CheckBox.AutoSize = true;
+            this.Automatic_CheckBox.Enabled = false;
             this.Automatic_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Automatic_CheckBox.Location = new System.Drawing.Point(374, 844);
             this.Automatic_CheckBox.Name = "Automatic_CheckBox";
@@ -178,6 +185,7 @@
             // ElectronicMirror_CheckBox
             // 
             this.ElectronicMirror_CheckBox.AutoSize = true;
+            this.ElectronicMirror_CheckBox.Enabled = false;
             this.ElectronicMirror_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ElectronicMirror_CheckBox.Location = new System.Drawing.Point(374, 803);
             this.ElectronicMirror_CheckBox.Name = "ElectronicMirror_CheckBox";
@@ -189,6 +197,7 @@
             // ElectronicGlass_CheckBox
             // 
             this.ElectronicGlass_CheckBox.AutoSize = true;
+            this.ElectronicGlass_CheckBox.Enabled = false;
             this.ElectronicGlass_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ElectronicGlass_CheckBox.Location = new System.Drawing.Point(374, 762);
             this.ElectronicGlass_CheckBox.Name = "ElectronicGlass_CheckBox";
@@ -200,6 +209,7 @@
             // CentralLocking_CheckBox
             // 
             this.CentralLocking_CheckBox.AutoSize = true;
+            this.CentralLocking_CheckBox.Enabled = false;
             this.CentralLocking_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CentralLocking_CheckBox.Location = new System.Drawing.Point(122, 967);
             this.CentralLocking_CheckBox.Name = "CentralLocking_CheckBox";
@@ -211,6 +221,7 @@
             // Immobilizer_CheckBox
             // 
             this.Immobilizer_CheckBox.AutoSize = true;
+            this.Immobilizer_CheckBox.Enabled = false;
             this.Immobilizer_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Immobilizer_CheckBox.Location = new System.Drawing.Point(122, 925);
             this.Immobilizer_CheckBox.Name = "Immobilizer_CheckBox";
@@ -222,6 +233,7 @@
             // Alarm_CheckBox
             // 
             this.Alarm_CheckBox.AutoSize = true;
+            this.Alarm_CheckBox.Enabled = false;
             this.Alarm_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Alarm_CheckBox.Location = new System.Drawing.Point(122, 884);
             this.Alarm_CheckBox.Name = "Alarm_CheckBox";
@@ -233,6 +245,7 @@
             // Hatch_CheckBox
             // 
             this.Hatch_CheckBox.AutoSize = true;
+            this.Hatch_CheckBox.Enabled = false;
             this.Hatch_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Hatch_CheckBox.Location = new System.Drawing.Point(122, 843);
             this.Hatch_CheckBox.Name = "Hatch_CheckBox";
@@ -244,6 +257,7 @@
             // Climatronic_CheckBox
             // 
             this.Climatronic_CheckBox.AutoSize = true;
+            this.Climatronic_CheckBox.Enabled = false;
             this.Climatronic_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Climatronic_CheckBox.Location = new System.Drawing.Point(122, 802);
             this.Climatronic_CheckBox.Name = "Climatronic_CheckBox";
@@ -255,6 +269,7 @@
             // AirConditioning_CheckBox
             // 
             this.AirConditioning_CheckBox.AutoSize = true;
+            this.AirConditioning_CheckBox.Enabled = false;
             this.AirConditioning_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AirConditioning_CheckBox.Location = new System.Drawing.Point(122, 761);
             this.AirConditioning_CheckBox.Name = "AirConditioning_CheckBox";
@@ -266,6 +281,7 @@
             // FourByFour_CheckBox
             // 
             this.FourByFour_CheckBox.AutoSize = true;
+            this.FourByFour_CheckBox.Enabled = false;
             this.FourByFour_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FourByFour_CheckBox.Location = new System.Drawing.Point(11, 967);
             this.FourByFour_CheckBox.Name = "FourByFour_CheckBox";
@@ -277,6 +293,7 @@
             // Esp_CheckBox
             // 
             this.Esp_CheckBox.AutoSize = true;
+            this.Esp_CheckBox.Enabled = false;
             this.Esp_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Esp_CheckBox.Location = new System.Drawing.Point(12, 925);
             this.Esp_CheckBox.Name = "Esp_CheckBox";
@@ -288,6 +305,7 @@
             // Arb_CheckBox
             // 
             this.Arb_CheckBox.AutoSize = true;
+            this.Arb_CheckBox.Enabled = false;
             this.Arb_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Arb_CheckBox.Location = new System.Drawing.Point(12, 884);
             this.Arb_CheckBox.Name = "Arb_CheckBox";
@@ -299,6 +317,7 @@
             // Ebs_CheckBox
             // 
             this.Ebs_CheckBox.AutoSize = true;
+            this.Ebs_CheckBox.Enabled = false;
             this.Ebs_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ebs_CheckBox.Location = new System.Drawing.Point(12, 843);
             this.Ebs_CheckBox.Name = "Ebs_CheckBox";
@@ -310,6 +329,7 @@
             // Asd_CheckBox
             // 
             this.Asd_CheckBox.AutoSize = true;
+            this.Asd_CheckBox.Enabled = false;
             this.Asd_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Asd_CheckBox.Location = new System.Drawing.Point(12, 802);
             this.Asd_CheckBox.Name = "Asd_CheckBox";
@@ -321,6 +341,7 @@
             // Abs_CheckBox
             // 
             this.Abs_CheckBox.AutoSize = true;
+            this.Abs_CheckBox.Enabled = false;
             this.Abs_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Abs_CheckBox.Location = new System.Drawing.Point(12, 761);
             this.Abs_CheckBox.Name = "Abs_CheckBox";
@@ -342,6 +363,7 @@
             // 
             // Address_TextBox
             // 
+            this.Address_TextBox.Enabled = false;
             this.Address_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Address_TextBox.Location = new System.Drawing.Point(759, 640);
             this.Address_TextBox.Name = "Address_TextBox";
@@ -360,6 +382,7 @@
             // 
             // PhoneNumber_TextBox
             // 
+            this.PhoneNumber_TextBox.Enabled = false;
             this.PhoneNumber_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhoneNumber_TextBox.Location = new System.Drawing.Point(96, 640);
             this.PhoneNumber_TextBox.Name = "PhoneNumber_TextBox";
@@ -378,6 +401,7 @@
             // 
             // Bulstat_TextBox
             // 
+            this.Bulstat_TextBox.Enabled = false;
             this.Bulstat_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bulstat_TextBox.Location = new System.Drawing.Point(775, 582);
             this.Bulstat_TextBox.Name = "Bulstat_TextBox";
@@ -396,6 +420,7 @@
             // 
             // Egn_TextBox
             // 
+            this.Egn_TextBox.Enabled = false;
             this.Egn_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Egn_TextBox.Location = new System.Drawing.Point(96, 582);
             this.Egn_TextBox.Name = "Egn_TextBox";
@@ -414,6 +439,7 @@
             // 
             // WorkingVolumeCubicCm_TextBox
             // 
+            this.WorkingVolumeCubicCm_TextBox.Enabled = false;
             this.WorkingVolumeCubicCm_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WorkingVolumeCubicCm_TextBox.Location = new System.Drawing.Point(309, 292);
             this.WorkingVolumeCubicCm_TextBox.Name = "WorkingVolumeCubicCm_TextBox";
@@ -432,6 +458,7 @@
             // 
             // FirstDateRegisterBG_DatePicker
             // 
+            this.FirstDateRegisterBG_DatePicker.Enabled = false;
             this.FirstDateRegisterBG_DatePicker.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstDateRegisterBG_DatePicker.Location = new System.Drawing.Point(415, 468);
             this.FirstDateRegisterBG_DatePicker.Name = "FirstDateRegisterBG_DatePicker";
@@ -442,6 +469,7 @@
             // FirstDateRegister_DatePicker
             // 
             this.FirstDateRegister_DatePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstDateRegister_DatePicker.Enabled = false;
             this.FirstDateRegister_DatePicker.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstDateRegister_DatePicker.Location = new System.Drawing.Point(370, 410);
             this.FirstDateRegister_DatePicker.Name = "FirstDateRegister_DatePicker";
@@ -529,6 +557,7 @@
             // FuelType_Methane_RadioButton
             // 
             this.FuelType_Methane_RadioButton.AutoSize = true;
+            this.FuelType_Methane_RadioButton.Enabled = false;
             this.FuelType_Methane_RadioButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FuelType_Methane_RadioButton.Location = new System.Drawing.Point(851, 325);
             this.FuelType_Methane_RadioButton.Name = "FuelType_Methane_RadioButton";
@@ -541,6 +570,7 @@
             // FuelType_Gas_RadioButton
             // 
             this.FuelType_Gas_RadioButton.AutoSize = true;
+            this.FuelType_Gas_RadioButton.Enabled = false;
             this.FuelType_Gas_RadioButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FuelType_Gas_RadioButton.Location = new System.Drawing.Point(851, 284);
             this.FuelType_Gas_RadioButton.Name = "FuelType_Gas_RadioButton";
@@ -553,6 +583,7 @@
             // FuelType_Gasoline_RadioButton
             // 
             this.FuelType_Gasoline_RadioButton.AutoSize = true;
+            this.FuelType_Gasoline_RadioButton.Enabled = false;
             this.FuelType_Gasoline_RadioButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FuelType_Gasoline_RadioButton.Location = new System.Drawing.Point(851, 243);
             this.FuelType_Gasoline_RadioButton.Name = "FuelType_Gasoline_RadioButton";
@@ -565,6 +596,7 @@
             // FuelType_Diesel_RadioButton
             // 
             this.FuelType_Diesel_RadioButton.AutoSize = true;
+            this.FuelType_Diesel_RadioButton.Enabled = false;
             this.FuelType_Diesel_RadioButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FuelType_Diesel_RadioButton.Location = new System.Drawing.Point(851, 202);
             this.FuelType_Diesel_RadioButton.Name = "FuelType_Diesel_RadioButton";
@@ -576,6 +608,7 @@
             // 
             // OwnerName_TextBox
             // 
+            this.OwnerName_TextBox.Enabled = false;
             this.OwnerName_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OwnerName_TextBox.Location = new System.Drawing.Point(187, 524);
             this.OwnerName_TextBox.Name = "OwnerName_TextBox";
@@ -584,6 +617,7 @@
             // 
             // CurrentKilometers_TextBox
             // 
+            this.CurrentKilometers_TextBox.Enabled = false;
             this.CurrentKilometers_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(727, 408);
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
@@ -593,6 +627,7 @@
             // PlateNumber_TextBox
             // 
             this.PlateNumber_TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.PlateNumber_TextBox.Enabled = false;
             this.PlateNumber_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlateNumber_TextBox.Location = new System.Drawing.Point(324, 350);
             this.PlateNumber_TextBox.Name = "PlateNumber_TextBox";
@@ -601,6 +636,7 @@
             // 
             // EngineNumber_TextBox
             // 
+            this.EngineNumber_TextBox.Enabled = false;
             this.EngineNumber_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EngineNumber_TextBox.Location = new System.Drawing.Point(198, 234);
             this.EngineNumber_TextBox.Name = "EngineNumber_TextBox";
@@ -609,6 +645,7 @@
             // 
             // ChassisNumber_TextBox
             // 
+            this.ChassisNumber_TextBox.Enabled = false;
             this.ChassisNumber_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChassisNumber_TextBox.Location = new System.Drawing.Point(148, 176);
             this.ChassisNumber_TextBox.Name = "ChassisNumber_TextBox";
@@ -628,6 +665,7 @@
             // 
             // Color_TextBox
             // 
+            this.Color_TextBox.Enabled = false;
             this.Color_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Color_TextBox.Location = new System.Drawing.Point(750, 118);
             this.Color_TextBox.Name = "Color_TextBox";
@@ -647,6 +685,7 @@
             // 
             // Model_TextBox
             // 
+            this.Model_TextBox.Enabled = false;
             this.Model_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Model_TextBox.Location = new System.Drawing.Point(442, 118);
             this.Model_TextBox.Name = "Model_TextBox";
@@ -666,6 +705,7 @@
             // 
             // Made_TextBox
             // 
+            this.Made_TextBox.Enabled = false;
             this.Made_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Made_TextBox.Location = new System.Drawing.Point(122, 118);
             this.Made_TextBox.Name = "Made_TextBox";
