@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Globalization;
     using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
@@ -51,8 +52,8 @@
             var chassisNumber = ChassisNumber_TextBox.Text.Trim();
             var engineNumber = EngineNumber_TextBox.Text.Trim();
             var workingVolumeCubicCm = WorkingVolumeCubicCm_TextBox.Text.Trim();
-            var firstRegistration = FirstDateRegister_DatePicker.Value;
-            var firstRegistrationInBG = FirstDateRegisterBG_DatePicker.Value;
+            var firstRegistration = Convert.ToDateTime(FirstDateRegister_DatePicker.Value, CultureInfo.InvariantCulture);
+            var firstRegistrationInBG = Convert.ToDateTime(FirstDateRegisterBG_DatePicker.Value, CultureInfo.InvariantCulture);
             var kilometers = CurrentKilometers_TextBox.Text.Trim();
             var owner = OwnerName_TextBox.Text.Trim();
             var egn = Egn_TextBox.Text.Trim();

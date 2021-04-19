@@ -4,6 +4,7 @@
     using System;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Globalization;
     using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
@@ -35,7 +36,7 @@
 
         private void End_Button_Click(object sender, EventArgs e)
         {
-            var dateMadeChanges = DateMadeChanges_DatePicker.Value;
+            var dateMadeChanges = Convert.ToDateTime(DateMadeChanges_DatePicker.Value, CultureInfo.InvariantCulture);
             var kilometers = CurrentKilometers_TextBox.Text.Trim();
             var serviceMade = Description_TextBox.Text.Trim();
 

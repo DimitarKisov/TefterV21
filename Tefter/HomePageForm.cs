@@ -6,6 +6,8 @@
     using System.Data.SqlClient;
     using System.Drawing;
     using System.IO;
+    using System.Linq;
+    using System.Text.RegularExpressions;
     using System.Windows.Forms;
     using Tefter.DbEntities;
 
@@ -37,6 +39,34 @@
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(Search_TextBox.Text))
+            {
+                MessageBox.Show("Моля, въведете регистрационен номер.");
+                return;
+            }
+
+            var carId = Search_TextBox.Text.Trim();
+
+            var carIdRegex = new Regex("^[А-а-Я-я]{2}[0-9]{4}[А-а-Я-я]{2}$");
+            if (!carIdRegex.IsMatch(carId))
+            {
+                MessageBox.Show("Моля, въведете валиден регистрационен номер.");
+                return;
+            }
+
+            var car = dbContex.Cars
+                .Include(x => x.CarData)
+                .ThenInclude(x => x.CarExtras)
+                .Include(x => x.OilAndFilters)
+                .Include(x => x.OtherServices)
+                .FirstOrDefault(x => x.Id == carId);
+
+            if (car == null)
+            {
+                MessageBox.Show("Не съществува кола с такъв номер!");
+                return;
+            }
+
 
         }
 

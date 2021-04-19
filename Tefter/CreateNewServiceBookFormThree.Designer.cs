@@ -34,10 +34,10 @@
             this.DateMadeChanged_Label = new System.Windows.Forms.Label();
             this.DateMadeChanges_DatePicker = new System.Windows.Forms.DateTimePicker();
             this.CurrentKilometers_Label = new System.Windows.Forms.Label();
-            this.CurrentKilometers_TextBox = new System.Windows.Forms.TextBox();
             this.Description_Label = new System.Windows.Forms.Label();
             this.Description_TextBox = new System.Windows.Forms.TextBox();
             this.End_Button = new System.Windows.Forms.Button();
+            this.CurrentKilometers_TextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // OtherService_Label
@@ -81,7 +81,7 @@
             // DateMadeChanges_DatePicker
             // 
             this.DateMadeChanges_DatePicker.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateMadeChanges_DatePicker.Location = new System.Drawing.Point(137, 118);
+            this.DateMadeChanges_DatePicker.Location = new System.Drawing.Point(137, 121);
             this.DateMadeChanges_DatePicker.Name = "DateMadeChanges_DatePicker";
             this.DateMadeChanges_DatePicker.Size = new System.Drawing.Size(200, 30);
             this.DateMadeChanges_DatePicker.TabIndex = 51;
@@ -96,15 +96,6 @@
             this.CurrentKilometers_Label.TabIndex = 52;
             this.CurrentKilometers_Label.Text = "Изминати км:";
             this.CurrentKilometers_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // CurrentKilometers_TextBox
-            // 
-            this.CurrentKilometers_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(709, 118);
-            this.CurrentKilometers_TextBox.Multiline = true;
-            this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
-            this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 35);
-            this.CurrentKilometers_TextBox.TabIndex = 53;
             // 
             // Description_Label
             // 
@@ -137,6 +128,14 @@
             this.End_Button.UseVisualStyleBackColor = true;
             this.End_Button.Click += new System.EventHandler(this.End_Button_Click);
             // 
+            // CurrentKilometers_TextBox
+            // 
+            this.CurrentKilometers_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(709, 118);
+            this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
+            this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
+            this.CurrentKilometers_TextBox.TabIndex = 57;
+            // 
             // CreateNewServiceBookFormThree
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,10 +143,10 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(934, 575);
+            this.Controls.Add(this.CurrentKilometers_TextBox);
             this.Controls.Add(this.End_Button);
             this.Controls.Add(this.Description_TextBox);
             this.Controls.Add(this.Description_Label);
-            this.Controls.Add(this.CurrentKilometers_TextBox);
             this.Controls.Add(this.CurrentKilometers_Label);
             this.Controls.Add(this.DateMadeChanges_DatePicker);
             this.Controls.Add(this.DateMadeChanged_Label);
@@ -170,9 +169,9 @@
         private System.Windows.Forms.Label DateMadeChanged_Label;
         private System.Windows.Forms.DateTimePicker DateMadeChanges_DatePicker;
         private System.Windows.Forms.Label CurrentKilometers_Label;
-        private System.Windows.Forms.TextBox CurrentKilometers_TextBox;
         private System.Windows.Forms.Label Description_Label;
         private System.Windows.Forms.TextBox Description_TextBox;
         private System.Windows.Forms.Button End_Button;
+        private System.Windows.Forms.TextBox CurrentKilometers_TextBox;
     }
 }

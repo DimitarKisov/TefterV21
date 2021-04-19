@@ -476,7 +476,7 @@
             // 
             this.AutomobileExtras_Label.AutoSize = true;
             this.AutomobileExtras_Label.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AutomobileExtras_Label.Location = new System.Drawing.Point(260, 704);
+            this.AutomobileExtras_Label.Location = new System.Drawing.Point(231, 703);
             this.AutomobileExtras_Label.Name = "AutomobileExtras_Label";
             this.AutomobileExtras_Label.Size = new System.Drawing.Size(484, 55);
             this.AutomobileExtras_Label.TabIndex = 40;
