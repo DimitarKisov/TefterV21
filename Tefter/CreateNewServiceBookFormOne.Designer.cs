@@ -125,7 +125,7 @@
             // Model_TextBox
             // 
             this.Model_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Model_TextBox.Location = new System.Drawing.Point(442, 119);
+            this.Model_TextBox.Location = new System.Drawing.Point(442, 118);
             this.Model_TextBox.Name = "Model_TextBox";
             this.Model_TextBox.Size = new System.Drawing.Size(191, 38);
             this.Model_TextBox.TabIndex = 3;
@@ -145,7 +145,7 @@
             // Color_TextBox
             // 
             this.Color_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Color_TextBox.Location = new System.Drawing.Point(750, 114);
+            this.Color_TextBox.Location = new System.Drawing.Point(750, 118);
             this.Color_TextBox.Name = "Color_TextBox";
             this.Color_TextBox.Size = new System.Drawing.Size(216, 38);
             this.Color_TextBox.TabIndex = 5;
@@ -220,7 +220,7 @@
             // 
             this.FuelType_Gasoline_RadioButton.AutoSize = true;
             this.FuelType_Gasoline_RadioButton.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FuelType_Gasoline_RadioButton.Location = new System.Drawing.Point(853, 243);
+            this.FuelType_Gasoline_RadioButton.Location = new System.Drawing.Point(851, 243);
             this.FuelType_Gasoline_RadioButton.Name = "FuelType_Gasoline_RadioButton";
             this.FuelType_Gasoline_RadioButton.Size = new System.Drawing.Size(113, 35);
             this.FuelType_Gasoline_RadioButton.TabIndex = 15;
@@ -333,7 +333,7 @@
             // 
             this.FirstDateRegister_DatePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstDateRegister_DatePicker.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstDateRegister_DatePicker.Location = new System.Drawing.Point(370, 416);
+            this.FirstDateRegister_DatePicker.Location = new System.Drawing.Point(370, 410);
             this.FirstDateRegister_DatePicker.Name = "FirstDateRegister_DatePicker";
             this.FirstDateRegister_DatePicker.Size = new System.Drawing.Size(263, 30);
             this.FirstDateRegister_DatePicker.TabIndex = 25;
@@ -342,7 +342,7 @@
             // FirstDateRegisterBG_DatePicker
             // 
             this.FirstDateRegisterBG_DatePicker.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstDateRegisterBG_DatePicker.Location = new System.Drawing.Point(415, 472);
+            this.FirstDateRegisterBG_DatePicker.Location = new System.Drawing.Point(415, 468);
             this.FirstDateRegisterBG_DatePicker.Name = "FirstDateRegisterBG_DatePicker";
             this.FirstDateRegisterBG_DatePicker.Size = new System.Drawing.Size(218, 30);
             this.FirstDateRegisterBG_DatePicker.TabIndex = 26;
@@ -413,7 +413,7 @@
             // Egn_TextBox
             // 
             this.Egn_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Egn_TextBox.Location = new System.Drawing.Point(96, 580);
+            this.Egn_TextBox.Location = new System.Drawing.Point(96, 582);
             this.Egn_TextBox.Name = "Egn_TextBox";
             this.Egn_TextBox.Size = new System.Drawing.Size(537, 38);
             this.Egn_TextBox.TabIndex = 32;
@@ -608,7 +608,7 @@
             // 
             this.CentralLocking_CheckBox.AutoSize = true;
             this.CentralLocking_CheckBox.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CentralLocking_CheckBox.Location = new System.Drawing.Point(123, 967);
+            this.CentralLocking_CheckBox.Location = new System.Drawing.Point(122, 967);
             this.CentralLocking_CheckBox.Name = "CentralLocking_CheckBox";
             this.CentralLocking_CheckBox.Size = new System.Drawing.Size(245, 35);
             this.CentralLocking_CheckBox.TabIndex = 64;

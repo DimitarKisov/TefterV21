@@ -67,7 +67,7 @@
                 return;
             }
 
-
+            var searchForm = new SearchServiceBookFormOne()
         }
 
         private static bool CheckDatabaseExists(string connectionString)
