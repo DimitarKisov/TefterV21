@@ -67,7 +67,9 @@
                 return;
             }
 
-            var searchForm = new SearchServiceBookFormOne()
+            var searchForm = new SearchServiceBookFormOne(car);
+            this.Hide();
+            searchForm.Show();
         }
 
         private static bool CheckDatabaseExists(string connectionString)

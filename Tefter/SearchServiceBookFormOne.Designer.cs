@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchServiceBookFormOne));
             this.Others_TextBox = new System.Windows.Forms.TextBox();
             this.Others_Label = new System.Windows.Forms.Label();
             this.Amplifier_CheckBox = new System.Windows.Forms.CheckBox();
@@ -782,11 +783,13 @@
             this.Controls.Add(this.Model_Label);
             this.Controls.Add(this.Made_TextBox);
             this.Controls.Add(this.Made_Label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1008, 1050);
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "SearchServiceBookFormOne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SearchServiceBookFormOne";
+            this.Text = "Преглед на сервизна книжка";
+            this.Load += new System.EventHandler(this.SearcheServiceBookFormOne_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
