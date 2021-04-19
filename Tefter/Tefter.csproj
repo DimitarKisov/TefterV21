@@ -356,6 +356,12 @@
     <Compile Include="SearchServiceBookFormOne.Designer.cs">
       <DependentUpon>SearchServiceBookFormOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchServiceBookFormTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchServiceBookFormTwo.Designer.cs">
+      <DependentUpon>SearchServiceBookFormTwo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreateNewServiceBookFormThree.resx">
       <DependentUpon>CreateNewServiceBookFormThree.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +386,9 @@
     </Compile>
     <EmbeddedResource Include="SearchServiceBookFormOne.resx">
       <DependentUpon>SearchServiceBookFormOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchServiceBookFormTwo.resx">
+      <DependentUpon>SearchServiceBookFormTwo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="appsettings.json" />
     <None Include="packages.config" />

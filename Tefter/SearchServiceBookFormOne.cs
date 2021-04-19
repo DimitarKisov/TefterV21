@@ -62,5 +62,12 @@
             Amplifier_CheckBox.Checked = Car.CarData.CarExtras.Amplifier;
             Others_TextBox.Text = Car.CarData.CarExtras.Other;
         }
+
+        private void NextToSearchServiceBookFormTwo_Button_Click(object sender, EventArgs e)
+        {
+            var secondSearchForm = new SearchServiceBookFormTwo(Car);
+            this.Hide();
+            secondSearchForm.Show();
+        }
     }
 }
