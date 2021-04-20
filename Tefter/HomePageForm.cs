@@ -18,8 +18,7 @@
         public HomePageForm()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Location = new Point(0, 0);
+            StartPosition = FormStartPosition.CenterScreen;
 
             var connString = GetConnectionString();
             var isDbCreated = CheckDatabaseExists(connString);
@@ -66,6 +65,7 @@
                 MessageBox.Show("Не съществува кола с такъв номер!");
                 return;
             }
+
 
             var searchForm = new SearchServiceBookFormOne(car, dbContex);
             this.Hide();
@@ -141,6 +141,14 @@
             }
             Search_TextBox.Font = new Font("Times New Roman", 48);
             Search_TextBox.ForeColor = Color.Black;
+        }
+
+        private void Search_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SearchButton_Click(sender, e);
+            }
         }
     }
 }

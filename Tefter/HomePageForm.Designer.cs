@@ -74,6 +74,7 @@
             this.Search_TextBox.Text = "РЕГИСТРАЦИОНЕН НОМЕР";
             this.Search_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Search_TextBox.Enter += new System.EventHandler(this.Search_TextBox_Enter);
+            this.Search_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Search_TextBox_KeyPress);
             this.Search_TextBox.Leave += new System.EventHandler(this.Search_TextBox_Leave);
             // 
             // HomePageForm
