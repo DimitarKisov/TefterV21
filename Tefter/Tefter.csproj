@@ -291,6 +291,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOilAndFiltersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOilAndFiltersForm.Designer.cs">
+      <DependentUpon>AddOilAndFiltersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="CreateNewServiceBookFormThree.cs">
       <SubType>Form</SubType>
@@ -362,6 +368,9 @@
     <Compile Include="SearchServiceBookFormTwo.Designer.cs">
       <DependentUpon>SearchServiceBookFormTwo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddOilAndFiltersForm.resx">
+      <DependentUpon>AddOilAndFiltersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateNewServiceBookFormThree.resx">
       <DependentUpon>CreateNewServiceBookFormThree.cs</DependentUpon>
     </EmbeddedResource>

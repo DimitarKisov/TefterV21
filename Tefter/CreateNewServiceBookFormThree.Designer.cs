@@ -60,7 +60,7 @@
             this.BackButton.IconColor = System.Drawing.Color.Black;
             this.BackButton.IconSize = 50;
             this.BackButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BackButton.Location = new System.Drawing.Point(1, 0);
+            this.BackButton.Location = new System.Drawing.Point(0, 0);
             this.BackButton.Name = "BackButton";
             this.BackButton.Rotation = 0D;
             this.BackButton.Size = new System.Drawing.Size(64, 55);

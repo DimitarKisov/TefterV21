@@ -638,7 +638,7 @@
             // 
             this.Search_EngineNumber_TextBox.Enabled = false;
             this.Search_EngineNumber_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_EngineNumber_TextBox.Location = new System.Drawing.Point(199, 234);
+            this.Search_EngineNumber_TextBox.Location = new System.Drawing.Point(198, 234);
             this.Search_EngineNumber_TextBox.Name = "Search_EngineNumber_TextBox";
             this.Search_EngineNumber_TextBox.Size = new System.Drawing.Size(435, 38);
             this.Search_EngineNumber_TextBox.TabIndex = 83;

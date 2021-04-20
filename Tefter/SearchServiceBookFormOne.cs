@@ -6,9 +6,12 @@
 
     public partial class SearchServiceBookFormOne : Form
     {
-        public SearchServiceBookFormOne(Car car)
+        private readonly ApplicationDbContext dbContext;
+        public SearchServiceBookFormOne(Car car, ApplicationDbContext dbContext)
         {
             InitializeComponent();
+
+            this.dbContext = dbContext;
 
             Car = car;
         }
@@ -65,7 +68,7 @@
 
         private void NextToSearchServiceBookFormTwo_Button_Click(object sender, EventArgs e)
         {
-            var secondSearchForm = new SearchServiceBookFormTwo(Car);
+            var secondSearchForm = new SearchServiceBookFormTwo(Car, dbContext);
             this.Hide();
             secondSearchForm.Show();
         }

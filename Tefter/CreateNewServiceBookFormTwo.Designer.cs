@@ -46,9 +46,9 @@
             this.DateMadeChanges_DatePicker = new System.Windows.Forms.DateTimePicker();
             this.Oil_Label = new System.Windows.Forms.Label();
             this.Oil_TextBox = new System.Windows.Forms.TextBox();
-            this.NextToNewServiceBookFormThree_Button = new FontAwesome.Sharp.IconButton();
-            this.BackButton = new FontAwesome.Sharp.IconButton();
             this.OilAndFilters_PictureBox = new System.Windows.Forms.PictureBox();
+            this.BackButton = new FontAwesome.Sharp.IconButton();
+            this.NextToNewServiceBookFormThree_Button = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFilters_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,6 +214,34 @@
             this.Oil_TextBox.Size = new System.Drawing.Size(170, 38);
             this.Oil_TextBox.TabIndex = 46;
             // 
+            // OilAndFilters_PictureBox
+            // 
+            this.OilAndFilters_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.OilAndFilters_PictureBox.Image = global::Tefter.Properties.Resources.OilAndFilters;
+            this.OilAndFilters_PictureBox.InitialImage = null;
+            this.OilAndFilters_PictureBox.Location = new System.Drawing.Point(565, 118);
+            this.OilAndFilters_PictureBox.Name = "OilAndFilters_PictureBox";
+            this.OilAndFilters_PictureBox.Size = new System.Drawing.Size(357, 386);
+            this.OilAndFilters_PictureBox.TabIndex = 49;
+            this.OilAndFilters_PictureBox.TabStop = false;
+            // 
+            // BackButton
+            // 
+            this.BackButton.BackColor = System.Drawing.SystemColors.Control;
+            this.BackButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackButton.IconChar = FontAwesome.Sharp.IconChar.LongArrowAltLeft;
+            this.BackButton.IconColor = System.Drawing.Color.Black;
+            this.BackButton.IconSize = 50;
+            this.BackButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BackButton.Location = new System.Drawing.Point(0, 0);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Rotation = 0D;
+            this.BackButton.Size = new System.Drawing.Size(64, 55);
+            this.BackButton.TabIndex = 48;
+            this.BackButton.UseVisualStyleBackColor = false;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // NextToNewServiceBookFormThree_Button
             // 
             this.NextToNewServiceBookFormThree_Button.BackColor = System.Drawing.SystemColors.Control;
@@ -230,34 +258,6 @@
             this.NextToNewServiceBookFormThree_Button.Text = "ПРОДЪЛЖИ";
             this.NextToNewServiceBookFormThree_Button.UseVisualStyleBackColor = false;
             this.NextToNewServiceBookFormThree_Button.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // BackButton
-            // 
-            this.BackButton.BackColor = System.Drawing.SystemColors.Control;
-            this.BackButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.IconChar = FontAwesome.Sharp.IconChar.LongArrowAltLeft;
-            this.BackButton.IconColor = System.Drawing.Color.Black;
-            this.BackButton.IconSize = 50;
-            this.BackButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BackButton.Location = new System.Drawing.Point(1, 0);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Rotation = 0D;
-            this.BackButton.Size = new System.Drawing.Size(64, 55);
-            this.BackButton.TabIndex = 48;
-            this.BackButton.UseVisualStyleBackColor = false;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
-            // 
-            // OilAndFilters_PictureBox
-            // 
-            this.OilAndFilters_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.OilAndFilters_PictureBox.Image = global::Tefter.Properties.Resources.OilAndFilters;
-            this.OilAndFilters_PictureBox.InitialImage = null;
-            this.OilAndFilters_PictureBox.Location = new System.Drawing.Point(565, 118);
-            this.OilAndFilters_PictureBox.Name = "OilAndFilters_PictureBox";
-            this.OilAndFilters_PictureBox.Size = new System.Drawing.Size(357, 386);
-            this.OilAndFilters_PictureBox.TabIndex = 49;
-            this.OilAndFilters_PictureBox.TabStop = false;
             // 
             // CreateNewServiceBookFormTwo
             // 
@@ -289,6 +289,7 @@
             this.MaximumSize = new System.Drawing.Size(950, 614);
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "CreateNewServiceBookFormTwo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Смяна на масло и филтри";
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFilters_PictureBox)).EndInit();
             this.ResumeLayout(false);

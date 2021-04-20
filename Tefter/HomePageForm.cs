@@ -67,7 +67,7 @@
                 return;
             }
 
-            var searchForm = new SearchServiceBookFormOne(car);
+            var searchForm = new SearchServiceBookFormOne(car, dbContex);
             this.Hide();
             searchForm.Show();
         }
