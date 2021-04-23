@@ -20,6 +20,8 @@
             CoupeFilter = coupeFilter;
         }
 
+        public int Id { get; set; }
+
         /// <summary>
         /// Дата
         /// </summary>

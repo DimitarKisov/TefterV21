@@ -32,6 +32,8 @@ namespace Tefter
             this.OilAndFiltersDataGridView = new System.Windows.Forms.DataGridView();
             this.AddButton = new FontAwesome.Sharp.IconButton();
             this.Search_BackButton = new FontAwesome.Sharp.IconButton();
+            this.SaveChangesButton = new FontAwesome.Sharp.IconButton();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KilometersData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OilColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,13 +42,16 @@ namespace Tefter
             this.FuelFilterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AirFilterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FilterCoupeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteRecordButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFiltersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // OilAndFiltersDataGridView
             // 
+            this.OilAndFiltersDataGridView.AllowUserToAddRows = false;
             this.OilAndFiltersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OilAndFiltersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.DataColumn,
             this.KilometersData,
             this.OilColumn,
@@ -95,6 +100,28 @@ namespace Tefter
             this.Search_BackButton.UseVisualStyleBackColor = false;
             this.Search_BackButton.Click += new System.EventHandler(this.Search_BackButton_Click);
             // 
+            // SaveChangesButton
+            // 
+            this.SaveChangesButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.SaveChangesButton.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.SaveChangesButton.IconColor = System.Drawing.Color.Black;
+            this.SaveChangesButton.IconSize = 60;
+            this.SaveChangesButton.Location = new System.Drawing.Point(814, 0);
+            this.SaveChangesButton.Name = "SaveChangesButton";
+            this.SaveChangesButton.Padding = new System.Windows.Forms.Padding(0, 2, 15, 0);
+            this.SaveChangesButton.Rotation = 0D;
+            this.SaveChangesButton.Size = new System.Drawing.Size(57, 55);
+            this.SaveChangesButton.TabIndex = 103;
+            this.SaveChangesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // DataColumn
             // 
             this.DataColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -137,11 +164,28 @@ namespace Tefter
             this.FilterCoupeColumn.HeaderText = "Филтър купе";
             this.FilterCoupeColumn.Name = "FilterCoupeColumn";
             // 
+            // DeleteRecordButton
+            // 
+            this.DeleteRecordButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.DeleteRecordButton.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.DeleteRecordButton.IconColor = System.Drawing.Color.Black;
+            this.DeleteRecordButton.IconSize = 60;
+            this.DeleteRecordButton.Location = new System.Drawing.Point(751, 0);
+            this.DeleteRecordButton.Name = "DeleteRecordButton";
+            this.DeleteRecordButton.Padding = new System.Windows.Forms.Padding(0, 2, 15, 0);
+            this.DeleteRecordButton.Rotation = 0D;
+            this.DeleteRecordButton.Size = new System.Drawing.Size(57, 55);
+            this.DeleteRecordButton.TabIndex = 104;
+            this.DeleteRecordButton.UseVisualStyleBackColor = true;
+            this.DeleteRecordButton.Click += new System.EventHandler(this.DeleteRecordButton_Click);
+            // 
             // SearchServiceBookFormTwo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(934, 575);
+            this.Controls.Add(this.DeleteRecordButton);
+            this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.Search_BackButton);
             this.Controls.Add(this.OilAndFiltersDataGridView);
@@ -161,6 +205,8 @@ namespace Tefter
         private System.Windows.Forms.DataGridView OilAndFiltersDataGridView;
         private FontAwesome.Sharp.IconButton Search_BackButton;
         private FontAwesome.Sharp.IconButton AddButton;
+        private FontAwesome.Sharp.IconButton SaveChangesButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn KilometersData;
         private System.Windows.Forms.DataGridViewTextBoxColumn OilColumn;
@@ -169,5 +215,6 @@ namespace Tefter
         private System.Windows.Forms.DataGridViewTextBoxColumn FuelFilterColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn AirFilterColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn FilterCoupeColumn;
+        private FontAwesome.Sharp.IconButton DeleteRecordButton;
     }
 }

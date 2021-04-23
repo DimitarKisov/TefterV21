@@ -29,58 +29,72 @@
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Close();
-            var secondForm = new CreateNewServiceBookFormTwo(Car, dbContext);
-            secondForm.Show();
+            try
+            {
+                var secondForm = new CreateNewServiceBookFormTwo(Car, dbContext);
+                this.Close();
+                secondForm.Show();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void End_Button_Click(object sender, EventArgs e)
         {
-            var dateMadeChanges = Convert.ToDateTime(DateMadeChanges_DatePicker.Value, CultureInfo.InvariantCulture);
-            var kilometers = CurrentKilometers_TextBox.Text.Trim();
-            var serviceMade = Description_TextBox.Text.Trim();
-
-            var sb = new StringBuilder();
-            var emptyOrWrongFields = new List<string>();
-
-            if (string.IsNullOrWhiteSpace(kilometers))
+            try
             {
-                emptyOrWrongFields.Add("Км");
+                var dateMadeChanges = Convert.ToDateTime(DateMadeChanges_DatePicker.Value, CultureInfo.InvariantCulture);
+                var kilometers = CurrentKilometers_TextBox.Text.Trim();
+                var serviceMade = Description_TextBox.Text.Trim();
+
+                var sb = new StringBuilder();
+                var emptyOrWrongFields = new List<string>();
+
+                if (string.IsNullOrWhiteSpace(kilometers))
+                {
+                    emptyOrWrongFields.Add("Км");
+                }
+
+                if (emptyOrWrongFields.Count() > 0)
+                {
+                    sb.AppendLine("Моля попълнете следните полета: ");
+                    sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+                    MessageBox.Show(sb.ToString());
+                    return;
+                }
+
+                var currentKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
+
+                if (!currentKilometersRegex.IsMatch(kilometers))
+                {
+                    emptyOrWrongFields.Add("Км");
+                }
+
+                if (emptyOrWrongFields.Count() > 0)
+                {
+                    sb.AppendLine("Моля въведете коректни данни за следните полета: ");
+                    sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+                    MessageBox.Show(sb.ToString());
+                    return;
+                }
+
+                var jsonData = new OtherServicesJsonData(dateMadeChanges, kilometers, serviceMade);
+                var data = JsonConvert.SerializeObject(jsonData);
+                var otherServices = new OtherService(data);
+
+                Car.OtherServices.Add(otherServices);
+                dbContext.SaveChanges();
+
+                var homePageForm = new HomePageForm();
+                this.Close();
+                homePageForm.Show();
             }
-            
-            if (emptyOrWrongFields.Count() > 0)
+            catch (Exception ex)
             {
-                sb.AppendLine("Моля попълнете следните полета: ");
-                sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
-                MessageBox.Show(sb.ToString());
-                return;
+
             }
-
-            var currentKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
-
-            if (!currentKilometersRegex.IsMatch(kilometers))
-            {
-                emptyOrWrongFields.Add("Км");
-            }
-
-            if (emptyOrWrongFields.Count() > 0)
-            {
-                sb.AppendLine("Моля въведете коректни данни за следните полета: ");
-                sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
-                MessageBox.Show(sb.ToString());
-                return;
-            }
-
-            var jsonData = new OtherServicesJsonData(dateMadeChanges, kilometers, serviceMade);
-            var data = JsonConvert.SerializeObject(jsonData);
-            var otherServices = new OtherService(data);
-
-            Car.OtherServices.Add(otherServices);
-            dbContext.SaveChanges();
-
-            this.Close();
-            var homePageForm = new HomePageForm();
-            homePageForm.Show();
         }
     }
 }

@@ -20,56 +20,78 @@
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
 
-            var connString = GetConnectionString();
-            var isDbCreated = CheckDatabaseExists(connString);
-
-            if (!isDbCreated)
+            try
             {
-                dbContex.Database.Migrate();
+                var connString = GetConnectionString();
+                var isDbCreated = CheckDatabaseExists(connString);
+
+                if (!isDbCreated)
+                {
+                    dbContex.Database.Migrate();
+                }
             }
+            catch (Exception ex)
+            {
+
+            }
+            
         }
         
         private void CreateNewServiceBook_Button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var createNewServiceBookFormOne = new CreateNewServiceBookFormOne();
-            createNewServiceBookFormOne.Show();
+            try
+            {
+                var createNewServiceBookFormOne = new CreateNewServiceBookFormOne();
+                this.Hide();
+                createNewServiceBookFormOne.Show();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Search_TextBox.Text))
+            try
             {
-                MessageBox.Show("Моля, въведете регистрационен номер.");
-                return;
+                if (string.IsNullOrWhiteSpace(Search_TextBox.Text))
+                {
+                    MessageBox.Show("Моля, въведете регистрационен номер.");
+                    return;
+                }
+
+                var carId = Search_TextBox.Text.Trim();
+
+                var carIdRegex = new Regex("^[А-а-Я-я]{2}[0-9]{4}[А-а-Я-я]{2}$");
+                if (!carIdRegex.IsMatch(carId))
+                {
+                    MessageBox.Show("Моля, въведете валиден регистрационен номер.");
+                    return;
+                }
+
+                var car = dbContex.Cars
+                    .Include(x => x.CarData)
+                    .ThenInclude(x => x.CarExtras)
+                    .Include(x => x.OilAndFilters)
+                    .Include(x => x.OtherServices)
+                    .FirstOrDefault(x => x.Id == carId);
+
+                if (car == null)
+                {
+                    MessageBox.Show("Не съществува кола с такъв номер!");
+                    return;
+                }
+
+
+                var searchForm = new SearchServiceBookFormOne(car, dbContex);
+                this.Hide();
+                searchForm.Show();
             }
-
-            var carId = Search_TextBox.Text.Trim();
-
-            var carIdRegex = new Regex("^[А-а-Я-я]{2}[0-9]{4}[А-а-Я-я]{2}$");
-            if (!carIdRegex.IsMatch(carId))
+            catch (Exception ex)
             {
-                MessageBox.Show("Моля, въведете валиден регистрационен номер.");
-                return;
+                throw;
             }
-
-            var car = dbContex.Cars
-                .Include(x => x.CarData)
-                .ThenInclude(x => x.CarExtras)
-                .Include(x => x.OilAndFilters)
-                .Include(x => x.OtherServices)
-                .FirstOrDefault(x => x.Id == carId);
-
-            if (car == null)
-            {
-                MessageBox.Show("Не съществува кола с такъв номер!");
-                return;
-            }
-
-
-            var searchForm = new SearchServiceBookFormOne(car, dbContex);
-            this.Hide();
-            searchForm.Show();
         }
 
         private static bool CheckDatabaseExists(string connectionString)
@@ -114,13 +136,20 @@
 
         private static string GetConnectionString()
         {
-            var builder = new ConfigurationBuilder()
+            try
+            {
+                var builder = new ConfigurationBuilder()
                                  .SetBasePath(Directory.GetCurrentDirectory())
                                  .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            var configuration = builder.Build();
-            var connectionString = configuration.GetSection("ConnectionString")["DefaultConnection"];
+                var configuration = builder.Build();
+                var connectionString = configuration.GetSection("ConnectionString")["DefaultConnection"];
 
-            return connectionString;
+                return connectionString;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         private void Search_TextBox_Leave(object sender, EventArgs e)
