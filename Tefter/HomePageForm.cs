@@ -10,18 +10,17 @@
     using System.Linq;
     using System.Text.RegularExpressions;
     using System.Windows.Forms;
-    using Tefter.DbEntities;
+    using Tefter.Helpers;
 
     public partial class HomePageForm : Form
     {
-        private ApplicationDbContext dbContex = new ApplicationDbContext();
-        //private readonly ILogger logger;
+        private ApplicationDbContext dbContext = new ApplicationDbContext();
+        private readonly Logger logger;
 
         public HomePageForm()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            //this.logger = logger;
 
             try
             {
@@ -30,12 +29,15 @@
 
                 if (!isDbCreated)
                 {
-                    dbContex.Database.Migrate();
+                    dbContext.Database.Migrate();
                 }
+
+                var configuration = dbContext.Configuration;
+                logger = new Logger(configuration);
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"HomePageFormConstructor: {ex}");
             }
             
         }
@@ -44,13 +46,13 @@
         {
             try
             {
-                var createNewServiceBookFormOne = new CreateNewServiceBookFormOne(dbContex);
+                var createNewServiceBookFormOne = new CreateNewServiceBookFormOne(dbContext, logger);
                 this.Hide();
                 createNewServiceBookFormOne.Show();
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"CreateNewServiceBook_Button_Click: {ex}");
             }
         }
 
@@ -73,7 +75,7 @@
                     return;
                 }
 
-                var car = dbContex.Cars
+                var car = dbContext.Cars
                     .Include(x => x.CarData)
                     .ThenInclude(x => x.CarExtras)
                     .Include(x => x.OilAndFilters)
@@ -87,17 +89,17 @@
                 }
 
 
-                var searchForm = new SearchServiceBookFormOne(car, dbContex);
+                var searchForm = new SearchServiceBookFormOne(car, dbContext);
                 this.Hide();
                 searchForm.Show();
             }
             catch (Exception ex)
             {
-                throw;
+                logger.WriteLine($"SearchButton_Click: {ex}");
             }
         }
 
-        private static bool CheckDatabaseExists(string connectionString)
+        private bool CheckDatabaseExists(string connectionString)
         {
             string query;
             bool result = false;
@@ -131,13 +133,13 @@
             }
             catch (Exception ex)
             {
-                result = false;
+                logger.WriteLine($"CheckDatabaseExists: {ex}");
             }
 
             return result;
         }
 
-        private static string GetConnectionString()
+        private string GetConnectionString()
         {
             try
             {
@@ -151,35 +153,57 @@
             }
             catch (Exception ex)
             {
+                logger.WriteLine($"GetConnectionString: {ex}");
                 return null;
             }
         }
 
         private void Search_TextBox_Leave(object sender, EventArgs e)
         {
-            if (Search_TextBox.Text == "")
+            try
             {
-                Search_TextBox.Text = "РЕГИСТРАЦИОНЕН НОМЕР";
+                if (Search_TextBox.Text == "")
+                {
+                    Search_TextBox.Text = "РЕГИСТРАЦИОНЕН НОМЕР";
+                }
+                Search_TextBox.Font = new Font("Times New Roman", 26);
+                Search_TextBox.ForeColor = Color.DarkGray;
             }
-            Search_TextBox.Font = new Font("Times New Roman", 26);
-            Search_TextBox.ForeColor = Color.DarkGray;
+            catch (Exception ex)
+            {
+                logger.WriteLine($"Search_TextBox_Leave: {ex}");
+            }
         }
 
         private void Search_TextBox_Enter(object sender, EventArgs e)
         {
-            if (Search_TextBox.Text == "РЕГИСТРАЦИОНЕН НОМЕР")
+            try
             {
-                Search_TextBox.Text = null;
+                if (Search_TextBox.Text == "РЕГИСТРАЦИОНЕН НОМЕР")
+                {
+                    Search_TextBox.Text = null;
+                }
+                Search_TextBox.Font = new Font("Times New Roman", 48);
+                Search_TextBox.ForeColor = Color.Black;
             }
-            Search_TextBox.Font = new Font("Times New Roman", 48);
-            Search_TextBox.ForeColor = Color.Black;
+            catch (Exception ex)
+            {
+                logger.WriteLine($"Search_TextBox_Enter: {ex}");
+            }
         }
 
         private void Search_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            try
             {
-                SearchButton_Click(sender, e);
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    SearchButton_Click(sender, e);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"Search_TextBox_KeyPress: {ex}");
             }
         }
     }

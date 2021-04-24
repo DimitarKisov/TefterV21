@@ -10,17 +10,20 @@
     using System.Windows.Forms;
     using Tefter.DbEntities;
     using Tefter.DbEntities.Helper;
+    using Tefter.Helpers;
 
     public partial class CreateNewServiceBookFormTwo : Form
     {
         private ApplicationDbContext dbContext;
+        private readonly Logger logger;
 
-        public CreateNewServiceBookFormTwo(Car car, ApplicationDbContext dbContext)
+        public CreateNewServiceBookFormTwo(Car car, ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Location = new Point(0, 0);
             this.dbContext = dbContext;
+            this.logger = logger;
 
             Car = car;
         }
@@ -86,13 +89,13 @@
 
                 Car.OilAndFilters.Add(oilAndFilters);
 
-                var thirdForm = new CreateNewServiceBookFormThree(Car, dbContext);
+                var thirdForm = new CreateNewServiceBookFormThree(Car, dbContext, logger);
                 this.Hide();
                 thirdForm.Show();
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"iconButton1_Click: {ex}");
             }
         }
 
@@ -100,13 +103,13 @@
         {
             try
             {
-                var firstForm = new CreateNewServiceBookFormOne(dbContext);
+                var firstForm = new CreateNewServiceBookFormOne(dbContext, logger);
                 this.Close();
                 firstForm.Show();
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"CreateNewServiceBookFormTwo.BackButton_Click: {ex}");
             }
         }
     }

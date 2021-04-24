@@ -3,15 +3,19 @@
     using System;
     using System.Windows.Forms;
     using Tefter.DbEntities;
+    using Tefter.Helpers;
 
     public partial class SearchServiceBookFormOne : Form
     {
         private readonly ApplicationDbContext dbContext;
-        public SearchServiceBookFormOne(Car car, ApplicationDbContext dbContext)
+        private readonly Logger logger;
+
+        public SearchServiceBookFormOne(Car car, ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
 
             this.dbContext = dbContext;
+            this.logger = logger;
 
             Car = car;
         }
@@ -28,7 +32,7 @@
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"SearchServiceBookFormOne.BackButton_Click: {ex}");
             }
         }
 
@@ -76,7 +80,7 @@
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"SearcheServiceBookFormOne_Load: {ex}");
             }
         }
 
@@ -90,7 +94,7 @@
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"NextToSearchServiceBookFormTwo_Button_Click: {ex}");
             }
         }
 

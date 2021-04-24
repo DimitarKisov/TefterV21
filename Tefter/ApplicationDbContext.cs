@@ -7,11 +7,23 @@
 
     public class ApplicationDbContext : DbContext
     {
+        public IConfiguration configuration;
+
+        public ApplicationDbContext()
+        {
+            Configuration = ConfigurationBuilder();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            ConfigurationBuilder(optionsBuilder);
+            var configuration = ConfigurationBuilder(optionsBuilder);
+            optionsBuilder.UseSqlServer(configuration.GetSection("ConnectionString")["DefaultConnection"]);
             base.OnConfiguring(optionsBuilder);
+
+            this.configuration = configuration;
         }
+
+        public IConfiguration Configuration { get; set; }
 
         public virtual DbSet<Car> Cars { get; set; }
 
@@ -50,13 +62,13 @@
                 .OnDelete(DeleteBehavior.Cascade);
         }
 
-        private static void ConfigurationBuilder(DbContextOptionsBuilder optionsBuilder)
+        private static IConfiguration ConfigurationBuilder(DbContextOptionsBuilder optionsBuilder = null)
         {
             var builder = new ConfigurationBuilder()
                                  .SetBasePath(Directory.GetCurrentDirectory())
                                  .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             var configuration = builder.Build();
-            optionsBuilder.UseSqlServer(configuration.GetSection("ConnectionString")["DefaultConnection"]);
+            return configuration;
         }
     }
 }

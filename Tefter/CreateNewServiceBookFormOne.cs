@@ -10,16 +10,20 @@
     using System.Windows.Forms;
     using Tefter.DbEntities;
     using Tefter.DbEntities.Enums;
+    using Tefter.Helpers;
 
     public partial class CreateNewServiceBookFormOne : Form
     {
         private ApplicationDbContext dbContext;
-        public CreateNewServiceBookFormOne(ApplicationDbContext dbContext)
+        private readonly Logger logger;
+
+        public CreateNewServiceBookFormOne(ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Location = new Point(0, 0);
             this.dbContext = dbContext;
+            this.logger = logger;
         }
 
         private void CreateNewServiceBookFormOne_Load(object sender, EventArgs e)
@@ -207,12 +211,12 @@
                 dbContext.Cars.Add(car);
 
                 this.Hide();
-                var secondForm = new CreateNewServiceBookFormTwo(car, dbContext);
+                var secondForm = new CreateNewServiceBookFormTwo(car, dbContext, logger);
                 secondForm.Show();
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"NextToNewServiceBookFormTwo_Button_Click: {ex}");
             }
         }
 
@@ -226,7 +230,7 @@
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"CreateNewServiceBookFormOne.BackButton_Click: {ex}");
             }
         }
 
