@@ -89,7 +89,7 @@
                 }
 
 
-                var searchForm = new SearchServiceBookFormOne(car, dbContext);
+                var searchForm = new SearchServiceBookFormOne(car, dbContext, logger);
                 this.Hide();
                 searchForm.Show();
             }

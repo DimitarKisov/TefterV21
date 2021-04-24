@@ -332,7 +332,6 @@
     <Compile Include="DbEntities\OilAndFilter.cs" />
     <Compile Include="DbEntities\OtherService.cs" />
     <Compile Include="Helpers\Logger.cs" />
-    <Compile Include="Helpers\WarningLevel.cs" />
     <Compile Include="HomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>

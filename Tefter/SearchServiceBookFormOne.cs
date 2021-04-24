@@ -88,7 +88,7 @@
         {
             try
             {
-                var secondSearchForm = new SearchServiceBookFormTwo(Car, dbContext);
+                var secondSearchForm = new SearchServiceBookFormTwo(Car, dbContext, logger);
                 this.Hide();
                 secondSearchForm.Show();
             }
