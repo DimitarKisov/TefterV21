@@ -359,6 +359,10 @@
     <Compile Include="Migrations\20210418181239_ChangedOtherServiceProperties.designer.cs">
       <DependentUpon>20210418181239_ChangedOtherServiceProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20210424211742_Test.cs" />
+    <Compile Include="Migrations\20210424211742_Test.designer.cs">
+      <DependentUpon>20210424211742_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -407,6 +411,9 @@
     </Compile>
     <EmbeddedResource Include="SearchServiceBookFormOne.resx">
       <DependentUpon>SearchServiceBookFormOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchServiceBookFormThree.resx">
+      <DependentUpon>SearchServiceBookFormThree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchServiceBookFormTwo.resx">
       <DependentUpon>SearchServiceBookFormTwo.cs</DependentUpon>

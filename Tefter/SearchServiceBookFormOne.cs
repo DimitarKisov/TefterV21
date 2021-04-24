@@ -100,7 +100,9 @@
 
         private void LoadOtherServiceButton_Click(object sender, EventArgs e)
         {
-
+            var thirdSearchForm = new SearchServiceBookFormThree(Car, dbContext, logger);
+            this.Hide();
+            thirdSearchForm.Show();
         }
     }
 }

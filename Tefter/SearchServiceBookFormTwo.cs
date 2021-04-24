@@ -66,7 +66,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"Search_BackButton_Click: {ex}");
+                logger.WriteLine($"SearchServiceBookFormTwo.Search_BackButton_Click: {ex}");
             }
         }
 
