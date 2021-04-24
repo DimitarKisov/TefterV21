@@ -29,10 +29,8 @@ namespace Tefter
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchServiceBookFormTwo));
             this.OilAndFiltersDataGridView = new System.Windows.Forms.DataGridView();
-            this.AddButton = new FontAwesome.Sharp.IconButton();
-            this.Search_BackButton = new FontAwesome.Sharp.IconButton();
-            this.SaveChangesButton = new FontAwesome.Sharp.IconButton();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KilometersData = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +40,9 @@ namespace Tefter
             this.FuelFilterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AirFilterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FilterCoupeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddButton = new FontAwesome.Sharp.IconButton();
+            this.Search_BackButton = new FontAwesome.Sharp.IconButton();
+            this.SaveChangesButton = new FontAwesome.Sharp.IconButton();
             this.DeleteRecordButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFiltersDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +66,54 @@ namespace Tefter
             this.OilAndFiltersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.OilAndFiltersDataGridView.Size = new System.Drawing.Size(934, 415);
             this.OilAndFiltersDataGridView.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // DataColumn
+            // 
+            this.DataColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataColumn.HeaderText = "Дата";
+            this.DataColumn.Name = "DataColumn";
+            // 
+            // KilometersData
+            // 
+            this.KilometersData.HeaderText = "Километри";
+            this.KilometersData.Name = "KilometersData";
+            // 
+            // OilColumn
+            // 
+            this.OilColumn.HeaderText = "Масло";
+            this.OilColumn.Name = "OilColumn";
+            // 
+            // NextChangeColumn
+            // 
+            this.NextChangeColumn.HeaderText = "Следваща смяна (км)";
+            this.NextChangeColumn.Name = "NextChangeColumn";
+            // 
+            // OilFilterColumn
+            // 
+            this.OilFilterColumn.HeaderText = "Маслен филтър";
+            this.OilFilterColumn.Name = "OilFilterColumn";
+            // 
+            // FuelFilterColumn
+            // 
+            this.FuelFilterColumn.HeaderText = "Горивен филтър";
+            this.FuelFilterColumn.Name = "FuelFilterColumn";
+            // 
+            // AirFilterColumn
+            // 
+            this.AirFilterColumn.HeaderText = "Въздушен филтър";
+            this.AirFilterColumn.Name = "AirFilterColumn";
+            // 
+            // FilterCoupeColumn
+            // 
+            this.FilterCoupeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FilterCoupeColumn.HeaderText = "Филтър купе";
+            this.FilterCoupeColumn.Name = "FilterCoupeColumn";
             // 
             // AddButton
             // 
@@ -116,60 +165,12 @@ namespace Tefter
             this.SaveChangesButton.UseVisualStyleBackColor = true;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // DataColumn
-            // 
-            this.DataColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataColumn.HeaderText = "Дата";
-            this.DataColumn.Name = "DataColumn";
-            // 
-            // KilometersData
-            // 
-            this.KilometersData.HeaderText = "Километри";
-            this.KilometersData.Name = "KilometersData";
-            // 
-            // OilColumn
-            // 
-            this.OilColumn.HeaderText = "Масло";
-            this.OilColumn.Name = "OilColumn";
-            // 
-            // NextChangeColumn
-            // 
-            this.NextChangeColumn.HeaderText = "Следваща смяна (км)";
-            this.NextChangeColumn.Name = "NextChangeColumn";
-            // 
-            // OilFilterColumn
-            // 
-            this.OilFilterColumn.HeaderText = "Маслен филтър";
-            this.OilFilterColumn.Name = "OilFilterColumn";
-            // 
-            // FuelFilterColumn
-            // 
-            this.FuelFilterColumn.HeaderText = "Горивен филтър";
-            this.FuelFilterColumn.Name = "FuelFilterColumn";
-            // 
-            // AirFilterColumn
-            // 
-            this.AirFilterColumn.HeaderText = "Въздушен филтър";
-            this.AirFilterColumn.Name = "AirFilterColumn";
-            // 
-            // FilterCoupeColumn
-            // 
-            this.FilterCoupeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FilterCoupeColumn.HeaderText = "Филтър купе";
-            this.FilterCoupeColumn.Name = "FilterCoupeColumn";
-            // 
             // DeleteRecordButton
             // 
             this.DeleteRecordButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.DeleteRecordButton.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.DeleteRecordButton.IconColor = System.Drawing.Color.Black;
-            this.DeleteRecordButton.IconSize = 60;
+            this.DeleteRecordButton.IconSize = 54;
             this.DeleteRecordButton.Location = new System.Drawing.Point(751, 0);
             this.DeleteRecordButton.Name = "DeleteRecordButton";
             this.DeleteRecordButton.Padding = new System.Windows.Forms.Padding(0, 2, 15, 0);
@@ -189,11 +190,12 @@ namespace Tefter
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.Search_BackButton);
             this.Controls.Add(this.OilAndFiltersDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(950, 614);
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "SearchServiceBookFormTwo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SearchServiceBookFormTwo";
+            this.Text = "Масла и филтри";
             this.Load += new System.EventHandler(this.SearchServiceBookFormTwo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFiltersDataGridView)).EndInit();
             this.ResumeLayout(false);

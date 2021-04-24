@@ -2,6 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.Logging;
     using System;
     using System.Data.SqlClient;
     using System.Drawing;
@@ -14,11 +15,13 @@
     public partial class HomePageForm : Form
     {
         private ApplicationDbContext dbContex = new ApplicationDbContext();
+        //private readonly ILogger logger;
 
         public HomePageForm()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            //this.logger = logger;
 
             try
             {
@@ -41,7 +44,7 @@
         {
             try
             {
-                var createNewServiceBookFormOne = new CreateNewServiceBookFormOne();
+                var createNewServiceBookFormOne = new CreateNewServiceBookFormOne(dbContex);
                 this.Hide();
                 createNewServiceBookFormOne.Show();
             }
@@ -122,7 +125,7 @@
 
                         sqlConnection.Close();
 
-                        result = (databaseID > 0);
+                        result = databaseID > 0;
                     }
                 }
             }

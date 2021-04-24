@@ -100,7 +100,7 @@
         {
             try
             {
-                var firstForm = new CreateNewServiceBookFormOne();
+                var firstForm = new CreateNewServiceBookFormOne(dbContext);
                 this.Close();
                 firstForm.Show();
             }

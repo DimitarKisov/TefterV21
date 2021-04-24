@@ -89,6 +89,7 @@
             this.Search_Made_Label = new System.Windows.Forms.Label();
             this.NextToSearchServiceBookFormTwo_Button = new FontAwesome.Sharp.IconButton();
             this.Search_BackButton = new FontAwesome.Sharp.IconButton();
+            this.LoadOtherServiceButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Others_TextBox
@@ -757,11 +758,22 @@
             this.Search_BackButton.UseVisualStyleBackColor = false;
             this.Search_BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // LoadOtherServiceButton
+            // 
+            this.LoadOtherServiceButton.Location = new System.Drawing.Point(682, 969);
+            this.LoadOtherServiceButton.Name = "LoadOtherServiceButton";
+            this.LoadOtherServiceButton.Size = new System.Drawing.Size(75, 23);
+            this.LoadOtherServiceButton.TabIndex = 135;
+            this.LoadOtherServiceButton.Text = "button1";
+            this.LoadOtherServiceButton.UseVisualStyleBackColor = true;
+            this.LoadOtherServiceButton.Click += new System.EventHandler(this.LoadOtherServiceButton_Click);
+            // 
             // SearchServiceBookFormOne
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(992, 911);
+            this.Controls.Add(this.LoadOtherServiceButton);
             this.Controls.Add(this.Others_TextBox);
             this.Controls.Add(this.Others_Label);
             this.Controls.Add(this.Amplifier_CheckBox);
@@ -896,5 +908,6 @@
         private System.Windows.Forms.Label Search_Model_Label;
         private System.Windows.Forms.TextBox Search_Made_TextBox;
         private System.Windows.Forms.Label Search_Made_Label;
+        private System.Windows.Forms.Button LoadOtherServiceButton;
     }
 }

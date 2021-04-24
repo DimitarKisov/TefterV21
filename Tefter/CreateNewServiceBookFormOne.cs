@@ -14,12 +14,12 @@
     public partial class CreateNewServiceBookFormOne : Form
     {
         private ApplicationDbContext dbContext;
-        public CreateNewServiceBookFormOne()
+        public CreateNewServiceBookFormOne(ApplicationDbContext dbContext)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Location = new Point(0, 0);
-            dbContext = new ApplicationDbContext();
+            this.dbContext = dbContext;
         }
 
         private void CreateNewServiceBookFormOne_Load(object sender, EventArgs e)
