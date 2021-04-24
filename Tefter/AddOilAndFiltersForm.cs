@@ -11,18 +11,21 @@
     using System.Windows.Forms;
     using Tefter.DbEntities;
     using Tefter.DbEntities.Helper;
+    using Tefter.Helpers;
 
     public partial class AddOilAndFiltersForm : Form
     {
         private readonly ApplicationDbContext dbContext;
+        private readonly Logger logger;
 
-        public AddOilAndFiltersForm(Car car, DataGridView oilAndFiltersDataGridView, ApplicationDbContext dbContext)
+        public AddOilAndFiltersForm(Car car, DataGridView oilAndFiltersDataGridView, ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(800, 100);
 
             this.dbContext = dbContext;
+            this.logger = logger;
 
             Car = car;
             OilAndFiltersDataGridView = oilAndFiltersDataGridView;
@@ -111,7 +114,7 @@
             }
             catch (Exception ex)
             {
-
+                logger.WriteLine($"AddOilAndFiltersRow_Click: {ex}");
             }
         }
     }

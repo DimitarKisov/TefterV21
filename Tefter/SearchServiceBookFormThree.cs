@@ -66,5 +66,18 @@
                 logger.WriteLine($"SearchServiceBookFormThree.Search_BackButton_Click: {ex}");
             }
         }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var addOtherServicesForm = new AddOtherServicesForm(Car, OtherServicesDataGridView, dbContext, logger);
+                addOtherServicesForm.Show();
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"SearchServiceBookFormThree.AddButton_Click: {ex}");
+            }
+        }
     }
 }

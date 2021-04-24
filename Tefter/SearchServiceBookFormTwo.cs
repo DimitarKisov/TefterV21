@@ -74,13 +74,12 @@
         {
             try
             {
-                var addOilAndFiltersForm = new AddOilAndFiltersForm(Car, OilAndFiltersDataGridView, dbContext);
-                this.Close();
+                var addOilAndFiltersForm = new AddOilAndFiltersForm(Car, OilAndFiltersDataGridView, dbContext, logger);
                 addOilAndFiltersForm.Show();
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"AddButton_Click: {ex}");
+                logger.WriteLine($"SearchServiceBookFormTwo.AddButton_Click: {ex}");
             }
         }
 
