@@ -42,6 +42,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"CreateNewServiceBookFormThree.BackButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
@@ -49,9 +50,18 @@
         {
             try
             {
-                var dateMadeChanges = Convert.ToDateTime(DateMadeChanges_DatePicker.Value, CultureInfo.InvariantCulture);
+                var dateMadeChanges = DateMadeChanges_DatePicker.Value;
                 var kilometers = CurrentKilometers_TextBox.Text.Trim();
                 var serviceMade = Description_TextBox.Text.Trim();
+
+                HomePageForm homePageForm;
+
+                if (string.IsNullOrWhiteSpace(kilometers) && string.IsNullOrWhiteSpace(serviceMade))
+                {
+                    homePageForm = new HomePageForm();
+                    this.Close();
+                    homePageForm.Show();
+                }
 
                 var sb = new StringBuilder();
                 var emptyOrWrongFields = new List<string>();
@@ -61,10 +71,16 @@
                     emptyOrWrongFields.Add("Км");
                 }
 
+                if (string.IsNullOrWhiteSpace(serviceMade))
+                {
+                    emptyOrWrongFields.Add("Извършена сервизна дейност");
+                }
+
                 if (emptyOrWrongFields.Count() > 0)
                 {
                     sb.AppendLine("Моля попълнете следните полета: ");
                     sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+
                     MessageBox.Show(sb.ToString());
                     return;
                 }
@@ -80,24 +96,27 @@
                 {
                     sb.AppendLine("Моля въведете коректни данни за следните полета: ");
                     sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+
                     MessageBox.Show(sb.ToString());
                     return;
                 }
 
-                var jsonData = new OtherServicesJsonData(dateMadeChanges, kilometers, serviceMade);
+                var toStringedDate = dateMadeChanges.ToString("dd.M.yyyy HH:mm:ss");
+                var jsonData = new OtherServicesJsonData(toStringedDate, kilometers, serviceMade);
                 var data = JsonConvert.SerializeObject(jsonData);
                 var otherServices = new OtherService(data);
 
                 Car.OtherServices.Add(otherServices);
                 dbContext.SaveChanges();
 
-                var homePageForm = new HomePageForm();
+                homePageForm = new HomePageForm();
                 this.Close();
                 homePageForm.Show();
             }
             catch (Exception ex)
             {
                 logger.WriteLine($"End_Button_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
     }

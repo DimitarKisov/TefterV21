@@ -14,7 +14,7 @@
 
     public partial class HomePageForm : Form
     {
-        private ApplicationDbContext dbContext = new ApplicationDbContext();
+        private readonly ApplicationDbContext dbContext = new ApplicationDbContext();
         private readonly Logger logger;
 
         public HomePageForm()
@@ -38,6 +38,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"HomePageFormConstructor: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
             
         }
@@ -53,6 +54,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"CreateNewServiceBook_Button_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
@@ -72,6 +74,7 @@
                 if (!carIdRegex.IsMatch(carId))
                 {
                     MessageBox.Show("Моля, въведете валиден регистрационен номер.");
+                    Search_TextBox.Clear();
                     return;
                 }
 
@@ -96,6 +99,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"SearchButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
@@ -134,6 +138,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"CheckDatabaseExists: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
 
             return result;
@@ -154,6 +159,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"GetConnectionString: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
                 return null;
             }
         }
@@ -172,6 +178,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"Search_TextBox_Leave: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
@@ -189,6 +196,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"Search_TextBox_Enter: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
@@ -204,6 +212,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"Search_TextBox_KeyPress: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
     }

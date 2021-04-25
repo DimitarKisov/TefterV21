@@ -33,6 +33,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"SearchServiceBookFormOne.BackButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
@@ -81,6 +82,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"SearcheServiceBookFormOne_Load: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
@@ -95,14 +97,23 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"NextToSearchServiceBookFormTwo_Button_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
         private void LoadOtherServiceButton_Click(object sender, EventArgs e)
         {
-            var thirdSearchForm = new SearchServiceBookFormThree(Car, dbContext, logger);
-            this.Hide();
-            thirdSearchForm.Show();
+            try
+            {
+                var thirdSearchForm = new SearchServiceBookFormThree(Car, dbContext, logger);
+                this.Hide();
+                thirdSearchForm.Show();
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"LoadOtherServiceButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
         }
     }
 }

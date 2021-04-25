@@ -217,6 +217,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"NextToNewServiceBookFormTwo_Button_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
@@ -231,6 +232,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"CreateNewServiceBookFormOne.BackButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 

@@ -40,7 +40,7 @@
         {
             try
             {
-                var dateMadeChanges = Convert.ToDateTime(DateMadeChanges_DatePicker.Value, CultureInfo.InvariantCulture);
+                var dateMadeChanges = DateMadeChanges_DatePicker.Value;
                 var kilometers = CurrentKilometers_TextBox.Text.Trim();
                 var serviceMade = Description_TextBox.Text.Trim();
 
@@ -50,14 +50,6 @@
                 if (string.IsNullOrWhiteSpace(kilometers))
                 {
                     emptyOrWrongFields.Add("Км");
-                }
-
-                if (emptyOrWrongFields.Count() > 0)
-                {
-                    sb.AppendLine("Моля попълнете следните полета: ");
-                    sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
-                    MessageBox.Show(sb.ToString());
-                    return;
                 }
 
                 var currentKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
@@ -75,7 +67,8 @@
                     return;
                 }
 
-                var jsonData = new OtherServicesJsonData(dateMadeChanges, kilometers, serviceMade);
+                var toStringedDate = dateMadeChanges.ToString("dd.M.yyyy HH:mm:ss");
+                var jsonData = new OtherServicesJsonData(toStringedDate, kilometers, serviceMade);
                 var data = JsonConvert.SerializeObject(jsonData);
                 var otherServices = new OtherService(data);
 

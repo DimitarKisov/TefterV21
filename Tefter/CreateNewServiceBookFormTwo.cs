@@ -46,10 +46,16 @@
                 var sb = new StringBuilder();
                 var emptyOrWrongFields = new List<string>();
 
+                if (string.IsNullOrWhiteSpace(oil))
+                {
+                    emptyOrWrongFields.Add("Масло");
+                }
+
                 if (string.IsNullOrWhiteSpace(kilometers))
                 {
                     emptyOrWrongFields.Add("Км");
                 }
+
                 if (string.IsNullOrWhiteSpace(nextOilChangeKilometers))
                 {
                     emptyOrWrongFields.Add("Следваща смяна на (км)");
@@ -83,7 +89,8 @@
                     return;
                 }
 
-                var jsonData = new OilAndFiltersJsonData(dateMadeChanges, kilometers, oil, nextOilChangeKilometers, oilFilter, fuelFilter, airFilter, coupeFilter);
+                var toStringedDate = dateMadeChanges.ToString("dd.M.yyyy HH:mm:ss");
+                var jsonData = new OilAndFiltersJsonData(toStringedDate, kilometers, oil, nextOilChangeKilometers, oilFilter, fuelFilter, airFilter, coupeFilter);
                 var data = JsonConvert.SerializeObject(jsonData);
                 var oilAndFilters = new OilAndFilter(data);
 
@@ -96,6 +103,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"iconButton1_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
 
@@ -110,6 +118,7 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"CreateNewServiceBookFormTwo.BackButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
     }

@@ -368,6 +368,12 @@
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadServicesMadeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadServicesMadeForm.Designer.cs">
+      <DependentUpon>ReadServicesMadeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchServiceBookFormOne.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,6 +420,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReadServicesMadeForm.resx">
+      <DependentUpon>ReadServicesMadeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchServiceBookFormOne.resx">
       <DependentUpon>SearchServiceBookFormOne.cs</DependentUpon>
     </EmbeddedResource>

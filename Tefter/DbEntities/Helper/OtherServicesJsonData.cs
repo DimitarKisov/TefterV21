@@ -1,14 +1,12 @@
 ﻿namespace Tefter.DbEntities.Helper
 {
-    using System;
-
     public class OtherServicesJsonData
     {
         public OtherServicesJsonData()
         {
         }
 
-        public OtherServicesJsonData(DateTime dateMadeChanges, string kilometers, string serviceMade)
+        public OtherServicesJsonData(string dateMadeChanges, string kilometers, string serviceMade)
         {
             DateMadeChanges = dateMadeChanges;
             Kilometers = kilometers;
@@ -18,7 +16,7 @@
         /// <summary>
         /// Дата на извършения ремонт
         /// </summary>
-        public DateTime DateMadeChanges { get; set; }
+        public string DateMadeChanges { get; set; }
 
         /// <summary>
         /// Изминати километри

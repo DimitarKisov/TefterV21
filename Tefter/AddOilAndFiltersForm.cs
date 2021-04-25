@@ -89,7 +89,8 @@
                     return;
                 }
 
-                var jsonData = new OilAndFiltersJsonData(dateMadeChanges, kilometers, oil, nextOilChangeKilometers, oilFilter, fuelFilter, airFilter, coupeFilter);
+                var toStringedDate = dateMadeChanges.ToString("dd.M.yyyy HH:mm:ss");
+                var jsonData = new OilAndFiltersJsonData(toStringedDate, kilometers, oil, nextOilChangeKilometers, oilFilter, fuelFilter, airFilter, coupeFilter);
                 var data = JsonConvert.SerializeObject(jsonData);
                 var oilAndFilters = new OilAndFilter(data);
 

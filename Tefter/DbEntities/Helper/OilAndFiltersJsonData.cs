@@ -1,14 +1,12 @@
 ﻿namespace Tefter.DbEntities.Helper
 {
-    using System;
-
     public class OilAndFiltersJsonData
     {
         public OilAndFiltersJsonData()
         {
         }
 
-        public OilAndFiltersJsonData(DateTime date, string kilometers, string oil, string nextChange, string oilFilter, string fuelFilter, string airFilter, string coupeFilter)
+        public OilAndFiltersJsonData(string date, string kilometers, string oil, string nextChange, string oilFilter, string fuelFilter, string airFilter, string coupeFilter)
         {
             Date = date;
             Kilometers = kilometers;
@@ -25,7 +23,7 @@
         /// <summary>
         /// Дата
         /// </summary>
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
 
         /// <summary>
         /// Километри
