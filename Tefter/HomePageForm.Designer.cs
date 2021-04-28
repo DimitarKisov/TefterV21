@@ -32,12 +32,13 @@
             this.CreateNewServiceBook_Button = new System.Windows.Forms.Button();
             this.SearchButton = new FontAwesome.Sharp.IconButton();
             this.Search_TextBox = new System.Windows.Forms.TextBox();
+            this.SearchAllNotesForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateNewServiceBook_Button
             // 
             this.CreateNewServiceBook_Button.Font = new System.Drawing.Font("Times New Roman", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateNewServiceBook_Button.Location = new System.Drawing.Point(70, 249);
+            this.CreateNewServiceBook_Button.Location = new System.Drawing.Point(71, 305);
             this.CreateNewServiceBook_Button.Name = "CreateNewServiceBook_Button";
             this.CreateNewServiceBook_Button.Size = new System.Drawing.Size(525, 79);
             this.CreateNewServiceBook_Button.TabIndex = 2;
@@ -77,11 +78,23 @@
             this.Search_TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Search_TextBox_KeyPress);
             this.Search_TextBox.Leave += new System.EventHandler(this.Search_TextBox_Leave);
             // 
+            // SearchAllNotesForm
+            // 
+            this.SearchAllNotesForm.Font = new System.Drawing.Font("Times New Roman", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchAllNotesForm.Location = new System.Drawing.Point(71, 198);
+            this.SearchAllNotesForm.Name = "SearchAllNotesForm";
+            this.SearchAllNotesForm.Size = new System.Drawing.Size(525, 79);
+            this.SearchAllNotesForm.TabIndex = 5;
+            this.SearchAllNotesForm.Text = "Бележки";
+            this.SearchAllNotesForm.UseVisualStyleBackColor = true;
+            this.SearchAllNotesForm.Click += new System.EventHandler(this.SearchAllNotesForm_Click);
+            // 
             // HomePageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 406);
+            this.Controls.Add(this.SearchAllNotesForm);
             this.Controls.Add(this.Search_TextBox);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.CreateNewServiceBook_Button);
@@ -97,6 +110,7 @@
         private System.Windows.Forms.Button CreateNewServiceBook_Button;
         private FontAwesome.Sharp.IconButton SearchButton;
         private System.Windows.Forms.TextBox Search_TextBox;
+        private System.Windows.Forms.Button SearchAllNotesForm;
     }
 }
 

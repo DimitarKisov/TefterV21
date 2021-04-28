@@ -379,6 +379,12 @@
     <Compile Include="ReadServicesMadeForm.Designer.cs">
       <DependentUpon>ReadServicesMadeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchAllNotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchAllNotesForm.Designer.cs">
+      <DependentUpon>SearchAllNotesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchServiceBookFormOne.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -427,6 +433,9 @@
     </Compile>
     <EmbeddedResource Include="ReadServicesMadeForm.resx">
       <DependentUpon>ReadServicesMadeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchAllNotesForm.resx">
+      <DependentUpon>SearchAllNotesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchServiceBookFormOne.resx">
       <DependentUpon>SearchServiceBookFormOne.cs</DependentUpon>

@@ -2,7 +2,6 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.Logging;
     using System;
     using System.Data.SqlClient;
     using System.Drawing;
@@ -48,12 +47,27 @@
             try
             {
                 var createNewServiceBookFormOne = new CreateNewServiceBookFormOne(dbContext, logger);
-                this.Hide();
+                Hide();
                 createNewServiceBookFormOne.Show();
             }
             catch (Exception ex)
             {
                 logger.WriteLine($"CreateNewServiceBook_Button_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
+        }
+
+        private void SearchAllNotesForm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var searchAllNotesForm = new SearchAllNotesForm(dbContext);
+                Hide();
+                searchAllNotesForm.Show();
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"SearchAllNotesForm_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -93,7 +107,7 @@
 
 
                 var searchForm = new SearchServiceBookFormOne(car, dbContext, logger);
-                this.Hide();
+                Hide();
                 searchForm.Show();
             }
             catch (Exception ex)
