@@ -35,6 +35,7 @@ namespace Tefter
             // 
             // LoadContext_TextBox
             // 
+            this.LoadContext_TextBox.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoadContext_TextBox.Location = new System.Drawing.Point(12, 12);
             this.LoadContext_TextBox.Multiline = true;
             this.LoadContext_TextBox.Name = "LoadContext_TextBox";

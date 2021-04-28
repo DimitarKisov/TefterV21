@@ -335,6 +335,7 @@
     <Compile Include="DbEntities\Helper\JsonBase.cs" />
     <Compile Include="DbEntities\Helper\OilAndFiltersJsonData.cs" />
     <Compile Include="DbEntities\Helper\OtherServicesJsonData.cs" />
+    <Compile Include="DbEntities\Note.cs" />
     <Compile Include="DbEntities\OilAndFilter.cs" />
     <Compile Include="DbEntities\OtherService.cs" />
     <Compile Include="Helpers\Logger.cs" />
@@ -364,6 +365,10 @@
     <Compile Include="Migrations\20210418181239_ChangedOtherServiceProperties.cs" />
     <Compile Include="Migrations\20210418181239_ChangedOtherServiceProperties.designer.cs">
       <DependentUpon>20210418181239_ChangedOtherServiceProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210428204210_AddedNoteTable.cs" />
+    <Compile Include="Migrations\20210428204210_AddedNoteTable.designer.cs">
+      <DependentUpon>20210428204210_AddedNoteTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

@@ -35,6 +35,8 @@
 
         public virtual DbSet<OtherService> OtherServices { get; set; }
 
+        public virtual DbSet<Note> Notes { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Car>()

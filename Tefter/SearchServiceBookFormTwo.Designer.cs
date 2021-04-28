@@ -185,6 +185,7 @@ namespace Tefter
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(934, 575);
             this.Controls.Add(this.DeleteRecordButton);
             this.Controls.Add(this.SaveChangesButton);
