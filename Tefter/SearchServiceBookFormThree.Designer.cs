@@ -55,6 +55,7 @@ namespace Tefter
             this.OtherServicesDataGridView.Name = "OtherServicesDataGridView";
             this.OtherServicesDataGridView.Size = new System.Drawing.Size(934, 415);
             this.OtherServicesDataGridView.TabIndex = 0;
+            this.OtherServicesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SearchServiceBookFormThree_CellDoubleClick);
             // 
             // Id
             // 

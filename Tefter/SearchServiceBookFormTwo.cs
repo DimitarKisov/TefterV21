@@ -66,7 +66,7 @@
             try
             {
                 var searchServiceBookFirstPage = new SearchServiceBookFormOne(Car, dbContext, logger);
-                this.Close();
+                Close();
                 searchServiceBookFirstPage.Show();
             }
             catch (Exception ex)
@@ -191,6 +191,7 @@
                 {
                     var id = (int)row.Cells["Id"].Value;
                     var itemForRemove = Car.OilAndFilters.FirstOrDefault(x => x.Id == id);
+
                     Car.OilAndFilters.Remove(itemForRemove);
                     OilAndFiltersDataGridView.Rows.Remove(row);
                 }
@@ -200,6 +201,21 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"DeleteRecordButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
+        }
+
+        private void SearchServiceBookFormTwo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var cell = OilAndFiltersDataGridView[e.ColumnIndex, e.RowIndex];
+                OilAndFiltersDataGridView.CurrentCell = cell;
+                OilAndFiltersDataGridView.BeginEdit(true);
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"SearchServiceBookFormTwo.SearchServiceBookFormTwo_CellDoubleClick: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

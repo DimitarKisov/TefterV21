@@ -66,6 +66,7 @@ namespace Tefter
             this.OilAndFiltersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.OilAndFiltersDataGridView.Size = new System.Drawing.Size(934, 415);
             this.OilAndFiltersDataGridView.TabIndex = 0;
+            this.OilAndFiltersDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SearchServiceBookFormTwo_CellDoubleClick);
             // 
             // Id
             // 

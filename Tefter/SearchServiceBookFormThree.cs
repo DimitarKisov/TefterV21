@@ -42,9 +42,6 @@
 
                 OtherServicesDataGridView.Columns["ServiceDone"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-                OtherServicesDataGridView.CellContentDoubleClick += DataGridView_CellContentDoubleClick;
-                OtherServicesDataGridView.CellContentDoubleClick += DataGridView_CellContentDoubleClick_DateMadeChanges;
-
                 OtherServicesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
                 for (int i = 0; i < Car.OtherServices.Count(); i++)
@@ -64,38 +61,6 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"SearchServiceBookFormThree_Load: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
-            }
-        }
-
-        private void DataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (OtherServicesDataGridView.Columns[e.ColumnIndex].Name == "ServiceDone")
-            {
-                try
-                {
-                    var readServiceMadeForm = new ReadServicesMadeForm(OtherServicesDataGridView, e.ColumnIndex, e.RowIndex, logger);
-                    readServiceMadeForm.Show();
-                }
-                catch (Exception ex)
-                {
-                    logger.WriteLine($"SearchServiceBookFormThree.DataGridView_CellContentDoubleClick: {ex}");
-                    MessageBox.Show("Възникна неочаквана грешка!");
-                }
-            }
-        }
-
-        private void DataGridView_CellContentDoubleClick_DateMadeChanges(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var cell = OtherServicesDataGridView[e.ColumnIndex, e.RowIndex];
-                OtherServicesDataGridView.CurrentCell = cell;
-                OtherServicesDataGridView.BeginEdit(true);
-            }
-            catch (Exception ex)
-            {
-                logger.WriteLine($"SearchServiceBookFormThree.DataGridView_CellContentDoubleClick_DateMadeChanges: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -200,6 +165,31 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"SearchServiceBookFormThree.SaveChangesButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
+        }
+
+        private void SearchServiceBookFormThree_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var columnName = OtherServicesDataGridView.Columns[e.ColumnIndex].Name;
+
+                if (columnName == "ServiceDone")
+                {
+                    var readServiceMadeForm = new ReadServicesMadeForm(OtherServicesDataGridView, e.ColumnIndex, e.RowIndex, logger);
+                    readServiceMadeForm.Show();
+                }
+                else if (columnName == "DateMadeChanges" || columnName == "Kilometers")
+                {
+                    var cell = OtherServicesDataGridView[e.ColumnIndex, e.RowIndex];
+                    OtherServicesDataGridView.CurrentCell = cell;
+                    OtherServicesDataGridView.BeginEdit(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"SearchServiceBookFormThree.SearchServiceBookFormThree_CellDoubleClick: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

@@ -35,8 +35,10 @@
         {
             try
             {
+                Car.OilAndFilters.Remove(Car.OilAndFilters.Last());
+
                 var secondForm = new CreateNewServiceBookFormTwo(Car, dbContext, logger);
-                this.Close();
+                Close();
                 secondForm.Show();
             }
             catch (Exception ex)
@@ -58,9 +60,14 @@
 
                 if (string.IsNullOrWhiteSpace(kilometers) && string.IsNullOrWhiteSpace(serviceMade))
                 {
+                    dbContext.Cars.Add(Car);
+                    dbContext.SaveChanges();
+
                     homePageForm = new HomePageForm();
-                    this.Close();
+                    Close();
                     homePageForm.Show();
+
+                    return;
                 }
 
                 var sb = new StringBuilder();
@@ -107,10 +114,12 @@
                 var otherServices = new OtherService(data);
 
                 Car.OtherServices.Add(otherServices);
+
+                dbContext.Cars.Add(Car);
                 dbContext.SaveChanges();
 
                 homePageForm = new HomePageForm();
-                this.Close();
+                Close();
                 homePageForm.Show();
             }
             catch (Exception ex)

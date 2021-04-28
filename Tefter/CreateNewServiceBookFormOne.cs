@@ -20,8 +20,8 @@
         public CreateNewServiceBookFormOne(ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Location = new Point(0, 0);
+            StartPosition = FormStartPosition.CenterScreen;
+            Location = new Point(0, 0);
             this.dbContext = dbContext;
             this.logger = logger;
         }
@@ -142,6 +142,7 @@
                 {
                     sb.AppendLine("Моля попълнете следните полета: ");
                     sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+
                     MessageBox.Show(sb.ToString());
                     return;
                 }
@@ -197,6 +198,7 @@
                 {
                     sb.AppendLine("Моля въведете коректни данни за следните полета: ");
                     sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+
                     MessageBox.Show(sb.ToString());
                     return;
                 }
@@ -208,9 +210,7 @@
                 carData.CarExtras = carExtras;
                 car.CarData = carData;
 
-                dbContext.Cars.Add(car);
-
-                this.Hide();
+                Hide();
                 var secondForm = new CreateNewServiceBookFormTwo(car, dbContext, logger);
                 secondForm.Show();
             }
@@ -226,7 +226,7 @@
             try
             {
                 var homePageForm = new HomePageForm();
-                this.Close();
+                Close();
                 homePageForm.Show();
             }
             catch (Exception ex)

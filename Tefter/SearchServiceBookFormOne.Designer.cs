@@ -89,7 +89,7 @@
             this.Search_Made_Label = new System.Windows.Forms.Label();
             this.NextToSearchServiceBookFormTwo_Button = new FontAwesome.Sharp.IconButton();
             this.Search_BackButton = new FontAwesome.Sharp.IconButton();
-            this.LoadOtherServiceButton = new System.Windows.Forms.Button();
+            this.LoadOtherServiceButton_Click = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // Others_TextBox
@@ -728,7 +728,7 @@
             // 
             this.NextToSearchServiceBookFormTwo_Button.BackColor = System.Drawing.SystemColors.Control;
             this.NextToSearchServiceBookFormTwo_Button.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.NextToSearchServiceBookFormTwo_Button.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NextToSearchServiceBookFormTwo_Button.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NextToSearchServiceBookFormTwo_Button.IconChar = FontAwesome.Sharp.IconChar.None;
             this.NextToSearchServiceBookFormTwo_Button.IconColor = System.Drawing.Color.Black;
             this.NextToSearchServiceBookFormTwo_Button.IconSize = 16;
@@ -737,7 +737,7 @@
             this.NextToSearchServiceBookFormTwo_Button.Rotation = 0D;
             this.NextToSearchServiceBookFormTwo_Button.Size = new System.Drawing.Size(170, 41);
             this.NextToSearchServiceBookFormTwo_Button.TabIndex = 101;
-            this.NextToSearchServiceBookFormTwo_Button.Text = "ПРОДЪЛЖИ";
+            this.NextToSearchServiceBookFormTwo_Button.Text = "Масла и филтри";
             this.NextToSearchServiceBookFormTwo_Button.UseVisualStyleBackColor = false;
             this.NextToSearchServiceBookFormTwo_Button.Click += new System.EventHandler(this.NextToSearchServiceBookFormTwo_Button_Click);
             // 
@@ -758,22 +758,29 @@
             this.Search_BackButton.UseVisualStyleBackColor = false;
             this.Search_BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // LoadOtherServiceButton
+            // LoadOtherServiceButton_Click
             // 
-            this.LoadOtherServiceButton.Location = new System.Drawing.Point(682, 969);
-            this.LoadOtherServiceButton.Name = "LoadOtherServiceButton";
-            this.LoadOtherServiceButton.Size = new System.Drawing.Size(75, 23);
-            this.LoadOtherServiceButton.TabIndex = 135;
-            this.LoadOtherServiceButton.Text = "button1";
-            this.LoadOtherServiceButton.UseVisualStyleBackColor = true;
-            this.LoadOtherServiceButton.Click += new System.EventHandler(this.LoadOtherServiceButton_Click);
+            this.LoadOtherServiceButton_Click.BackColor = System.Drawing.SystemColors.Control;
+            this.LoadOtherServiceButton_Click.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.LoadOtherServiceButton_Click.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadOtherServiceButton_Click.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.LoadOtherServiceButton_Click.IconColor = System.Drawing.Color.Black;
+            this.LoadOtherServiceButton_Click.IconSize = 16;
+            this.LoadOtherServiceButton_Click.Location = new System.Drawing.Point(620, 963);
+            this.LoadOtherServiceButton_Click.Name = "LoadOtherServiceButton_Click";
+            this.LoadOtherServiceButton_Click.Rotation = 0D;
+            this.LoadOtherServiceButton_Click.Size = new System.Drawing.Size(170, 41);
+            this.LoadOtherServiceButton_Click.TabIndex = 135;
+            this.LoadOtherServiceButton_Click.Text = "Други сервизни намеси";
+            this.LoadOtherServiceButton_Click.UseVisualStyleBackColor = false;
+            this.LoadOtherServiceButton_Click.Click += new System.EventHandler(this.LoadOtherServiceButton_Click_Click);
             // 
             // SearchServiceBookFormOne
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(992, 911);
-            this.Controls.Add(this.LoadOtherServiceButton);
+            this.Controls.Add(this.LoadOtherServiceButton_Click);
             this.Controls.Add(this.Others_TextBox);
             this.Controls.Add(this.Others_Label);
             this.Controls.Add(this.Amplifier_CheckBox);
@@ -908,6 +915,6 @@
         private System.Windows.Forms.Label Search_Model_Label;
         private System.Windows.Forms.TextBox Search_Made_TextBox;
         private System.Windows.Forms.Label Search_Made_Label;
-        private System.Windows.Forms.Button LoadOtherServiceButton;
+        private FontAwesome.Sharp.IconButton LoadOtherServiceButton_Click;
     }
 }

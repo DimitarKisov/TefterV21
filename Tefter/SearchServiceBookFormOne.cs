@@ -101,7 +101,7 @@
             }
         }
 
-        private void LoadOtherServiceButton_Click(object sender, EventArgs e)
+        private void LoadOtherServiceButton_Click_Click(object sender, EventArgs e)
         {
             try
             {
