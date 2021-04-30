@@ -54,6 +54,7 @@
             // BackButton
             // 
             this.BackButton.BackColor = System.Drawing.SystemColors.Control;
+            this.BackButton.Enabled = false;
             this.BackButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BackButton.IconChar = FontAwesome.Sharp.IconChar.LongArrowAltLeft;
@@ -64,7 +65,8 @@
             this.BackButton.Name = "BackButton";
             this.BackButton.Rotation = 0D;
             this.BackButton.Size = new System.Drawing.Size(64, 55);
-            this.BackButton.TabIndex = 49;
+            this.BackButton.TabIndex = 1;
+            this.BackButton.TabStop = false;
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
@@ -114,18 +116,19 @@
             this.Description_TextBox.Name = "Description_TextBox";
             this.Description_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Description_TextBox.Size = new System.Drawing.Size(933, 337);
-            this.Description_TextBox.TabIndex = 55;
+            this.Description_TextBox.TabIndex = 2;
             // 
             // End_Button
             // 
+            this.End_Button.BackColor = System.Drawing.Color.Gainsboro;
             this.End_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.End_Button.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.End_Button.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.End_Button.Location = new System.Drawing.Point(0, 538);
             this.End_Button.Name = "End_Button";
             this.End_Button.Size = new System.Drawing.Size(934, 37);
-            this.End_Button.TabIndex = 56;
+            this.End_Button.TabIndex = 3;
             this.End_Button.Text = "КРАЙ";
-            this.End_Button.UseVisualStyleBackColor = true;
+            this.End_Button.UseVisualStyleBackColor = false;
             this.End_Button.Click += new System.EventHandler(this.End_Button_Click);
             // 
             // CurrentKilometers_TextBox
@@ -134,7 +137,7 @@
             this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(709, 118);
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
             this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.CurrentKilometers_TextBox.TabIndex = 57;
+            this.CurrentKilometers_TextBox.TabIndex = 1;
             // 
             // CreateNewServiceBookFormThree
             // 

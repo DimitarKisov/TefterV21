@@ -333,7 +333,6 @@
     <Compile Include="CreateNewServiceBookFormOne.Designer.cs">
       <DependentUpon>CreateNewServiceBookFormOne.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbAccess.cs" />
     <Compile Include="DbEntities\Car.cs" />
     <Compile Include="DbEntities\CarData.cs" />
     <Compile Include="DbEntities\CarExtras.cs" />
@@ -344,6 +343,7 @@
     <Compile Include="DbEntities\Note.cs" />
     <Compile Include="DbEntities\OilAndFilter.cs" />
     <Compile Include="DbEntities\OtherService.cs" />
+    <Compile Include="Helpers\GlobalMethods.cs" />
     <Compile Include="Helpers\Logger.cs" />
     <Compile Include="HomePageForm.cs">
       <SubType>Form</SubType>
@@ -351,7 +351,6 @@
     <Compile Include="HomePageForm.Designer.cs">
       <DependentUpon>HomePageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbEntities\Info.cs" />
     <Compile Include="Migrations\20210417152413_Initial.cs" />
     <Compile Include="Migrations\20210417152413_Initial.designer.cs">
       <DependentUpon>20210417152413_Initial.cs</DependentUpon>

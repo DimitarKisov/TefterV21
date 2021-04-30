@@ -127,15 +127,16 @@
                     return;
                 }
 
-                var brandRegex = new Regex("^([А-Я][а-я]*)$");
-                var modelRegex = new Regex("^([А-Я][а-я]*)$");
-                var colorRegex = new Regex("^([А-Я][а-я]*)$");
+                var brandRegex = new Regex("^([А-Я-а-я]+)$");
+                var modelRegex = new Regex("^([А-Я-а-я]+)$");
+                var colorRegex = new Regex("^([А-Я-а-я]+)$");
                 var workingVolumeCubicCmRegex = new Regex("^[0-9]*$");
-                var plateNumberRegex = new Regex("^[А-а-Я-я]{2}[0-9]{4}[А-а-Я-я]{2}$");
+                var plateNumberRegex = new Regex("^[А-Я-а-я]{2}[0-9]{4}[А-Я-а-я]{2}$");
                 var kilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
-                var ownerRegex = new Regex("^(([А-Я][а-я]+)|([А-Я][а-я]+ [А-Я][а-я]+ [А-Я][а-я]+)|[А-Я][а-я]+ [А-Я][а-я]+)$");
+                var ownerRegex = new Regex("^(([А-Я-а-я]+)|([А-Я-а-я]+ [А-Я-а-я]+ [А-Я-а-я]+)|[А-Я-а-я]+ [А-Я-а-я]+)$");
                 var egnRegex = new Regex("^[0-9]{10}$");
                 var phoneNumberRegex = new Regex("^([0-9]{10})$|([0-9{12}]{12})$");
+
 
                 if (!brandRegex.IsMatch(brand))
                 {
@@ -182,6 +183,11 @@
                     MessageBox.Show(sb.ToString());
                     return;
                 }
+
+                brand = GlobalMethods.CapitalizeFirstLetter(brand);
+                model = GlobalMethods.CapitalizeFirstLetter(model);
+                color = GlobalMethods.CapitalizeFirstLetter(color);
+                owner = GlobalMethods.CapitalizeOwnerName(owner);
 
                 var car = new Car(carId);
                 var carData = new CarData(brand, model, color, chassisNumber, engineNumber, workingVolumeCubicCm, firstRegistration, firstRegistrationInBG, fuelType, kilometers, owner, egn, bulstat, phoneNumber, address);

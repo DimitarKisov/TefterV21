@@ -46,18 +46,19 @@ namespace Tefter
             this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(709, 118);
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
             this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.CurrentKilometers_TextBox.TabIndex = 66;
+            this.CurrentKilometers_TextBox.TabIndex = 1;
             // 
             // AddOtherServicesRow
             // 
+            this.AddOtherServicesRow.BackColor = System.Drawing.Color.Gainsboro;
             this.AddOtherServicesRow.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AddOtherServicesRow.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddOtherServicesRow.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
             this.AddOtherServicesRow.Location = new System.Drawing.Point(0, 538);
             this.AddOtherServicesRow.Name = "AddOtherServicesRow";
             this.AddOtherServicesRow.Size = new System.Drawing.Size(934, 37);
-            this.AddOtherServicesRow.TabIndex = 65;
-            this.AddOtherServicesRow.Text = "Добави";
-            this.AddOtherServicesRow.UseVisualStyleBackColor = true;
+            this.AddOtherServicesRow.TabIndex = 3;
+            this.AddOtherServicesRow.Text = "ДОБАВИ";
+            this.AddOtherServicesRow.UseVisualStyleBackColor = false;
             this.AddOtherServicesRow.Click += new System.EventHandler(this.AddOtherServicesRow_Click);
             // 
             // Description_TextBox
@@ -68,7 +69,7 @@ namespace Tefter
             this.Description_TextBox.Name = "Description_TextBox";
             this.Description_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Description_TextBox.Size = new System.Drawing.Size(933, 337);
-            this.Description_TextBox.TabIndex = 64;
+            this.Description_TextBox.TabIndex = 2;
             // 
             // Description_Label
             // 

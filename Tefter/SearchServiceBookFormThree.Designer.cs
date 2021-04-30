@@ -53,7 +53,7 @@ namespace Tefter
             this.ServiceDone});
             this.OtherServicesDataGridView.Location = new System.Drawing.Point(0, 61);
             this.OtherServicesDataGridView.Name = "OtherServicesDataGridView";
-            this.OtherServicesDataGridView.Size = new System.Drawing.Size(934, 415);
+            this.OtherServicesDataGridView.Size = new System.Drawing.Size(934, 513);
             this.OtherServicesDataGridView.TabIndex = 0;
             this.OtherServicesDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SearchServiceBookFormThree_CellDoubleClick);
             // 

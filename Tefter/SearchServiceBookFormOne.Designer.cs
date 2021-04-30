@@ -484,7 +484,7 @@
             this.Search_AutomobileDetails_Label.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_AutomobileDetails_Label.Location = new System.Drawing.Point(0, 0);
             this.Search_AutomobileDetails_Label.Name = "Search_AutomobileDetails_Label";
-            this.Search_AutomobileDetails_Label.Size = new System.Drawing.Size(992, 55);
+            this.Search_AutomobileDetails_Label.Size = new System.Drawing.Size(975, 55);
             this.Search_AutomobileDetails_Label.TabIndex = 97;
             this.Search_AutomobileDetails_Label.Text = "ДАННИ ЗА АВТОМОБИЛА";
             this.Search_AutomobileDetails_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -726,7 +726,7 @@
             // 
             // NextToSearchServiceBookFormTwo_Button
             // 
-            this.NextToSearchServiceBookFormTwo_Button.BackColor = System.Drawing.SystemColors.Control;
+            this.NextToSearchServiceBookFormTwo_Button.BackColor = System.Drawing.Color.Gainsboro;
             this.NextToSearchServiceBookFormTwo_Button.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.NextToSearchServiceBookFormTwo_Button.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NextToSearchServiceBookFormTwo_Button.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -760,7 +760,7 @@
             // 
             // LoadOtherServiceButton_Click
             // 
-            this.LoadOtherServiceButton_Click.BackColor = System.Drawing.SystemColors.Control;
+            this.LoadOtherServiceButton_Click.BackColor = System.Drawing.Color.Gainsboro;
             this.LoadOtherServiceButton_Click.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.LoadOtherServiceButton_Click.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoadOtherServiceButton_Click.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -779,7 +779,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1009, 911);
+            this.ClientSize = new System.Drawing.Size(992, 911);
             this.Controls.Add(this.LoadOtherServiceButton_Click);
             this.Controls.Add(this.Others_TextBox);
             this.Controls.Add(this.Others_Label);

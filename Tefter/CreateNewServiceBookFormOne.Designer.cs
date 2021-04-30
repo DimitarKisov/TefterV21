@@ -127,7 +127,7 @@
             this.Model_TextBox.Location = new System.Drawing.Point(442, 118);
             this.Model_TextBox.Name = "Model_TextBox";
             this.Model_TextBox.Size = new System.Drawing.Size(191, 38);
-            this.Model_TextBox.TabIndex = 3;
+            this.Model_TextBox.TabIndex = 2;
             // 
             // Color_Label
             // 
@@ -146,7 +146,7 @@
             this.Color_TextBox.Location = new System.Drawing.Point(750, 118);
             this.Color_TextBox.Name = "Color_TextBox";
             this.Color_TextBox.Size = new System.Drawing.Size(216, 38);
-            this.Color_TextBox.TabIndex = 5;
+            this.Color_TextBox.TabIndex = 3;
             // 
             // ChassisNumber_Label
             // 
@@ -165,7 +165,7 @@
             this.ChassisNumber_TextBox.Location = new System.Drawing.Point(148, 176);
             this.ChassisNumber_TextBox.Name = "ChassisNumber_TextBox";
             this.ChassisNumber_TextBox.Size = new System.Drawing.Size(485, 38);
-            this.ChassisNumber_TextBox.TabIndex = 7;
+            this.ChassisNumber_TextBox.TabIndex = 4;
             // 
             // EngineNumber_TextBox
             // 
@@ -173,7 +173,7 @@
             this.EngineNumber_TextBox.Location = new System.Drawing.Point(198, 234);
             this.EngineNumber_TextBox.Name = "EngineNumber_TextBox";
             this.EngineNumber_TextBox.Size = new System.Drawing.Size(435, 38);
-            this.EngineNumber_TextBox.TabIndex = 8;
+            this.EngineNumber_TextBox.TabIndex = 5;
             // 
             // PlateNumber_TextBox
             // 
@@ -182,7 +182,7 @@
             this.PlateNumber_TextBox.Location = new System.Drawing.Point(324, 350);
             this.PlateNumber_TextBox.Name = "PlateNumber_TextBox";
             this.PlateNumber_TextBox.Size = new System.Drawing.Size(309, 38);
-            this.PlateNumber_TextBox.TabIndex = 9;
+            this.PlateNumber_TextBox.TabIndex = 11;
             // 
             // CurrentKilometers_TextBox
             // 
@@ -190,7 +190,7 @@
             this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(727, 408);
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
             this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(239, 38);
-            this.CurrentKilometers_TextBox.TabIndex = 12;
+            this.CurrentKilometers_TextBox.TabIndex = 14;
             // 
             // OwnerName_TextBox
             // 
@@ -198,7 +198,7 @@
             this.OwnerName_TextBox.Location = new System.Drawing.Point(187, 524);
             this.OwnerName_TextBox.Name = "OwnerName_TextBox";
             this.OwnerName_TextBox.Size = new System.Drawing.Size(446, 38);
-            this.OwnerName_TextBox.TabIndex = 13;
+            this.OwnerName_TextBox.TabIndex = 15;
             // 
             // FuelType_Diesel_RadioButton
             // 
@@ -207,8 +207,7 @@
             this.FuelType_Diesel_RadioButton.Location = new System.Drawing.Point(851, 202);
             this.FuelType_Diesel_RadioButton.Name = "FuelType_Diesel_RadioButton";
             this.FuelType_Diesel_RadioButton.Size = new System.Drawing.Size(100, 35);
-            this.FuelType_Diesel_RadioButton.TabIndex = 14;
-            this.FuelType_Diesel_RadioButton.TabStop = true;
+            this.FuelType_Diesel_RadioButton.TabIndex = 6;
             this.FuelType_Diesel_RadioButton.Text = "Дизел";
             this.FuelType_Diesel_RadioButton.UseVisualStyleBackColor = true;
             // 
@@ -219,8 +218,7 @@
             this.FuelType_Gasoline_RadioButton.Location = new System.Drawing.Point(851, 243);
             this.FuelType_Gasoline_RadioButton.Name = "FuelType_Gasoline_RadioButton";
             this.FuelType_Gasoline_RadioButton.Size = new System.Drawing.Size(113, 35);
-            this.FuelType_Gasoline_RadioButton.TabIndex = 15;
-            this.FuelType_Gasoline_RadioButton.TabStop = true;
+            this.FuelType_Gasoline_RadioButton.TabIndex = 7;
             this.FuelType_Gasoline_RadioButton.Text = "Бензин";
             this.FuelType_Gasoline_RadioButton.UseVisualStyleBackColor = true;
             // 
@@ -231,8 +229,7 @@
             this.FuelType_Gas_RadioButton.Location = new System.Drawing.Point(851, 284);
             this.FuelType_Gas_RadioButton.Name = "FuelType_Gas_RadioButton";
             this.FuelType_Gas_RadioButton.Size = new System.Drawing.Size(86, 35);
-            this.FuelType_Gas_RadioButton.TabIndex = 16;
-            this.FuelType_Gas_RadioButton.TabStop = true;
+            this.FuelType_Gas_RadioButton.TabIndex = 8;
             this.FuelType_Gas_RadioButton.Text = "АГУ";
             this.FuelType_Gas_RadioButton.UseVisualStyleBackColor = true;
             // 
@@ -243,8 +240,7 @@
             this.FuelType_Methane_RadioButton.Location = new System.Drawing.Point(851, 325);
             this.FuelType_Methane_RadioButton.Name = "FuelType_Methane_RadioButton";
             this.FuelType_Methane_RadioButton.Size = new System.Drawing.Size(106, 35);
-            this.FuelType_Methane_RadioButton.TabIndex = 17;
-            this.FuelType_Methane_RadioButton.TabStop = true;
+            this.FuelType_Methane_RadioButton.TabIndex = 9;
             this.FuelType_Methane_RadioButton.Text = "Метан";
             this.FuelType_Methane_RadioButton.UseVisualStyleBackColor = true;
             // 
@@ -332,7 +328,8 @@
             this.FirstDateRegister_DatePicker.Location = new System.Drawing.Point(370, 410);
             this.FirstDateRegister_DatePicker.Name = "FirstDateRegister_DatePicker";
             this.FirstDateRegister_DatePicker.Size = new System.Drawing.Size(263, 30);
-            this.FirstDateRegister_DatePicker.TabIndex = 25;
+            this.FirstDateRegister_DatePicker.TabIndex = 12;
+            this.FirstDateRegister_DatePicker.TabStop = false;
             this.FirstDateRegister_DatePicker.Value = new System.DateTime(1995, 1, 1, 0, 0, 0, 0);
             // 
             // FirstDateRegisterBG_DatePicker
@@ -341,7 +338,8 @@
             this.FirstDateRegisterBG_DatePicker.Location = new System.Drawing.Point(415, 468);
             this.FirstDateRegisterBG_DatePicker.Name = "FirstDateRegisterBG_DatePicker";
             this.FirstDateRegisterBG_DatePicker.Size = new System.Drawing.Size(218, 30);
-            this.FirstDateRegisterBG_DatePicker.TabIndex = 26;
+            this.FirstDateRegisterBG_DatePicker.TabIndex = 13;
+            this.FirstDateRegisterBG_DatePicker.TabStop = false;
             this.FirstDateRegisterBG_DatePicker.Value = new System.DateTime(1995, 1, 1, 0, 0, 0, 0);
             // 
             // WorkingVolumeCubicCm_Label
@@ -360,7 +358,7 @@
             this.WorkingVolumeCubicCm_TextBox.Location = new System.Drawing.Point(309, 292);
             this.WorkingVolumeCubicCm_TextBox.Name = "WorkingVolumeCubicCm_TextBox";
             this.WorkingVolumeCubicCm_TextBox.Size = new System.Drawing.Size(324, 38);
-            this.WorkingVolumeCubicCm_TextBox.TabIndex = 30;
+            this.WorkingVolumeCubicCm_TextBox.TabIndex = 10;
             // 
             // Egn_Label
             // 
@@ -378,7 +376,7 @@
             this.Egn_TextBox.Location = new System.Drawing.Point(96, 582);
             this.Egn_TextBox.Name = "Egn_TextBox";
             this.Egn_TextBox.Size = new System.Drawing.Size(537, 38);
-            this.Egn_TextBox.TabIndex = 32;
+            this.Egn_TextBox.TabIndex = 16;
             // 
             // Bulstat_Label
             // 
@@ -396,7 +394,7 @@
             this.Bulstat_TextBox.Location = new System.Drawing.Point(775, 582);
             this.Bulstat_TextBox.Name = "Bulstat_TextBox";
             this.Bulstat_TextBox.Size = new System.Drawing.Size(191, 38);
-            this.Bulstat_TextBox.TabIndex = 34;
+            this.Bulstat_TextBox.TabIndex = 17;
             // 
             // PhoneNumber_Label
             // 
@@ -414,7 +412,7 @@
             this.PhoneNumber_TextBox.Location = new System.Drawing.Point(96, 640);
             this.PhoneNumber_TextBox.Name = "PhoneNumber_TextBox";
             this.PhoneNumber_TextBox.Size = new System.Drawing.Size(537, 38);
-            this.PhoneNumber_TextBox.TabIndex = 36;
+            this.PhoneNumber_TextBox.TabIndex = 18;
             // 
             // Address_Label
             // 
@@ -432,7 +430,7 @@
             this.Address_TextBox.Location = new System.Drawing.Point(759, 640);
             this.Address_TextBox.Name = "Address_TextBox";
             this.Address_TextBox.Size = new System.Drawing.Size(207, 38);
-            this.Address_TextBox.TabIndex = 38;
+            this.Address_TextBox.TabIndex = 19;
             // 
             // AutomobileExtras_Label
             // 
@@ -452,7 +450,8 @@
             this.Abs_CheckBox.Location = new System.Drawing.Point(12, 761);
             this.Abs_CheckBox.Name = "Abs_CheckBox";
             this.Abs_CheckBox.Size = new System.Drawing.Size(85, 35);
-            this.Abs_CheckBox.TabIndex = 52;
+            this.Abs_CheckBox.TabIndex = 20;
+            this.Abs_CheckBox.TabStop = false;
             this.Abs_CheckBox.Text = "ABS";
             this.Abs_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -463,7 +462,8 @@
             this.Asd_CheckBox.Location = new System.Drawing.Point(12, 802);
             this.Asd_CheckBox.Name = "Asd_CheckBox";
             this.Asd_CheckBox.Size = new System.Drawing.Size(86, 35);
-            this.Asd_CheckBox.TabIndex = 54;
+            this.Asd_CheckBox.TabIndex = 21;
+            this.Asd_CheckBox.TabStop = false;
             this.Asd_CheckBox.Text = "ASD";
             this.Asd_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -474,7 +474,8 @@
             this.Ebs_CheckBox.Location = new System.Drawing.Point(12, 843);
             this.Ebs_CheckBox.Name = "Ebs_CheckBox";
             this.Ebs_CheckBox.Size = new System.Drawing.Size(83, 35);
-            this.Ebs_CheckBox.TabIndex = 55;
+            this.Ebs_CheckBox.TabIndex = 22;
+            this.Ebs_CheckBox.TabStop = false;
             this.Ebs_CheckBox.Text = "EBS";
             this.Ebs_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -485,7 +486,8 @@
             this.Arb_CheckBox.Location = new System.Drawing.Point(12, 884);
             this.Arb_CheckBox.Name = "Arb_CheckBox";
             this.Arb_CheckBox.Size = new System.Drawing.Size(88, 35);
-            this.Arb_CheckBox.TabIndex = 56;
+            this.Arb_CheckBox.TabIndex = 23;
+            this.Arb_CheckBox.TabStop = false;
             this.Arb_CheckBox.Text = "ARB";
             this.Arb_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -496,7 +498,8 @@
             this.Esp_CheckBox.Location = new System.Drawing.Point(12, 925);
             this.Esp_CheckBox.Name = "Esp_CheckBox";
             this.Esp_CheckBox.Size = new System.Drawing.Size(80, 35);
-            this.Esp_CheckBox.TabIndex = 57;
+            this.Esp_CheckBox.TabIndex = 24;
+            this.Esp_CheckBox.TabStop = false;
             this.Esp_CheckBox.Text = "ESP";
             this.Esp_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -507,7 +510,8 @@
             this.FourByFour_CheckBox.Location = new System.Drawing.Point(11, 967);
             this.FourByFour_CheckBox.Name = "FourByFour_CheckBox";
             this.FourByFour_CheckBox.Size = new System.Drawing.Size(74, 35);
-            this.FourByFour_CheckBox.TabIndex = 58;
+            this.FourByFour_CheckBox.TabIndex = 25;
+            this.FourByFour_CheckBox.TabStop = false;
             this.FourByFour_CheckBox.Text = "4x4";
             this.FourByFour_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -518,7 +522,8 @@
             this.AirConditioning_CheckBox.Location = new System.Drawing.Point(122, 761);
             this.AirConditioning_CheckBox.Name = "AirConditioning_CheckBox";
             this.AirConditioning_CheckBox.Size = new System.Drawing.Size(140, 35);
-            this.AirConditioning_CheckBox.TabIndex = 59;
+            this.AirConditioning_CheckBox.TabIndex = 26;
+            this.AirConditioning_CheckBox.TabStop = false;
             this.AirConditioning_CheckBox.Text = "климатик";
             this.AirConditioning_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -529,7 +534,8 @@
             this.Climatronic_CheckBox.Location = new System.Drawing.Point(122, 802);
             this.Climatronic_CheckBox.Name = "Climatronic_CheckBox";
             this.Climatronic_CheckBox.Size = new System.Drawing.Size(182, 35);
-            this.Climatronic_CheckBox.TabIndex = 60;
+            this.Climatronic_CheckBox.TabIndex = 27;
+            this.Climatronic_CheckBox.TabStop = false;
             this.Climatronic_CheckBox.Text = "климатроник";
             this.Climatronic_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -540,7 +546,8 @@
             this.Hatch_CheckBox.Location = new System.Drawing.Point(122, 843);
             this.Hatch_CheckBox.Name = "Hatch_CheckBox";
             this.Hatch_CheckBox.Size = new System.Drawing.Size(79, 35);
-            this.Hatch_CheckBox.TabIndex = 61;
+            this.Hatch_CheckBox.TabIndex = 28;
+            this.Hatch_CheckBox.TabStop = false;
             this.Hatch_CheckBox.Text = "люк";
             this.Hatch_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -551,7 +558,8 @@
             this.Alarm_CheckBox.Location = new System.Drawing.Point(122, 884);
             this.Alarm_CheckBox.Name = "Alarm_CheckBox";
             this.Alarm_CheckBox.Size = new System.Drawing.Size(113, 35);
-            this.Alarm_CheckBox.TabIndex = 62;
+            this.Alarm_CheckBox.TabIndex = 29;
+            this.Alarm_CheckBox.TabStop = false;
             this.Alarm_CheckBox.Text = "аларма";
             this.Alarm_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -562,7 +570,8 @@
             this.Immobilizer_CheckBox.Location = new System.Drawing.Point(122, 925);
             this.Immobilizer_CheckBox.Name = "Immobilizer_CheckBox";
             this.Immobilizer_CheckBox.Size = new System.Drawing.Size(182, 35);
-            this.Immobilizer_CheckBox.TabIndex = 63;
+            this.Immobilizer_CheckBox.TabIndex = 30;
+            this.Immobilizer_CheckBox.TabStop = false;
             this.Immobilizer_CheckBox.Text = "имобилайзер";
             this.Immobilizer_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -573,7 +582,8 @@
             this.CentralLocking_CheckBox.Location = new System.Drawing.Point(122, 967);
             this.CentralLocking_CheckBox.Name = "CentralLocking_CheckBox";
             this.CentralLocking_CheckBox.Size = new System.Drawing.Size(245, 35);
-            this.CentralLocking_CheckBox.TabIndex = 64;
+            this.CentralLocking_CheckBox.TabIndex = 31;
+            this.CentralLocking_CheckBox.TabStop = false;
             this.CentralLocking_CheckBox.Text = "центр. заключване";
             this.CentralLocking_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -584,7 +594,8 @@
             this.ElectronicGlass_CheckBox.Location = new System.Drawing.Point(374, 762);
             this.ElectronicGlass_CheckBox.Name = "ElectronicGlass_CheckBox";
             this.ElectronicGlass_CheckBox.Size = new System.Drawing.Size(148, 35);
-            this.ElectronicGlass_CheckBox.TabIndex = 65;
+            this.ElectronicGlass_CheckBox.TabIndex = 32;
+            this.ElectronicGlass_CheckBox.TabStop = false;
             this.ElectronicGlass_CheckBox.Text = "ел. стъкла";
             this.ElectronicGlass_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -595,7 +606,8 @@
             this.ElectronicMirror_CheckBox.Location = new System.Drawing.Point(374, 803);
             this.ElectronicMirror_CheckBox.Name = "ElectronicMirror_CheckBox";
             this.ElectronicMirror_CheckBox.Size = new System.Drawing.Size(172, 35);
-            this.ElectronicMirror_CheckBox.TabIndex = 66;
+            this.ElectronicMirror_CheckBox.TabIndex = 33;
+            this.ElectronicMirror_CheckBox.TabStop = false;
             this.ElectronicMirror_CheckBox.Text = "ел. огледала";
             this.ElectronicMirror_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -606,7 +618,8 @@
             this.Automatic_CheckBox.Location = new System.Drawing.Point(374, 844);
             this.Automatic_CheckBox.Name = "Automatic_CheckBox";
             this.Automatic_CheckBox.Size = new System.Drawing.Size(148, 35);
-            this.Automatic_CheckBox.TabIndex = 67;
+            this.Automatic_CheckBox.TabIndex = 34;
+            this.Automatic_CheckBox.TabStop = false;
             this.Automatic_CheckBox.Text = "автоматик";
             this.Automatic_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -617,7 +630,8 @@
             this.ElectronicPacket_CheckBox.Location = new System.Drawing.Point(374, 885);
             this.ElectronicPacket_CheckBox.Name = "ElectronicPacket_CheckBox";
             this.ElectronicPacket_CheckBox.Size = new System.Drawing.Size(118, 35);
-            this.ElectronicPacket_CheckBox.TabIndex = 68;
+            this.ElectronicPacket_CheckBox.TabIndex = 35;
+            this.ElectronicPacket_CheckBox.TabStop = false;
             this.ElectronicPacket_CheckBox.Text = "ел. пак.";
             this.ElectronicPacket_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -628,7 +642,8 @@
             this.SteeringWheelHydraulics_CheckBox.Location = new System.Drawing.Point(374, 926);
             this.SteeringWheelHydraulics_CheckBox.Name = "SteeringWheelHydraulics_CheckBox";
             this.SteeringWheelHydraulics_CheckBox.Size = new System.Drawing.Size(281, 35);
-            this.SteeringWheelHydraulics_CheckBox.TabIndex = 69;
+            this.SteeringWheelHydraulics_CheckBox.TabIndex = 36;
+            this.SteeringWheelHydraulics_CheckBox.TabStop = false;
             this.SteeringWheelHydraulics_CheckBox.Text = "хидравлика на волана";
             this.SteeringWheelHydraulics_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -639,7 +654,8 @@
             this.Stereo_CheckBox.Location = new System.Drawing.Point(374, 967);
             this.Stereo_CheckBox.Name = "Stereo_CheckBox";
             this.Stereo_CheckBox.Size = new System.Drawing.Size(109, 35);
-            this.Stereo_CheckBox.TabIndex = 70;
+            this.Stereo_CheckBox.TabIndex = 37;
+            this.Stereo_CheckBox.TabStop = false;
             this.Stereo_CheckBox.Text = "стерео";
             this.Stereo_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -650,7 +666,8 @@
             this.CdChanger_CheckBox.Location = new System.Drawing.Point(661, 762);
             this.CdChanger_CheckBox.Name = "CdChanger_CheckBox";
             this.CdChanger_CheckBox.Size = new System.Drawing.Size(192, 35);
-            this.CdChanger_CheckBox.TabIndex = 71;
+            this.CdChanger_CheckBox.TabIndex = 38;
+            this.CdChanger_CheckBox.TabStop = false;
             this.CdChanger_CheckBox.Text = "CD чейнджър";
             this.CdChanger_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -661,7 +678,8 @@
             this.Amplifier_CheckBox.Location = new System.Drawing.Point(661, 803);
             this.Amplifier_CheckBox.Name = "Amplifier_CheckBox";
             this.Amplifier_CheckBox.Size = new System.Drawing.Size(145, 35);
-            this.Amplifier_CheckBox.TabIndex = 72;
+            this.Amplifier_CheckBox.TabIndex = 39;
+            this.Amplifier_CheckBox.TabStop = false;
             this.Amplifier_CheckBox.Text = "усилвател";
             this.Amplifier_CheckBox.UseVisualStyleBackColor = true;
             // 
@@ -681,11 +699,11 @@
             this.Others_TextBox.Multiline = true;
             this.Others_TextBox.Name = "Others_TextBox";
             this.Others_TextBox.Size = new System.Drawing.Size(189, 101);
-            this.Others_TextBox.TabIndex = 74;
+            this.Others_TextBox.TabIndex = 40;
             // 
             // NextToNewServiceBookFormTwo_Button
             // 
-            this.NextToNewServiceBookFormTwo_Button.BackColor = System.Drawing.SystemColors.Control;
+            this.NextToNewServiceBookFormTwo_Button.BackColor = System.Drawing.Color.Gainsboro;
             this.NextToNewServiceBookFormTwo_Button.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.NextToNewServiceBookFormTwo_Button.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NextToNewServiceBookFormTwo_Button.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -695,7 +713,7 @@
             this.NextToNewServiceBookFormTwo_Button.Name = "NextToNewServiceBookFormTwo_Button";
             this.NextToNewServiceBookFormTwo_Button.Rotation = 0D;
             this.NextToNewServiceBookFormTwo_Button.Size = new System.Drawing.Size(170, 41);
-            this.NextToNewServiceBookFormTwo_Button.TabIndex = 28;
+            this.NextToNewServiceBookFormTwo_Button.TabIndex = 41;
             this.NextToNewServiceBookFormTwo_Button.Text = "ПРОДЪЛЖИ";
             this.NextToNewServiceBookFormTwo_Button.UseVisualStyleBackColor = false;
             this.NextToNewServiceBookFormTwo_Button.Click += new System.EventHandler(this.NextToNewServiceBookFormTwo_Button_Click);
@@ -713,7 +731,8 @@
             this.BackButton.Name = "BackButton";
             this.BackButton.Rotation = 0D;
             this.BackButton.Size = new System.Drawing.Size(64, 55);
-            this.BackButton.TabIndex = 27;
+            this.BackButton.TabIndex = 1;
+            this.BackButton.TabStop = false;
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 

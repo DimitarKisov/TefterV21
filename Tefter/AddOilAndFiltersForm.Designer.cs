@@ -76,7 +76,7 @@ namespace Tefter
             // 
             // AddOilAndFiltersRow
             // 
-            this.AddOilAndFiltersRow.BackColor = System.Drawing.SystemColors.Control;
+            this.AddOilAndFiltersRow.BackColor = System.Drawing.Color.Gainsboro;
             this.AddOilAndFiltersRow.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.AddOilAndFiltersRow.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddOilAndFiltersRow.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -86,7 +86,7 @@ namespace Tefter
             this.AddOilAndFiltersRow.Name = "AddOilAndFiltersRow";
             this.AddOilAndFiltersRow.Rotation = 0D;
             this.AddOilAndFiltersRow.Size = new System.Drawing.Size(170, 41);
-            this.AddOilAndFiltersRow.TabIndex = 67;
+            this.AddOilAndFiltersRow.TabIndex = 8;
             this.AddOilAndFiltersRow.Text = "ДОБАВИ";
             this.AddOilAndFiltersRow.UseVisualStyleBackColor = false;
             this.AddOilAndFiltersRow.Click += new System.EventHandler(this.AddOilAndFiltersRow_Click);
@@ -98,7 +98,7 @@ namespace Tefter
             this.Oil_TextBox.Multiline = true;
             this.Oil_TextBox.Name = "Oil_TextBox";
             this.Oil_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.Oil_TextBox.TabIndex = 66;
+            this.Oil_TextBox.TabIndex = 1;
             // 
             // Oil_Label
             // 
@@ -125,7 +125,7 @@ namespace Tefter
             this.CoupeFilter_TextBox.Multiline = true;
             this.CoupeFilter_TextBox.Name = "CoupeFilter_TextBox";
             this.CoupeFilter_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.CoupeFilter_TextBox.TabIndex = 63;
+            this.CoupeFilter_TextBox.TabIndex = 7;
             // 
             // AirFilter_TextBox
             // 
@@ -134,7 +134,7 @@ namespace Tefter
             this.AirFilter_TextBox.Multiline = true;
             this.AirFilter_TextBox.Name = "AirFilter_TextBox";
             this.AirFilter_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.AirFilter_TextBox.TabIndex = 62;
+            this.AirFilter_TextBox.TabIndex = 6;
             // 
             // FuelFilter_TextBox
             // 
@@ -143,7 +143,7 @@ namespace Tefter
             this.FuelFilter_TextBox.Multiline = true;
             this.FuelFilter_TextBox.Name = "FuelFilter_TextBox";
             this.FuelFilter_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.FuelFilter_TextBox.TabIndex = 61;
+            this.FuelFilter_TextBox.TabIndex = 5;
             // 
             // OilFilter_TextBox
             // 
@@ -152,7 +152,7 @@ namespace Tefter
             this.OilFilter_TextBox.Multiline = true;
             this.OilFilter_TextBox.Name = "OilFilter_TextBox";
             this.OilFilter_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.OilFilter_TextBox.TabIndex = 60;
+            this.OilFilter_TextBox.TabIndex = 4;
             // 
             // NextOilChangeKilometers_TextBox
             // 
@@ -161,7 +161,7 @@ namespace Tefter
             this.NextOilChangeKilometers_TextBox.Multiline = true;
             this.NextOilChangeKilometers_TextBox.Name = "NextOilChangeKilometers_TextBox";
             this.NextOilChangeKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.NextOilChangeKilometers_TextBox.TabIndex = 59;
+            this.NextOilChangeKilometers_TextBox.TabIndex = 3;
             // 
             // CurrentKilometers_TextBox
             // 
@@ -170,7 +170,7 @@ namespace Tefter
             this.CurrentKilometers_TextBox.Multiline = true;
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
             this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.CurrentKilometers_TextBox.TabIndex = 58;
+            this.CurrentKilometers_TextBox.TabIndex = 2;
             // 
             // AirFilter_Label
             // 

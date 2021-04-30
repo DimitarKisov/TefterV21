@@ -42,21 +42,22 @@ namespace Tefter
             this.PlateNumber_TextBox.Location = new System.Drawing.Point(0, 0);
             this.PlateNumber_TextBox.Name = "PlateNumber_TextBox";
             this.PlateNumber_TextBox.Size = new System.Drawing.Size(800, 37);
-            this.PlateNumber_TextBox.TabIndex = 0;
+            this.PlateNumber_TextBox.TabIndex = 1;
             this.PlateNumber_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PlateNumber_TextBox.Enter += new System.EventHandler(this.PlateNumber_TextBox_Enter);
             this.PlateNumber_TextBox.Leave += new System.EventHandler(this.PlateNumber_TextBox_Leave);
             // 
             // SaveChanges_Button
             // 
+            this.SaveChanges_Button.BackColor = System.Drawing.Color.Gainsboro;
             this.SaveChanges_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SaveChanges_Button.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveChanges_Button.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
             this.SaveChanges_Button.Location = new System.Drawing.Point(0, 413);
             this.SaveChanges_Button.Name = "SaveChanges_Button";
             this.SaveChanges_Button.Size = new System.Drawing.Size(800, 37);
-            this.SaveChanges_Button.TabIndex = 57;
-            this.SaveChanges_Button.Text = "Добави";
-            this.SaveChanges_Button.UseVisualStyleBackColor = true;
+            this.SaveChanges_Button.TabIndex = 3;
+            this.SaveChanges_Button.Text = "ДОБАВИ";
+            this.SaveChanges_Button.UseVisualStyleBackColor = false;
             this.SaveChanges_Button.Click += new System.EventHandler(this.AddNote_Button_Click);
             // 
             // Description_TextBox
@@ -66,7 +67,7 @@ namespace Tefter
             this.Description_TextBox.Multiline = true;
             this.Description_TextBox.Name = "Description_TextBox";
             this.Description_TextBox.Size = new System.Drawing.Size(800, 364);
-            this.Description_TextBox.TabIndex = 58;
+            this.Description_TextBox.TabIndex = 2;
             // 
             // AddNewNoteForm
             // 

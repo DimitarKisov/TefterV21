@@ -140,7 +140,7 @@
             this.CurrentKilometers_TextBox.Multiline = true;
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
             this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.CurrentKilometers_TextBox.TabIndex = 37;
+            this.CurrentKilometers_TextBox.TabIndex = 3;
             // 
             // NextOilChangeKilometers_TextBox
             // 
@@ -149,7 +149,7 @@
             this.NextOilChangeKilometers_TextBox.Multiline = true;
             this.NextOilChangeKilometers_TextBox.Name = "NextOilChangeKilometers_TextBox";
             this.NextOilChangeKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.NextOilChangeKilometers_TextBox.TabIndex = 38;
+            this.NextOilChangeKilometers_TextBox.TabIndex = 4;
             // 
             // OilFilter_TextBox
             // 
@@ -158,7 +158,7 @@
             this.OilFilter_TextBox.Multiline = true;
             this.OilFilter_TextBox.Name = "OilFilter_TextBox";
             this.OilFilter_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.OilFilter_TextBox.TabIndex = 39;
+            this.OilFilter_TextBox.TabIndex = 5;
             // 
             // FuelFilter_TextBox
             // 
@@ -167,7 +167,7 @@
             this.FuelFilter_TextBox.Multiline = true;
             this.FuelFilter_TextBox.Name = "FuelFilter_TextBox";
             this.FuelFilter_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.FuelFilter_TextBox.TabIndex = 40;
+            this.FuelFilter_TextBox.TabIndex = 6;
             // 
             // AirFilter_TextBox
             // 
@@ -176,7 +176,7 @@
             this.AirFilter_TextBox.Multiline = true;
             this.AirFilter_TextBox.Name = "AirFilter_TextBox";
             this.AirFilter_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.AirFilter_TextBox.TabIndex = 41;
+            this.AirFilter_TextBox.TabIndex = 7;
             // 
             // CoupeFilter_TextBox
             // 
@@ -185,7 +185,7 @@
             this.CoupeFilter_TextBox.Multiline = true;
             this.CoupeFilter_TextBox.Name = "CoupeFilter_TextBox";
             this.CoupeFilter_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.CoupeFilter_TextBox.TabIndex = 42;
+            this.CoupeFilter_TextBox.TabIndex = 8;
             // 
             // DateMadeChanges_DatePicker
             // 
@@ -194,7 +194,8 @@
             this.DateMadeChanges_DatePicker.Location = new System.Drawing.Point(295, 118);
             this.DateMadeChanges_DatePicker.Name = "DateMadeChanges_DatePicker";
             this.DateMadeChanges_DatePicker.Size = new System.Drawing.Size(216, 30);
-            this.DateMadeChanges_DatePicker.TabIndex = 43;
+            this.DateMadeChanges_DatePicker.TabIndex = 1;
+            this.DateMadeChanges_DatePicker.TabStop = false;
             // 
             // Oil_Label
             // 
@@ -212,7 +213,7 @@
             this.Oil_TextBox.Multiline = true;
             this.Oil_TextBox.Name = "Oil_TextBox";
             this.Oil_TextBox.Size = new System.Drawing.Size(170, 38);
-            this.Oil_TextBox.TabIndex = 46;
+            this.Oil_TextBox.TabIndex = 2;
             // 
             // OilAndFilters_PictureBox
             // 
@@ -238,13 +239,14 @@
             this.BackButton.Name = "BackButton";
             this.BackButton.Rotation = 0D;
             this.BackButton.Size = new System.Drawing.Size(64, 55);
-            this.BackButton.TabIndex = 48;
+            this.BackButton.TabIndex = 1;
+            this.BackButton.TabStop = false;
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // NextToNewServiceBookFormThree_Button
             // 
-            this.NextToNewServiceBookFormThree_Button.BackColor = System.Drawing.SystemColors.Control;
+            this.NextToNewServiceBookFormThree_Button.BackColor = System.Drawing.Color.Gainsboro;
             this.NextToNewServiceBookFormThree_Button.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.NextToNewServiceBookFormThree_Button.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NextToNewServiceBookFormThree_Button.IconChar = FontAwesome.Sharp.IconChar.None;
@@ -254,7 +256,7 @@
             this.NextToNewServiceBookFormThree_Button.Name = "NextToNewServiceBookFormThree_Button";
             this.NextToNewServiceBookFormThree_Button.Rotation = 0D;
             this.NextToNewServiceBookFormThree_Button.Size = new System.Drawing.Size(170, 41);
-            this.NextToNewServiceBookFormThree_Button.TabIndex = 47;
+            this.NextToNewServiceBookFormThree_Button.TabIndex = 9;
             this.NextToNewServiceBookFormThree_Button.Text = "ПРОДЪЛЖИ";
             this.NextToNewServiceBookFormThree_Button.UseVisualStyleBackColor = false;
             this.NextToNewServiceBookFormThree_Button.Click += new System.EventHandler(this.iconButton1_Click);
