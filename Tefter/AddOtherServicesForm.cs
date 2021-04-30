@@ -5,7 +5,6 @@
     using System.Collections.Generic;
     using System.Data;
     using System.Drawing;
-    using System.Globalization;
     using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
@@ -84,11 +83,12 @@
                 OtherServicesDataGridView.Rows[rowsCountWithNewRow].Cells[2].Value = jsonData.Kilometers;
                 OtherServicesDataGridView.Rows[rowsCountWithNewRow].Cells[3].Value = jsonData.ServiceMade;
 
-                this.Close();
+                Close();
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"AddOtherServicesRow_Click: {ex}");
+                logger.WriteLine($"AddOtherServicesForm.AddOtherServicesRow_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
     }

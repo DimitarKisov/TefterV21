@@ -124,7 +124,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"End_Button_Click: {ex}");
+                logger.WriteLine($"CreateNewServiceBookFormThree.End_Button_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

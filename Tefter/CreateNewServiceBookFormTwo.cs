@@ -22,6 +22,7 @@
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             Location = new Point(0, 0);
+
             this.dbContext = dbContext;
             this.logger = logger;
 
@@ -104,7 +105,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"iconButton1_Click: {ex}");
+                logger.WriteLine($"CreateNewServiceBookFormTwo.iconButton1_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

@@ -36,7 +36,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"ReadServicesMadeForm_Load: {ex}");
+                logger.WriteLine($"ReadServicesMadeForm.ReadServicesMadeForm_Load: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
             
@@ -50,7 +50,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"ReadServicesMadeForm_FormClosing: {ex}");
+                logger.WriteLine($"ReadServicesMadeForm.ReadServicesMadeForm_FormClosing: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

@@ -111,11 +111,12 @@
                 OilAndFiltersDataGridView.Rows[rowsCountWithNewRow].Cells[7].Value = jsonData.AirFilter;
                 OilAndFiltersDataGridView.Rows[rowsCountWithNewRow].Cells[8].Value = jsonData.CoupeFilter;
 
-                this.Close();
+                Close();
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"AddOilAndFiltersRow_Click: {ex}");
+                logger.WriteLine($"AddOilAndFiltersForm.AddOilAndFiltersRow_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
     }

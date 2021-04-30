@@ -36,10 +36,9 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"HomePageFormConstructor: {ex}");
+                logger.WriteLine($"HomePageForm.Constructor: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
-            
         }
         
         private void CreateNewServiceBook_Button_Click(object sender, EventArgs e)
@@ -52,7 +51,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"CreateNewServiceBook_Button_Click: {ex}");
+                logger.WriteLine($"HomePageForm.CreateNewServiceBook_Button_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -61,13 +60,13 @@
         {
             try
             {
-                var searchAllNotesForm = new SearchAllNotesForm(dbContext);
+                var searchAllNotesForm = new SearchAllNotesForm(dbContext, logger);
                 Hide();
                 searchAllNotesForm.Show();
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"SearchAllNotesForm_Click: {ex}");
+                logger.WriteLine($"HomePageForm.SearchAllNotesForm_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -105,14 +104,13 @@
                     return;
                 }
 
-
                 var searchForm = new SearchServiceBookFormOne(car, dbContext, logger);
                 Hide();
                 searchForm.Show();
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"SearchButton_Click: {ex}");
+                logger.WriteLine($"HomePageForm.SearchButton_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -151,7 +149,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"CheckDatabaseExists: {ex}");
+                logger.WriteLine($"HomePageForm.CheckDatabaseExists: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
 
@@ -172,7 +170,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"GetConnectionString: {ex}");
+                logger.WriteLine($"HomePageForm.GetConnectionString: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
                 return null;
             }
@@ -186,12 +184,12 @@
                 {
                     Search_TextBox.Text = "РЕГИСТРАЦИОНЕН НОМЕР";
                 }
-                Search_TextBox.Font = new Font("Times New Roman", 26);
+                Search_TextBox.Font = new Font("Times New Roman", 48);
                 Search_TextBox.ForeColor = Color.DarkGray;
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"Search_TextBox_Leave: {ex}");
+                logger.WriteLine($"HomePageForm.Search_TextBox_Leave: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -209,7 +207,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"Search_TextBox_Enter: {ex}");
+                logger.WriteLine($"HomePageForm.Search_TextBox_Enter: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -225,7 +223,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"Search_TextBox_KeyPress: {ex}");
+                logger.WriteLine($"HomePageForm.Search_TextBox_KeyPress: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

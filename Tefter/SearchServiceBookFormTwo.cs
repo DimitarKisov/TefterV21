@@ -56,7 +56,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"SearchServiceBookFormTwo_Load: {ex}");
+                logger.WriteLine($"SearchServiceBookFormTwo.SearchServiceBookFormTwo_Load: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -200,7 +200,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"DeleteRecordButton_Click: {ex}");
+                logger.WriteLine($"SearchServiceBookFormTwo.DeleteRecordButton_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

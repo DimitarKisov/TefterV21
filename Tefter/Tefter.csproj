@@ -296,6 +296,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewNoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewNoteForm.Designer.cs">
+      <DependentUpon>AddNewNoteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOilAndFiltersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,6 +409,9 @@
     <Compile Include="SearchServiceBookFormTwo.Designer.cs">
       <DependentUpon>SearchServiceBookFormTwo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewNoteForm.resx">
+      <DependentUpon>AddNewNoteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddOilAndFiltersForm.resx">
       <DependentUpon>AddOilAndFiltersForm.cs</DependentUpon>
     </EmbeddedResource>

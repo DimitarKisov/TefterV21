@@ -101,7 +101,6 @@
             this.Made_Label.TabIndex = 0;
             this.Made_Label.Text = "Марка:";
             this.Made_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Made_Label.Click += new System.EventHandler(this.label1_Click);
             // 
             // Made_TextBox
             // 
@@ -129,7 +128,6 @@
             this.Model_TextBox.Name = "Model_TextBox";
             this.Model_TextBox.Size = new System.Drawing.Size(191, 38);
             this.Model_TextBox.TabIndex = 3;
-            this.Model_TextBox.TextChanged += new System.EventHandler(this.Model_TextBox_TextChanged);
             // 
             // Color_Label
             // 
@@ -176,7 +174,6 @@
             this.EngineNumber_TextBox.Name = "EngineNumber_TextBox";
             this.EngineNumber_TextBox.Size = new System.Drawing.Size(435, 38);
             this.EngineNumber_TextBox.TabIndex = 8;
-            this.EngineNumber_TextBox.TextChanged += new System.EventHandler(this.EngineNumber_TextBox_TextChanged);
             // 
             // PlateNumber_TextBox
             // 
@@ -194,7 +191,6 @@
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
             this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(239, 38);
             this.CurrentKilometers_TextBox.TabIndex = 12;
-            this.CurrentKilometers_TextBox.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // OwnerName_TextBox
             // 
@@ -793,7 +789,6 @@
             this.Name = "CreateNewServiceBookFormOne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Данни за автомобила";
-            this.Load += new System.EventHandler(this.CreateNewServiceBookFormOne_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

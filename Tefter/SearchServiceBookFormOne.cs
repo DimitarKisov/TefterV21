@@ -27,7 +27,7 @@
             try
             {
                 var homePageForm = new HomePageForm();
-                this.Close();
+                Close();
                 homePageForm.Show();
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"SearcheServiceBookFormOne_Load: {ex}");
+                logger.WriteLine($"SearchServiceBookFormOne.SearcheServiceBookFormOne_Load: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -91,12 +91,12 @@
             try
             {
                 var secondSearchForm = new SearchServiceBookFormTwo(Car, dbContext, logger);
-                this.Hide();
+                Hide();
                 secondSearchForm.Show();
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"NextToSearchServiceBookFormTwo_Button_Click: {ex}");
+                logger.WriteLine($"SearchServiceBookFormOne.NextToSearchServiceBookFormTwo_Button_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -106,12 +106,12 @@
             try
             {
                 var thirdSearchForm = new SearchServiceBookFormThree(Car, dbContext, logger);
-                this.Hide();
+                Hide();
                 thirdSearchForm.Show();
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"LoadOtherServiceButton_Click: {ex}");
+                logger.WriteLine($"SearchServiceBookFormOne.LoadOtherServiceButton_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

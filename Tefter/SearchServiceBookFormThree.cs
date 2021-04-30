@@ -52,7 +52,7 @@
                     }
 
                     var parsedJson = Car.OtherServices[i].ParseData<OtherServicesJsonData>();
-                    OtherServicesDataGridView.Rows[i].Cells[0].Value = Car.OilAndFilters[i].Id;
+                    OtherServicesDataGridView.Rows[i].Cells[0].Value = Car.OtherServices[i].Id;
                     OtherServicesDataGridView.Rows[i].Cells[1].Value = parsedJson.DateMadeChanges;
                     OtherServicesDataGridView.Rows[i].Cells[2].Value = parsedJson.Kilometers;
                     OtherServicesDataGridView.Rows[i].Cells[3].Value = parsedJson.ServiceMade;
@@ -60,7 +60,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"SearchServiceBookFormThree_Load: {ex}");
+                logger.WriteLine($"SearchServiceBookFormThree.SearchServiceBookFormThree_Load: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -70,7 +70,7 @@
             try
             {
                 var searchServiceBookFirstPage = new SearchServiceBookFormOne(Car, dbContext, logger);
-                this.Close();
+                Close();
                 searchServiceBookFirstPage.Show();
             }
             catch (Exception ex)

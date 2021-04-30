@@ -53,7 +53,7 @@
                     {
                         using (StreamWriter sw = File.AppendText(strPath))
                         {
-                            sw.WriteLine(text);
+                            sw.WriteLine(DateTime.Now + " - " + text);
                         }
                     }
                 }

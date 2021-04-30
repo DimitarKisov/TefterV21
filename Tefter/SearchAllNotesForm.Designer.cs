@@ -30,26 +30,39 @@ namespace Tefter
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchAllNotesForm));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SearchAllNotes_DataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddButton = new FontAwesome.Sharp.IconButton();
             this.SaveChangesButton = new FontAwesome.Sharp.IconButton();
             this.DeleteRecordButton = new FontAwesome.Sharp.IconButton();
             this.Search_BackButton = new FontAwesome.Sharp.IconButton();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchAllNotes_DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // SearchAllNotes_DataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SearchAllNotes_DataGridView.AllowUserToAddRows = false;
+            this.SearchAllNotes_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SearchAllNotes_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Description});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 61);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(934, 415);
-            this.dataGridView1.TabIndex = 0;
+            this.SearchAllNotes_DataGridView.Location = new System.Drawing.Point(0, 61);
+            this.SearchAllNotes_DataGridView.Name = "SearchAllNotes_DataGridView";
+            this.SearchAllNotes_DataGridView.Size = new System.Drawing.Size(934, 415);
+            this.SearchAllNotes_DataGridView.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Регистрационен номер";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.HeaderText = "Описание";
+            this.Description.Name = "Description";
             // 
             // AddButton
             // 
@@ -66,6 +79,7 @@ namespace Tefter
             this.AddButton.TabIndex = 103;
             this.AddButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // SaveChangesButton
             // 
@@ -81,6 +95,7 @@ namespace Tefter
             this.SaveChangesButton.TabIndex = 104;
             this.SaveChangesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
             // DeleteRecordButton
             // 
@@ -95,6 +110,7 @@ namespace Tefter
             this.DeleteRecordButton.Size = new System.Drawing.Size(57, 55);
             this.DeleteRecordButton.TabIndex = 105;
             this.DeleteRecordButton.UseVisualStyleBackColor = true;
+            this.DeleteRecordButton.Click += new System.EventHandler(this.DeleteRecordButton_Click);
             // 
             // Search_BackButton
             // 
@@ -111,18 +127,7 @@ namespace Tefter
             this.Search_BackButton.Size = new System.Drawing.Size(64, 55);
             this.Search_BackButton.TabIndex = 106;
             this.Search_BackButton.UseVisualStyleBackColor = false;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Регистрационен номер";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.HeaderText = "Описание";
-            this.Description.Name = "Description";
+            this.Search_BackButton.Click += new System.EventHandler(this.Search_BackButton_Click);
             // 
             // SearchAllNotesForm
             // 
@@ -133,21 +138,22 @@ namespace Tefter
             this.Controls.Add(this.DeleteRecordButton);
             this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.AddButton);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.SearchAllNotes_DataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(950, 614);
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "SearchAllNotesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Бележки";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.SearchAllNotesForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.SearchAllNotes_DataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView SearchAllNotes_DataGridView;
         private FontAwesome.Sharp.IconButton AddButton;
         private FontAwesome.Sharp.IconButton SaveChangesButton;
         private FontAwesome.Sharp.IconButton DeleteRecordButton;

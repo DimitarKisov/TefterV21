@@ -26,26 +26,6 @@
             this.logger = logger;
         }
 
-        private void CreateNewServiceBookFormOne_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Model_TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void NextToNewServiceBookFormTwo_Button_Click(object sender, EventArgs e)
         {
             try
@@ -216,7 +196,7 @@
             }
             catch (Exception ex)
             {
-                logger.WriteLine($"NextToNewServiceBookFormTwo_Button_Click: {ex}");
+                logger.WriteLine($"CreateNewServiceBookFormOne.NextToNewServiceBookFormTwo_Button_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
@@ -234,16 +214,6 @@
                 logger.WriteLine($"CreateNewServiceBookFormOne.BackButton_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
-        }
-
-        private void CreateNewServiceBookFormOne_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EngineNumber_TextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
