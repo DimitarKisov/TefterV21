@@ -31,6 +31,8 @@
             {
                 SearchAllNotes_DataGridView.Columns["Id"].Visible = true;
 
+                SearchAllNotes_DataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
                 for (int i = 0; i < notes.Count(); i++)
                 {
                     if (notes.Count() - 1 >= i)
@@ -53,7 +55,7 @@
         {
             try
             {
-                var addNewNoteForm = new AddNewNoteForm(dbContext, logger, SearchAllNotes_DataGridView);
+                var addNewNoteForm = new AddNewNoteForm(dbContext, logger, SearchAllNotes_DataGridView, notes);
                 addNewNoteForm.Show();
             }
             catch (Exception ex)
@@ -159,6 +161,32 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"SearchAllNotesForm.Search_BackButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
+        }
+
+        private void SearchAllNotesForm_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var columnName = SearchAllNotes_DataGridView.Columns[e.ColumnIndex].Name;
+
+                if (columnName == "Id")
+                {
+                    var cell = SearchAllNotes_DataGridView[e.ColumnIndex, e.RowIndex];
+                    SearchAllNotes_DataGridView.CurrentCell = cell;
+                    SearchAllNotes_DataGridView.BeginEdit(true);
+                }
+                else if (columnName == "Description")
+                {
+                    var readServiceMadeForm = new ReadNoteForm(SearchAllNotes_DataGridView, e.ColumnIndex, e.RowIndex, logger);
+                    readServiceMadeForm.Show();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"SearchServiceBookFormTwo.SearchServiceBookFormTwo_CellDoubleClick: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

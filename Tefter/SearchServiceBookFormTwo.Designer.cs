@@ -135,7 +135,7 @@ namespace Tefter
             // 
             // Search_BackButton
             // 
-            this.Search_BackButton.BackColor = System.Drawing.SystemColors.Control;
+            this.Search_BackButton.BackColor = System.Drawing.Color.Gainsboro;
             this.Search_BackButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.Search_BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_BackButton.IconChar = FontAwesome.Sharp.IconChar.LongArrowAltLeft;

@@ -193,5 +193,29 @@
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
+
+        private void DeleteRecordButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedRows = OtherServicesDataGridView.SelectedRows;
+
+                foreach (DataGridViewRow row in selectedRows)
+                {
+                    var id = (int)row.Cells["Id"].Value;
+                    var itemForRemove = Car.OtherServices.FirstOrDefault(x => x.Id == id);
+
+                    Car.OtherServices.Remove(itemForRemove);
+                    OtherServicesDataGridView.Rows.Remove(row);
+                }
+
+                dbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"SearchServiceBookFormThree.DeleteRecordButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
+        }
     }
 }

@@ -732,7 +732,7 @@
             this.NextToSearchServiceBookFormTwo_Button.IconChar = FontAwesome.Sharp.IconChar.None;
             this.NextToSearchServiceBookFormTwo_Button.IconColor = System.Drawing.Color.Black;
             this.NextToSearchServiceBookFormTwo_Button.IconSize = 16;
-            this.NextToSearchServiceBookFormTwo_Button.Location = new System.Drawing.Point(796, 963);
+            this.NextToSearchServiceBookFormTwo_Button.Location = new System.Drawing.Point(620, 963);
             this.NextToSearchServiceBookFormTwo_Button.Name = "NextToSearchServiceBookFormTwo_Button";
             this.NextToSearchServiceBookFormTwo_Button.Rotation = 0D;
             this.NextToSearchServiceBookFormTwo_Button.Size = new System.Drawing.Size(170, 41);
@@ -743,7 +743,7 @@
             // 
             // Search_BackButton
             // 
-            this.Search_BackButton.BackColor = System.Drawing.SystemColors.Control;
+            this.Search_BackButton.BackColor = System.Drawing.Color.Gainsboro;
             this.Search_BackButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.Search_BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_BackButton.IconChar = FontAwesome.Sharp.IconChar.LongArrowAltLeft;
@@ -766,7 +766,7 @@
             this.LoadOtherServiceButton_Click.IconChar = FontAwesome.Sharp.IconChar.None;
             this.LoadOtherServiceButton_Click.IconColor = System.Drawing.Color.Black;
             this.LoadOtherServiceButton_Click.IconSize = 16;
-            this.LoadOtherServiceButton_Click.Location = new System.Drawing.Point(620, 963);
+            this.LoadOtherServiceButton_Click.Location = new System.Drawing.Point(796, 963);
             this.LoadOtherServiceButton_Click.Name = "LoadOtherServiceButton_Click";
             this.LoadOtherServiceButton_Click.Rotation = 0D;
             this.LoadOtherServiceButton_Click.Size = new System.Drawing.Size(170, 41);

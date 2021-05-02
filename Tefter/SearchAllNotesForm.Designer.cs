@@ -31,12 +31,12 @@ namespace Tefter
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchAllNotesForm));
             this.SearchAllNotes_DataGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddButton = new FontAwesome.Sharp.IconButton();
             this.SaveChangesButton = new FontAwesome.Sharp.IconButton();
             this.DeleteRecordButton = new FontAwesome.Sharp.IconButton();
             this.Search_BackButton = new FontAwesome.Sharp.IconButton();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SearchAllNotes_DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,20 +49,9 @@ namespace Tefter
             this.Description});
             this.SearchAllNotes_DataGridView.Location = new System.Drawing.Point(0, 61);
             this.SearchAllNotes_DataGridView.Name = "SearchAllNotes_DataGridView";
-            this.SearchAllNotes_DataGridView.Size = new System.Drawing.Size(934, 415);
+            this.SearchAllNotes_DataGridView.Size = new System.Drawing.Size(934, 513);
             this.SearchAllNotes_DataGridView.TabIndex = 0;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Регистрационен номер";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.HeaderText = "Описание";
-            this.Description.Name = "Description";
+            this.SearchAllNotes_DataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SearchAllNotesForm_CellDoubleClick);
             // 
             // AddButton
             // 
@@ -114,7 +103,7 @@ namespace Tefter
             // 
             // Search_BackButton
             // 
-            this.Search_BackButton.BackColor = System.Drawing.SystemColors.Control;
+            this.Search_BackButton.BackColor = System.Drawing.Color.Gainsboro;
             this.Search_BackButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.Search_BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_BackButton.IconChar = FontAwesome.Sharp.IconChar.LongArrowAltLeft;
@@ -128,6 +117,17 @@ namespace Tefter
             this.Search_BackButton.TabIndex = 106;
             this.Search_BackButton.UseVisualStyleBackColor = false;
             this.Search_BackButton.Click += new System.EventHandler(this.Search_BackButton_Click);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Регистрационен номер";
+            this.Id.Name = "Id";
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.HeaderText = "Описание";
+            this.Description.Name = "Description";
             // 
             // SearchAllNotesForm
             // 

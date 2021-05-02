@@ -15,7 +15,7 @@
         private readonly ApplicationDbContext dbContext;
         private readonly Logger logger;
 
-        public AddNewNoteForm(ApplicationDbContext dbContext, Logger logger, DataGridView searchAllNotes_DataGridView)
+        public AddNewNoteForm(ApplicationDbContext dbContext, Logger logger, DataGridView searchAllNotes_DataGridView, List<Note> notes)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
@@ -25,9 +25,12 @@
             this.logger = logger;
 
             SearchAllNotes_DataGridView = searchAllNotes_DataGridView;
+            Notes = notes;
         }
 
         public DataGridView SearchAllNotes_DataGridView { get; set; }
+
+        public List<Note> Notes { get; set; }
 
         private void PlateNumber_TextBox_Leave(object sender, EventArgs e)
         {
@@ -114,6 +117,7 @@
                 dbContext.Notes.Add(note);
                 dbContext.SaveChanges();
 
+                Notes.Add(note);
                 SearchAllNotes_DataGridView.Rows.Add();
 
                 var rowsCountWithNewRow = SearchAllNotes_DataGridView.Rows.Count - 1;
