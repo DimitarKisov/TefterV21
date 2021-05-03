@@ -29,14 +29,16 @@ namespace Tefter
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchAllNotesForm));
             this.SearchAllNotes_DataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddButton = new FontAwesome.Sharp.IconButton();
             this.SaveChangesButton = new FontAwesome.Sharp.IconButton();
             this.DeleteRecordButton = new FontAwesome.Sharp.IconButton();
             this.Search_BackButton = new FontAwesome.Sharp.IconButton();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SearchAllNotes_DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +55,19 @@ namespace Tefter
             this.SearchAllNotes_DataGridView.TabIndex = 0;
             this.SearchAllNotes_DataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SearchAllNotesForm_CellDoubleClick);
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Регистрационен номер";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.HeaderText = "Описание";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
             // AddButton
             // 
             this.AddButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -67,6 +82,7 @@ namespace Tefter
             this.AddButton.Size = new System.Drawing.Size(57, 55);
             this.AddButton.TabIndex = 103;
             this.AddButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.ToolTip.SetToolTip(this.AddButton, "Добави запис");
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -83,6 +99,7 @@ namespace Tefter
             this.SaveChangesButton.Size = new System.Drawing.Size(57, 55);
             this.SaveChangesButton.TabIndex = 104;
             this.SaveChangesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.ToolTip.SetToolTip(this.SaveChangesButton, "Запиши");
             this.SaveChangesButton.UseVisualStyleBackColor = true;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
@@ -98,6 +115,7 @@ namespace Tefter
             this.DeleteRecordButton.Rotation = 0D;
             this.DeleteRecordButton.Size = new System.Drawing.Size(57, 55);
             this.DeleteRecordButton.TabIndex = 105;
+            this.ToolTip.SetToolTip(this.DeleteRecordButton, "Изтрий запис");
             this.DeleteRecordButton.UseVisualStyleBackColor = true;
             this.DeleteRecordButton.Click += new System.EventHandler(this.DeleteRecordButton_Click);
             // 
@@ -115,19 +133,9 @@ namespace Tefter
             this.Search_BackButton.Rotation = 0D;
             this.Search_BackButton.Size = new System.Drawing.Size(64, 55);
             this.Search_BackButton.TabIndex = 106;
+            this.ToolTip.SetToolTip(this.Search_BackButton, "Назад");
             this.Search_BackButton.UseVisualStyleBackColor = false;
             this.Search_BackButton.Click += new System.EventHandler(this.Search_BackButton_Click);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Регистрационен номер";
-            this.Id.Name = "Id";
-            // 
-            // Description
-            // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.HeaderText = "Описание";
-            this.Description.Name = "Description";
             // 
             // SearchAllNotesForm
             // 
@@ -160,5 +168,6 @@ namespace Tefter
         private FontAwesome.Sharp.IconButton Search_BackButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }

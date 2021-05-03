@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewServiceBookFormThree));
             this.OtherService_Label = new System.Windows.Forms.Label();
             this.BackButton = new FontAwesome.Sharp.IconButton();
@@ -38,6 +39,7 @@
             this.Description_TextBox = new System.Windows.Forms.TextBox();
             this.End_Button = new System.Windows.Forms.Button();
             this.CurrentKilometers_TextBox = new System.Windows.Forms.TextBox();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // OtherService_Label
@@ -67,6 +69,7 @@
             this.BackButton.Size = new System.Drawing.Size(64, 55);
             this.BackButton.TabIndex = 1;
             this.BackButton.TabStop = false;
+            this.ToolTip.SetToolTip(this.BackButton, "Назад");
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
@@ -175,5 +178,6 @@
         private System.Windows.Forms.TextBox Description_TextBox;
         private System.Windows.Forms.Button End_Button;
         private System.Windows.Forms.TextBox CurrentKilometers_TextBox;
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }

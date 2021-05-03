@@ -14,6 +14,7 @@
         private readonly ApplicationDbContext dbContext;
         private Logger logger;
         private List<Note> notes;
+        private bool needSaveChanges;
 
         public SearchAllNotesForm(ApplicationDbContext dbContext, Logger logger)
         {
@@ -23,6 +24,8 @@
             this.logger = logger;
 
             notes = dbContext.Notes.ToList();
+
+            needSaveChanges = false;
         }
 
         private void SearchAllNotesForm_Load(object sender, EventArgs e)
@@ -111,7 +114,6 @@
                         return;
                     }
 
-                    notes[i].Id = carId;
                     notes[i].Description = description;
                 }
 

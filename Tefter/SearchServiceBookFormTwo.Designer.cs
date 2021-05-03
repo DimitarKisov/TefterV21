@@ -29,6 +29,7 @@ namespace Tefter
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchServiceBookFormTwo));
             this.OilAndFiltersDataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +45,7 @@ namespace Tefter
             this.Search_BackButton = new FontAwesome.Sharp.IconButton();
             this.SaveChangesButton = new FontAwesome.Sharp.IconButton();
             this.DeleteRecordButton = new FontAwesome.Sharp.IconButton();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFiltersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,6 +132,7 @@ namespace Tefter
             this.AddButton.Size = new System.Drawing.Size(57, 55);
             this.AddButton.TabIndex = 102;
             this.AddButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.ToolTip.SetToolTip(this.AddButton, "Добави запис");
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -147,6 +150,7 @@ namespace Tefter
             this.Search_BackButton.Rotation = 0D;
             this.Search_BackButton.Size = new System.Drawing.Size(64, 55);
             this.Search_BackButton.TabIndex = 101;
+            this.ToolTip.SetToolTip(this.Search_BackButton, "Назад");
             this.Search_BackButton.UseVisualStyleBackColor = false;
             this.Search_BackButton.Click += new System.EventHandler(this.Search_BackButton_Click);
             // 
@@ -163,6 +167,7 @@ namespace Tefter
             this.SaveChangesButton.Size = new System.Drawing.Size(57, 55);
             this.SaveChangesButton.TabIndex = 103;
             this.SaveChangesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.ToolTip.SetToolTip(this.SaveChangesButton, "Запиши");
             this.SaveChangesButton.UseVisualStyleBackColor = true;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
@@ -178,6 +183,7 @@ namespace Tefter
             this.DeleteRecordButton.Rotation = 0D;
             this.DeleteRecordButton.Size = new System.Drawing.Size(57, 55);
             this.DeleteRecordButton.TabIndex = 104;
+            this.ToolTip.SetToolTip(this.DeleteRecordButton, "Изтрий запис");
             this.DeleteRecordButton.UseVisualStyleBackColor = true;
             this.DeleteRecordButton.Click += new System.EventHandler(this.DeleteRecordButton_Click);
             // 
@@ -220,5 +226,6 @@ namespace Tefter
         private System.Windows.Forms.DataGridViewTextBoxColumn AirFilterColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn FilterCoupeColumn;
         private FontAwesome.Sharp.IconButton DeleteRecordButton;
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }

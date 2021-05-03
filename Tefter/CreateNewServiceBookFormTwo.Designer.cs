@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewServiceBookFormTwo));
             this.ChangeOilAndFilters_Label = new System.Windows.Forms.Label();
             this.DateMadeChanges_Label = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.OilAndFilters_PictureBox = new System.Windows.Forms.PictureBox();
             this.BackButton = new FontAwesome.Sharp.IconButton();
             this.NextToNewServiceBookFormThree_Button = new FontAwesome.Sharp.IconButton();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFilters_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -241,6 +243,7 @@
             this.BackButton.Size = new System.Drawing.Size(64, 55);
             this.BackButton.TabIndex = 1;
             this.BackButton.TabStop = false;
+            this.ToolTip.SetToolTip(this.BackButton, "Назад");
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
@@ -322,5 +325,6 @@
         private FontAwesome.Sharp.IconButton NextToNewServiceBookFormThree_Button;
         private FontAwesome.Sharp.IconButton BackButton;
         private System.Windows.Forms.PictureBox OilAndFilters_PictureBox;
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }

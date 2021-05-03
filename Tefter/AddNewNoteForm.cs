@@ -78,13 +78,13 @@
                 var sb = new StringBuilder();
                 var emptyOrWrongFields = new List<string>();
 
-                if (string.IsNullOrWhiteSpace(carId))
+                if (string.IsNullOrWhiteSpace(carId) || carId == "РЕГИСТРАЦИОНЕН НОМЕР")
                 {
                     emptyOrWrongFields.Add("Регистрационен номер");
                 }
                 if (string.IsNullOrWhiteSpace(description))
                 {
-                    emptyOrWrongFields.Add("Бележки");
+                    emptyOrWrongFields.Add("Описание");
                 }
 
                 if (emptyOrWrongFields.Count() > 0)

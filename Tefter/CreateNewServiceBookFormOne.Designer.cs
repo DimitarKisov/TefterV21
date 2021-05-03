@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewServiceBookFormOne));
             this.Made_Label = new System.Windows.Forms.Label();
             this.Made_TextBox = new System.Windows.Forms.TextBox();
@@ -89,6 +90,7 @@
             this.Others_TextBox = new System.Windows.Forms.TextBox();
             this.NextToNewServiceBookFormTwo_Button = new FontAwesome.Sharp.IconButton();
             this.BackButton = new FontAwesome.Sharp.IconButton();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // Made_Label
@@ -733,6 +735,7 @@
             this.BackButton.Size = new System.Drawing.Size(64, 55);
             this.BackButton.TabIndex = 1;
             this.BackButton.TabStop = false;
+            this.ToolTip.SetToolTip(this.BackButton, "Назад");
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
@@ -875,5 +878,6 @@
         private System.Windows.Forms.CheckBox Amplifier_CheckBox;
         private System.Windows.Forms.Label Others_Label;
         private System.Windows.Forms.TextBox Others_TextBox;
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }

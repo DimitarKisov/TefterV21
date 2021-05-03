@@ -75,7 +75,7 @@
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(Search_TextBox.Text))
+                if (string.IsNullOrWhiteSpace(Search_TextBox.Text) || Search_TextBox.Text == "РЕГИСТРАЦИОНЕН НОМЕР")
                 {
                     MessageBox.Show("Моля, въведете регистрационен номер.");
                     return;
@@ -87,7 +87,6 @@
                 if (!carIdRegex.IsMatch(carId))
                 {
                     MessageBox.Show("Моля, въведете валиден регистрационен номер.");
-                    Search_TextBox.Clear();
                     return;
                 }
 
