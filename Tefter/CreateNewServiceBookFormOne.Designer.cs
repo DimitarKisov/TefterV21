@@ -718,7 +718,7 @@
             this.NextToNewServiceBookFormTwo_Button.TabIndex = 41;
             this.NextToNewServiceBookFormTwo_Button.Text = "ПРОДЪЛЖИ";
             this.NextToNewServiceBookFormTwo_Button.UseVisualStyleBackColor = false;
-            this.NextToNewServiceBookFormTwo_Button.Click += new System.EventHandler(this.NextToNewServiceBookFormTwo_Button_Click);
+            this.NextToNewServiceBookFormTwo_Button.Click += new System.EventHandler(this.Open_CreateNewServiceBookFormTwo_Button_Click);
             // 
             // BackButton
             // 

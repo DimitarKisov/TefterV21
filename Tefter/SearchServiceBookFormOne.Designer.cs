@@ -460,7 +460,7 @@
             this.Search_AutomobileDetails_Label.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_AutomobileDetails_Label.Location = new System.Drawing.Point(0, 0);
             this.Search_AutomobileDetails_Label.Name = "Search_AutomobileDetails_Label";
-            this.Search_AutomobileDetails_Label.Size = new System.Drawing.Size(975, 55);
+            this.Search_AutomobileDetails_Label.Size = new System.Drawing.Size(992, 55);
             this.Search_AutomobileDetails_Label.TabIndex = 97;
             this.Search_AutomobileDetails_Label.Text = "ДАННИ ЗА АВТОМОБИЛА";
             this.Search_AutomobileDetails_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -704,7 +704,7 @@
             this.NextToSearchServiceBookFormTwo_Button.TabIndex = 101;
             this.NextToSearchServiceBookFormTwo_Button.Text = "Масла и филтри";
             this.NextToSearchServiceBookFormTwo_Button.UseVisualStyleBackColor = false;
-            this.NextToSearchServiceBookFormTwo_Button.Click += new System.EventHandler(this.NextToSearchServiceBookFormTwo_Button_Click);
+            this.NextToSearchServiceBookFormTwo_Button.Click += new System.EventHandler(this.LoadSearchServiceBookFormTwoButton_Click);
             // 
             // Search_BackButton
             // 
@@ -778,7 +778,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(992, 911);
+            this.ClientSize = new System.Drawing.Size(1009, 911);
             this.Controls.Add(this.DeleteRecordButton);
             this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.LoadOtherServiceButton_Click);

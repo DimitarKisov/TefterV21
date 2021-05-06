@@ -33,6 +33,8 @@
         {
             try
             {
+                Car.OilAndFilters = dbContext.OilAndFilters.Where(x => x.CarId == Car.Id).ToList();
+
                 OilAndFiltersDataGridView.Columns["Id"].Visible = false;
 
                 for (int i = 0; i < Car.OilAndFilters.Count(); i++)

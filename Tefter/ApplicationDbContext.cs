@@ -27,8 +27,6 @@
 
         public virtual DbSet<Car> Cars { get; set; }
 
-        public virtual DbSet<CarData> CarDatas { get; set; }
-
         public virtual DbSet<CarExtras> CarExtras { get; set; }
 
         public virtual DbSet<OilAndFilter> OilAndFilters { get; set; }
@@ -40,15 +38,9 @@
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Car>()
-                .HasOne(c => c.CarData)
+                .HasOne(c => c.CarExtras)
                 .WithOne(cd => cd.Car)
-                .HasForeignKey<CarData>(c => c.CarId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<CarData>()
-                .HasOne(cd => cd.CarExtras)
-                .WithOne(ce => ce.CarData)
-                .HasForeignKey<CarExtras>(cd => cd.CarDataId)
+                .HasForeignKey<CarExtras>(c => c.CarId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<OilAndFilter>()

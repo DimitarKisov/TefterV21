@@ -56,7 +56,6 @@
             // BackButton
             // 
             this.BackButton.BackColor = System.Drawing.Color.Gainsboro;
-            this.BackButton.Enabled = false;
             this.BackButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BackButton.IconChar = FontAwesome.Sharp.IconChar.LongArrowAltLeft;
@@ -132,7 +131,7 @@
             this.End_Button.TabIndex = 3;
             this.End_Button.Text = "КРАЙ";
             this.End_Button.UseVisualStyleBackColor = false;
-            this.End_Button.Click += new System.EventHandler(this.End_Button_Click);
+            this.End_Button.Click += new System.EventHandler(this.EndButton_Click);
             // 
             // CurrentKilometers_TextBox
             // 

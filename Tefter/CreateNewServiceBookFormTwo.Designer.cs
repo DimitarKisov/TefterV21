@@ -262,7 +262,7 @@
             this.NextToNewServiceBookFormThree_Button.TabIndex = 9;
             this.NextToNewServiceBookFormThree_Button.Text = "ПРОДЪЛЖИ";
             this.NextToNewServiceBookFormThree_Button.UseVisualStyleBackColor = false;
-            this.NextToNewServiceBookFormThree_Button.Click += new System.EventHandler(this.iconButton1_Click);
+            this.NextToNewServiceBookFormThree_Button.Click += new System.EventHandler(this.Open_CreateNewServiceBookFormThreeButton_Click);
             // 
             // CreateNewServiceBookFormTwo
             // 

@@ -32,6 +32,8 @@
         {
             try
             {
+                Car.OtherServices = dbContext.OtherServices.Where(x => x.CarId == Car.Id).ToList();
+
                 OtherServicesDataGridView.Columns["Id"].Visible = false;
 
                 OtherServicesDataGridView.Columns["DateMadeChanges"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

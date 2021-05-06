@@ -122,8 +122,8 @@
         /// </summary>
         public string Other { get; set; }
 
-        public int CarDataId { get; set; }
+        public string CarId { get; set; }
 
-        public virtual CarData CarData { get; set; }
+        public virtual Car Car { get; set; }
     }
 }

@@ -333,8 +333,8 @@
     <Compile Include="CreateNewServiceBookFormOne.Designer.cs">
       <DependentUpon>CreateNewServiceBookFormOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="DbAccess.cs" />
     <Compile Include="DbEntities\Car.cs" />
-    <Compile Include="DbEntities\CarData.cs" />
     <Compile Include="DbEntities\CarExtras.cs" />
     <Compile Include="DbEntities\Enums\FuelType.cs" />
     <Compile Include="DbEntities\Helper\JsonBase.cs" />
@@ -374,6 +374,10 @@
     <Compile Include="Migrations\20210428204210_AddedNoteTable.cs" />
     <Compile Include="Migrations\20210428204210_AddedNoteTable.designer.cs">
       <DependentUpon>20210428204210_AddedNoteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210506122906_ChangedTables.cs" />
+    <Compile Include="Migrations\20210506122906_ChangedTables.designer.cs">
+      <DependentUpon>20210506122906_ChangedTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

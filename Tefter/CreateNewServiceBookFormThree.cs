@@ -4,7 +4,6 @@
     using System;
     using System.Collections.Generic;
     using System.Drawing;
-    using System.Globalization;
     using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
@@ -31,24 +30,7 @@
 
         public Car Car { get; set; }
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Car.OilAndFilters.Remove(Car.OilAndFilters.Last());
-
-                var secondForm = new CreateNewServiceBookFormTwo(Car, dbContext, logger);
-                Close();
-                secondForm.Show();
-            }
-            catch (Exception ex)
-            {
-                logger.WriteLine($"CreateNewServiceBookFormThree.BackButton_Click: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
-            }
-        }
-
-        private void End_Button_Click(object sender, EventArgs e)
+        private void EndButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -125,6 +107,23 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"CreateNewServiceBookFormThree.End_Button_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Car.OilAndFilters.Remove(Car.OilAndFilters.Last());
+
+                var secondForm = new CreateNewServiceBookFormTwo(Car, dbContext, logger);
+                Close();
+                secondForm.Show();
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"CreateNewServiceBookFormThree.BackButton_Click: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

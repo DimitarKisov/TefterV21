@@ -32,42 +32,6 @@
 
         public List<Note> Notes { get; set; }
 
-        private void PlateNumber_TextBox_Leave(object sender, EventArgs e)
-        {
-            try
-            {
-                if (PlateNumber_TextBox.Text == "")
-                {
-                    PlateNumber_TextBox.Text = "РЕГИСТРАЦИОНЕН НОМЕР";
-                }
-                PlateNumber_TextBox.Font = new Font("Times New Roman", 22);
-                PlateNumber_TextBox.ForeColor = Color.DarkGray;
-            }
-            catch (Exception ex)
-            {
-                logger.WriteLine($"AddNewNoteForm.PlateNumber_TextBox_Leave: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
-            }
-        }
-
-        private void PlateNumber_TextBox_Enter(object sender, EventArgs e)
-        {
-            try
-            {
-                if (PlateNumber_TextBox.Text == "РЕГИСТРАЦИОНЕН НОМЕР")
-                {
-                    PlateNumber_TextBox.Text = null;
-                }
-                PlateNumber_TextBox.Font = new Font("Times New Roman", 22);
-                PlateNumber_TextBox.ForeColor = Color.Black;
-            }
-            catch (Exception ex)
-            {
-                logger.WriteLine($"AddNewNoteForm.PlateNumber_TextBox_Enter: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
-            }
-        }
-
         private void AddNote_Button_Click(object sender, EventArgs e)
         {
             try
@@ -130,6 +94,42 @@
             catch (Exception ex)
             {
                 logger.WriteLine($"AddNewNoteForm.AddNote_Button_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
+        }
+
+        private void PlateNumber_TextBox_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PlateNumber_TextBox.Text == "")
+                {
+                    PlateNumber_TextBox.Text = "РЕГИСТРАЦИОНЕН НОМЕР";
+                }
+                PlateNumber_TextBox.Font = new Font("Times New Roman", 22);
+                PlateNumber_TextBox.ForeColor = Color.DarkGray;
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"AddNewNoteForm.PlateNumber_TextBox_Leave: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
+        }
+
+        private void PlateNumber_TextBox_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PlateNumber_TextBox.Text == "РЕГИСТРАЦИОНЕН НОМЕР")
+                {
+                    PlateNumber_TextBox.Text = null;
+                }
+                PlateNumber_TextBox.Font = new Font("Times New Roman", 22);
+                PlateNumber_TextBox.ForeColor = Color.Black;
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"AddNewNoteForm.PlateNumber_TextBox_Enter: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

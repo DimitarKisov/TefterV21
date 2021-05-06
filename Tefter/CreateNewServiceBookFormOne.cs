@@ -26,7 +26,7 @@
             this.logger = logger;
         }
 
-        private void NextToNewServiceBookFormTwo_Button_Click(object sender, EventArgs e)
+        private void Open_CreateNewServiceBookFormTwo_Button_Click(object sender, EventArgs e)
         {
             try
             {
@@ -189,12 +189,10 @@
                 color = GlobalMethods.CapitalizeFirstLetter(color);
                 owner = GlobalMethods.CapitalizeOwnerName(owner);
 
-                var car = new Car(carId);
-                var carData = new CarData(brand, model, color, chassisNumber, engineNumber, workingVolumeCubicCm, firstRegistration, firstRegistrationInBG, fuelType, kilometers, owner, egn, bulstat, phoneNumber, address);
+                var car = new Car(carId, brand, model, color, chassisNumber, engineNumber, workingVolumeCubicCm, firstRegistration, firstRegistrationInBG, fuelType, kilometers, owner, egn, bulstat, phoneNumber, address);
                 var carExtras = new CarExtras(abs, asd, ebs, esp, fourByFour, airConditioning, climatronic, hatch, alarm, immobilizer, centralLocking, electronicGlass, electronicMirrors, automatic, electronicPacket, steeringWheelHydraulics, stereo, cdChanger, amplifier, others);
 
-                carData.CarExtras = carExtras;
-                car.CarData = carData;
+                car.CarExtras = carExtras;
 
                 Hide();
                 var secondForm = new CreateNewServiceBookFormTwo(car, dbContext, logger);
