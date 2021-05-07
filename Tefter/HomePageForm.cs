@@ -14,7 +14,7 @@
 
     public partial class HomePageForm : Form
     {
-        private readonly ApplicationDbContext dbContext = new ApplicationDbContext();
+        private readonly ApplicationDbContext dbContext;
         private readonly Logger logger;
 
         public HomePageForm()
@@ -33,6 +33,7 @@
                 //    //dbContext.Database.ExecuteSqlRaw("ALTER DATABASE TefterV21 COLLATE Cyrillic_General_CI_AS");
                 //}
 
+                dbContext = new ApplicationDbContext();
                 dbContext.Database.Migrate();
 
                 //var isDbCreated = DbAccess.ExecuteQuery(new SqlCommand { CommandText = "SELECT database_id FROM sys.databases WHERE Name = 'TefterV21'" }, connString);
@@ -43,8 +44,7 @@
                 //    dbContext.Database.ExecuteSqlRaw("ALTER DATABASE TefterV21 COLLATE Cyrillic_General_CI_AS");
                 //}
 
-                var configuration = dbContext.Configuration;
-                logger = new Logger(configuration);
+                logger = new Logger();
             }
             catch (Exception ex)
             {

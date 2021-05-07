@@ -137,7 +137,6 @@
                 var egnRegex = new Regex("^[0-9]{10}$");
                 var phoneNumberRegex = new Regex("^([0-9]{10})$|([0-9{12}]{12})$");
 
-
                 if (!brandRegex.IsMatch(brand))
                 {
                     emptyOrWrongFields.Add("Марка");
@@ -184,6 +183,13 @@
                     return;
                 }
 
+                var dbExists = dbContext.Cars.Find(carId);
+                if (dbExists != null)
+                {
+                    MessageBox.Show($"Вече съществува кола с регистрационен номер {carId}. Моля, въведете друг.");
+                    return;
+                }
+
                 brand = GlobalMethods.CapitalizeFirstLetter(brand);
                 model = GlobalMethods.CapitalizeFirstLetter(model);
                 color = GlobalMethods.CapitalizeFirstLetter(color);
@@ -194,8 +200,11 @@
 
                 car.CarExtras = carExtras;
 
-                Hide();
                 var secondForm = new CreateNewServiceBookFormTwo(car, dbContext, logger);
+                secondForm.RefToHomePageForm = this;
+
+                Hide();
+
                 secondForm.Show();
             }
             catch (Exception ex)

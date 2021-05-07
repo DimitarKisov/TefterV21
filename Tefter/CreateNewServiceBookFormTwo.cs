@@ -31,13 +31,15 @@
 
         public Car Car { get; set; }
 
+        public Form RefToHomePageForm { get; set; }
+
         private void Open_CreateNewServiceBookFormThreeButton_Click(object sender, EventArgs e)
         {
             try
             {
                 var dateMadeChanges = DateMadeChanges_DatePicker.Value;
                 var oil = Oil_TextBox.Text.Trim();
-                var kilometers = CurrentKilometers_TextBox.Text.Trim();
+                //var kilometers = CurrentKilometers_TextBox.Text.Trim();
                 var nextOilChangeKilometers = NextOilChangeKilometers_TextBox.Text.Trim();
                 var oilFilter = OilFilter_TextBox.Text.Trim();
                 var fuelFilter = FuelFilter_TextBox.Text.Trim();
@@ -52,10 +54,10 @@
                     emptyOrWrongFields.Add("Масло");
                 }
 
-                if (string.IsNullOrWhiteSpace(kilometers))
-                {
-                    emptyOrWrongFields.Add("Км");
-                }
+                //if (string.IsNullOrWhiteSpace(kilometers))
+                //{
+                //    emptyOrWrongFields.Add("Км");
+                //}
 
                 if (string.IsNullOrWhiteSpace(nextOilChangeKilometers))
                 {
@@ -74,10 +76,10 @@
                 var currentKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
                 var nextOilChangeKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
 
-                if (!currentKilometersRegex.IsMatch(kilometers))
-                {
-                    emptyOrWrongFields.Add("Км");
-                }
+                //if (!currentKilometersRegex.IsMatch(kilometers))
+                //{
+                //    emptyOrWrongFields.Add("Км");
+                //}
                 if (!nextOilChangeKilometersRegex.IsMatch(nextOilChangeKilometers))
                 {
                     emptyOrWrongFields.Add("Следваща смяна на (км)");
@@ -93,14 +95,17 @@
                 }
 
                 var toStringedDate = dateMadeChanges.ToString("dd.M.yyyy HH:mm:ss");
-                var jsonData = new OilAndFiltersJsonData(toStringedDate, kilometers, oil, nextOilChangeKilometers, oilFilter, fuelFilter, airFilter, coupeFilter);
+                var jsonData = new OilAndFiltersJsonData(toStringedDate, Car.Kilometers, oil, nextOilChangeKilometers, oilFilter, fuelFilter, airFilter, coupeFilter);
                 var data = JsonConvert.SerializeObject(jsonData);
                 var oilAndFilters = new OilAndFilter(data);
 
                 Car.OilAndFilters.Add(oilAndFilters);
 
                 var thirdForm = new CreateNewServiceBookFormThree(Car, dbContext, logger);
+                thirdForm.RefToCreateNewServiceBookFormTwo = this;
+
                 Hide();
+
                 thirdForm.Show();
             }
             catch (Exception ex)
@@ -114,13 +119,25 @@
         {
             try
             {
-                var firstForm = new CreateNewServiceBookFormOne(dbContext, logger);
                 Close();
-                firstForm.Show();
+                RefToHomePageForm.Show();
             }
             catch (Exception ex)
             {
                 logger.WriteLine($"CreateNewServiceBookFormTwo.BackButton_Click: {ex}");
+                MessageBox.Show("Възникна неочаквана грешка!");
+            }
+        }
+
+        private void CreateNewServiceBookFormThree_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrentKilometers_TextBox.Text = Car.Kilometers;
+            }
+            catch (Exception ex)
+            {
+                logger.WriteLine($"CreateNewServiceBookFormThree_Load: {ex}");
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }

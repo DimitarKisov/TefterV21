@@ -38,7 +38,7 @@
 
                 OtherServicesDataGridView.Columns["DateMadeChanges"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 OtherServicesDataGridView.Columns["DateMadeChanges"].ReadOnly = false;
-                
+
                 OtherServicesDataGridView.Columns["Kilometers"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 OtherServicesDataGridView.Columns["Kilometers"].ReadOnly = false;
 
@@ -163,6 +163,8 @@
                 }
 
                 dbContext.SaveChanges();
+
+                MessageBox.Show("Успешно направени промени.");
             }
             catch (Exception ex)
             {
@@ -175,18 +177,21 @@
         {
             try
             {
-                var columnName = OtherServicesDataGridView.Columns[e.ColumnIndex].Name;
+                if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+                {
+                    var columnName = OtherServicesDataGridView.Columns[e.ColumnIndex].Name;
 
-                if (columnName == "ServiceDone")
-                {
-                    var readServiceMadeForm = new ReadServicesMadeForm(OtherServicesDataGridView, e.ColumnIndex, e.RowIndex, logger);
-                    readServiceMadeForm.Show();
-                }
-                else if (columnName == "DateMadeChanges" || columnName == "Kilometers")
-                {
-                    var cell = OtherServicesDataGridView[e.ColumnIndex, e.RowIndex];
-                    OtherServicesDataGridView.CurrentCell = cell;
-                    OtherServicesDataGridView.BeginEdit(true);
+                    if (columnName == "ServiceDone")
+                    {
+                        var readServiceMadeForm = new ReadServicesMadeForm(OtherServicesDataGridView, e.ColumnIndex, e.RowIndex, logger);
+                        readServiceMadeForm.Show();
+                    }
+                    else if (columnName == "DateMadeChanges" || columnName == "Kilometers")
+                    {
+                        var cell = OtherServicesDataGridView[e.ColumnIndex, e.RowIndex];
+                        OtherServicesDataGridView.CurrentCell = cell;
+                        OtherServicesDataGridView.BeginEdit(true);
+                    }
                 }
             }
             catch (Exception ex)
@@ -212,6 +217,8 @@
                 }
 
                 dbContext.SaveChanges();
+
+                MessageBox.Show("Успешно изтрит запис.");
             }
             catch (Exception ex)
             {

@@ -20,8 +20,8 @@
         public CreateNewServiceBookFormThree(Car car, ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.Location = new Point(0, 0);
+            StartPosition = FormStartPosition.CenterScreen;
+            Location = new Point(0, 0);
             this.dbContext = dbContext;
             this.logger = logger;
 
@@ -29,6 +29,8 @@
         }
 
         public Car Car { get; set; }
+
+        public Form RefToCreateNewServiceBookFormTwo { get; set; }
 
         private void EndButton_Click(object sender, EventArgs e)
         {
@@ -117,9 +119,8 @@
             {
                 Car.OilAndFilters.Remove(Car.OilAndFilters.Last());
 
-                var secondForm = new CreateNewServiceBookFormTwo(Car, dbContext, logger);
                 Close();
-                secondForm.Show();
+                RefToCreateNewServiceBookFormTwo.Show();
             }
             catch (Exception ex)
             {

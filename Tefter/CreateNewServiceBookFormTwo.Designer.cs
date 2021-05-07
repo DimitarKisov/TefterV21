@@ -137,10 +137,12 @@
             // 
             // CurrentKilometers_TextBox
             // 
+            this.CurrentKilometers_TextBox.BackColor = System.Drawing.SystemColors.Window;
             this.CurrentKilometers_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(341, 234);
             this.CurrentKilometers_TextBox.Multiline = true;
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
+            this.CurrentKilometers_TextBox.ReadOnly = true;
             this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
             this.CurrentKilometers_TextBox.TabIndex = 3;
             // 
@@ -296,6 +298,7 @@
             this.Name = "CreateNewServiceBookFormTwo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Смяна на масло и филтри";
+            this.Load += new System.EventHandler(this.CreateNewServiceBookFormThree_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFilters_PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -38,7 +38,7 @@
             // CreateNewServiceBook_Button
             // 
             this.CreateNewServiceBook_Button.Font = new System.Drawing.Font("Times New Roman", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateNewServiceBook_Button.Location = new System.Drawing.Point(71, 305);
+            this.CreateNewServiceBook_Button.Location = new System.Drawing.Point(72, 281);
             this.CreateNewServiceBook_Button.Name = "CreateNewServiceBook_Button";
             this.CreateNewServiceBook_Button.Size = new System.Drawing.Size(525, 79);
             this.CreateNewServiceBook_Button.TabIndex = 2;
@@ -54,7 +54,7 @@
             this.SearchButton.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.SearchButton.IconColor = System.Drawing.Color.Black;
             this.SearchButton.IconSize = 55;
-            this.SearchButton.Location = new System.Drawing.Point(495, 95);
+            this.SearchButton.Location = new System.Drawing.Point(496, 71);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Rotation = 0D;
             this.SearchButton.Size = new System.Drawing.Size(100, 79);
@@ -67,7 +67,7 @@
             this.Search_TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.Search_TextBox.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search_TextBox.ForeColor = System.Drawing.Color.DarkGray;
-            this.Search_TextBox.Location = new System.Drawing.Point(70, 95);
+            this.Search_TextBox.Location = new System.Drawing.Point(71, 71);
             this.Search_TextBox.Multiline = true;
             this.Search_TextBox.Name = "Search_TextBox";
             this.Search_TextBox.Size = new System.Drawing.Size(426, 79);
@@ -81,7 +81,7 @@
             // SearchAllNotesForm
             // 
             this.SearchAllNotesForm.Font = new System.Drawing.Font("Times New Roman", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchAllNotesForm.Location = new System.Drawing.Point(71, 198);
+            this.SearchAllNotesForm.Location = new System.Drawing.Point(72, 174);
             this.SearchAllNotesForm.Name = "SearchAllNotesForm";
             this.SearchAllNotesForm.Size = new System.Drawing.Size(525, 79);
             this.SearchAllNotesForm.TabIndex = 5;
@@ -99,7 +99,10 @@
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.CreateNewServiceBook_Button);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(683, 445);
+            this.MinimumSize = new System.Drawing.Size(683, 445);
             this.Name = "HomePageForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Начало";
             this.ResumeLayout(false);
             this.PerformLayout();

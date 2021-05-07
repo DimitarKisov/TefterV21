@@ -93,6 +93,7 @@
             try
             {
                 #region CarData
+                //var carId = PlateNumber_TextBox.Text.Trim();
                 var brand = Made_TextBox.Text.Trim();
                 var model = Model_TextBox.Text.Trim();
                 var color = Color_TextBox.Text.Trim();
@@ -144,6 +145,10 @@
                 {
                     emptyOrWrongFields.Add("Модел");
                 }
+                //if (string.IsNullOrWhiteSpace(carId))
+                //{
+                //    emptyOrWrongFields.Add("Регистрационен номер");
+                //}
                 if (string.IsNullOrWhiteSpace(kilometers))
                 {
                     emptyOrWrongFields.Add("Км");
@@ -188,12 +193,11 @@
                 var modelRegex = new Regex("^([А-Я-а-я]+)$");
                 var colorRegex = new Regex("^([А-Я-а-я]+)$");
                 var workingVolumeCubicCmRegex = new Regex("^[0-9]*$");
-                var plateNumberRegex = new Regex("^[А-Я-а-я]{2}[0-9]{4}[А-Я-а-я]{2}$");
+                //var plateNumberRegex = new Regex("^[А-Я-а-я]{2}[0-9]{4}[А-Я-а-я]{2}$");
                 var kilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
                 var ownerRegex = new Regex("^(([А-Я-а-я]+)|([А-Я-а-я]+ [А-Я-а-я]+ [А-Я-а-я]+)|[А-Я-а-я]+ [А-Я-а-я]+)$");
                 var egnRegex = new Regex("^[0-9]{10}$");
                 var phoneNumberRegex = new Regex("^([0-9]{10})$|([0-9{12}]{12})$");
-
 
                 if (!brandRegex.IsMatch(brand))
                 {
@@ -211,6 +215,10 @@
                 {
                     emptyOrWrongFields.Add("Работен обем куб. см");
                 }
+                //if (!plateNumberRegex.IsMatch(carId))
+                //{
+                //    emptyOrWrongFields.Add("Регистрационен номер");
+                //}
                 if (!kilometersRegex.IsMatch(kilometers))
                 {
                     emptyOrWrongFields.Add("Км");
@@ -243,6 +251,19 @@
                 owner = GlobalMethods.CapitalizeOwnerName(owner);
 
                 #region CarData
+                //if (Car.Id != carId)
+                //{
+                //    var oilAndFilters = dbContext.OilAndFilters.Where(x => x.CarId == Car.Id).ToList();
+                //    var otherServices = dbContext.OtherServices.Where(x => x.CarId == Car.Id).ToList();
+                //    var carExtras = dbContext.CarExtras.FirstOrDefault(x => x.CarId == Car.Id);
+
+                //    oilAndFilters.ForEach(x => x.CarId = carId);
+                //    otherServices.ForEach(x => x.CarId = carId);
+                //    carExtras.CarId = carId;
+
+                //    Car.Id = carId;
+                //}
+                
                 Car.Brand = brand;
                 Car.Model = model;
                 Car.Color = color;
@@ -299,10 +320,14 @@
         {
             try
             {
-                dbContext.OilAndFilters.RemoveRange(Car.OilAndFilters);
-                dbContext.OtherServices.RemoveRange(Car.OtherServices);
+                var oilAndFilters = dbContext.OilAndFilters.Where(x => x.CarId == Car.Id);
+                var otherServices = dbContext.OtherServices.Where(x => x.CarId == Car.Id);
+                dbContext.OilAndFilters.RemoveRange(oilAndFilters);
+                dbContext.OtherServices.RemoveRange(otherServices);
                 dbContext.CarExtras.Remove(Car.CarExtras);
                 dbContext.Cars.Remove(Car);
+
+                dbContext.SaveChanges();
 
                 MessageBox.Show("Успешно изтрит запис.");
 

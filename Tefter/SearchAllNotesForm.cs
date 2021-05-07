@@ -14,7 +14,6 @@
         private readonly ApplicationDbContext dbContext;
         private Logger logger;
         private List<Note> notes;
-        private bool needSaveChanges;
 
         public SearchAllNotesForm(ApplicationDbContext dbContext, Logger logger)
         {
@@ -24,8 +23,6 @@
             this.logger = logger;
 
             notes = dbContext.Notes.ToList();
-
-            needSaveChanges = false;
         }
 
         private void SearchAllNotesForm_Load(object sender, EventArgs e)
@@ -171,20 +168,22 @@
         {
             try
             {
-                var columnName = SearchAllNotes_DataGridView.Columns[e.ColumnIndex].Name;
+                if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+                {
+                    var columnName = SearchAllNotes_DataGridView.Columns[e.ColumnIndex].Name;
 
-                if (columnName == "Id")
-                {
-                    var cell = SearchAllNotes_DataGridView[e.ColumnIndex, e.RowIndex];
-                    SearchAllNotes_DataGridView.CurrentCell = cell;
-                    SearchAllNotes_DataGridView.BeginEdit(true);
+                    if (columnName == "Id")
+                    {
+                        var cell = SearchAllNotes_DataGridView[e.ColumnIndex, e.RowIndex];
+                        SearchAllNotes_DataGridView.CurrentCell = cell;
+                        SearchAllNotes_DataGridView.BeginEdit(true);
+                    }
+                    else if (columnName == "Description")
+                    {
+                        var readServiceMadeForm = new ReadNoteForm(SearchAllNotes_DataGridView, e.ColumnIndex, e.RowIndex, logger);
+                        readServiceMadeForm.Show();
+                    }
                 }
-                else if (columnName == "Description")
-                {
-                    var readServiceMadeForm = new ReadNoteForm(SearchAllNotes_DataGridView, e.ColumnIndex, e.RowIndex, logger);
-                    readServiceMadeForm.Show();
-                }
-                
             }
             catch (Exception ex)
             {

@@ -7,23 +7,26 @@
 
     public class ApplicationDbContext : DbContext
     {
-        public IConfiguration configuration;
+        //public IConfiguration configuration;
 
         public ApplicationDbContext()
         {
-            Configuration = ConfigurationBuilder();
+            //Configuration = ConfigurationBuilder();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var configuration = ConfigurationBuilder(optionsBuilder);
-            optionsBuilder.UseSqlServer(configuration.GetSection("ConnectionString")["DefaultConnection"]);
+            //var configuration = ConfigurationBuilder(optionsBuilder);
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-D6H1HDU\SQLEXPRESS;Database=TefterV21;Trusted_Connection=True;MultipleActiveResultSets=true");
             base.OnConfiguring(optionsBuilder);
 
-            this.configuration = configuration;
+            //this.configuration = configuration;
+
+            //kompa = DESKTOP-D6H1HDU\SQLEXPRESS
+            //laptopa = SNEAKYSOB\SQLEXPRESS
         }
 
-        public IConfiguration Configuration { get; set; }
+        //public IConfiguration Configuration { get; set; }
 
         public virtual DbSet<Car> Cars { get; set; }
 
@@ -56,13 +59,13 @@
                 .OnDelete(DeleteBehavior.Cascade);
         }
 
-        private static IConfiguration ConfigurationBuilder(DbContextOptionsBuilder optionsBuilder = null)
-        {
-            var builder = new ConfigurationBuilder()
-                                 .SetBasePath(Directory.GetCurrentDirectory())
-                                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            var configuration = builder.Build();
-            return configuration;
-        }
+        //private static IConfiguration ConfigurationBuilder(DbContextOptionsBuilder optionsBuilder = null)
+        //{
+        //    var builder = new ConfigurationBuilder()
+        //                         .SetBasePath(Directory.GetCurrentDirectory())
+        //                         .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+        //    var configuration = builder.Build();
+        //    return configuration;
+        //}
     }
 }

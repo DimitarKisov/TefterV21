@@ -175,6 +175,8 @@
                 }
 
                 dbContext.SaveChanges();
+
+                MessageBox.Show("Успешно направени промени.");
             }
             catch (Exception ex)
             {
@@ -199,6 +201,8 @@
                 }
 
                 dbContext.SaveChanges();
+
+                MessageBox.Show("Успешно изтрит запис.");
             }
             catch (Exception ex)
             {
@@ -211,9 +215,12 @@
         {
             try
             {
-                var cell = OilAndFiltersDataGridView[e.ColumnIndex, e.RowIndex];
-                OilAndFiltersDataGridView.CurrentCell = cell;
-                OilAndFiltersDataGridView.BeginEdit(true);
+                if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+                {
+                    var cell = OilAndFiltersDataGridView[e.ColumnIndex, e.RowIndex];
+                    OilAndFiltersDataGridView.CurrentCell = cell;
+                    OilAndFiltersDataGridView.BeginEdit(true);
+                }
             }
             catch (Exception ex)
             {
