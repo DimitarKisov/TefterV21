@@ -115,6 +115,8 @@
                 }
 
                 dbContext.SaveChanges();
+
+                MessageBox.Show("Успешно направени промени.");
             }
             catch (Exception ex)
             {
@@ -141,6 +143,8 @@
                 }
 
                 dbContext.SaveChanges();
+
+                MessageBox.Show("Успешно изтрит запис.");
             }
             catch (Exception ex)
             {
