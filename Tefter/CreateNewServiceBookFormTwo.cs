@@ -133,6 +133,8 @@
         {
             try
             {
+                OilAndFilters_PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
                 CurrentKilometers_TextBox.Text = Car.Kilometers;
             }
             catch (Exception ex)

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Drawing;
     using System.Globalization;
     using System.Linq;
     using System.Text;
@@ -31,6 +32,11 @@
         {
             try
             {
+                if (Screen.PrimaryScreen.WorkingArea.Width != 1920 || Screen.PrimaryScreen.WorkingArea.Height != 1080)
+                {
+                    Size = new Size(Screen.PrimaryScreen.WorkingArea.Width - 30, Screen.PrimaryScreen.WorkingArea.Height - 50);
+                }
+
                 PlateNumber_TextBox.Text = Car.Id;
                 Made_TextBox.Text = Car.Brand;
                 Model_TextBox.Text = Car.Model;

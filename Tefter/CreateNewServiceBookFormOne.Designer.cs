@@ -741,7 +741,8 @@
             // 
             // CreateNewServiceBookFormOne
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(992, 911);
@@ -811,6 +812,7 @@
             this.Name = "CreateNewServiceBookFormOne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Данни за автомобила";
+            this.Load += new System.EventHandler(this.CreateNewServiceBookFormOne_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

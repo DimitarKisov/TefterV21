@@ -228,5 +228,13 @@
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
         }
+
+        private void CreateNewServiceBookFormOne_Load(object sender, EventArgs e)
+        {
+            if (Screen.PrimaryScreen.WorkingArea.Width != 1920 || Screen.PrimaryScreen.WorkingArea.Height != 1080)
+            {
+                Size = new Size(Screen.PrimaryScreen.WorkingArea.Width - 30, Screen.PrimaryScreen.WorkingArea.Height - 50);
+            }
+        }
     }
 }

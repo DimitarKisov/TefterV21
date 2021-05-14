@@ -159,8 +159,8 @@ namespace Tefter
             // 
             // SearchServiceBookFormThree
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoScroll = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(934, 575);
             this.Controls.Add(this.DeleteRecordButton);
@@ -170,7 +170,7 @@ namespace Tefter
             this.Controls.Add(this.OtherServicesDataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(950, 614);
-            this.MinimumSize = new System.Drawing.Size(500, 500);
+            this.MinimumSize = new System.Drawing.Size(950, 614);
             this.Name = "SearchServiceBookFormThree";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Други сервизни намеси";
