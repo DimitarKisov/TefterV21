@@ -337,7 +337,7 @@
 
                 MessageBox.Show("Успешно изтрит запис.");
 
-                var homePage = new HomePageForm(dbContext);
+                var homePage = new HomePageForm(dbContext, logger);
                 Close();
                 homePage.Show();
             }
@@ -382,7 +382,7 @@
         {
             try
             {
-                var homePageForm = new HomePageForm(dbContext);
+                var homePageForm = new HomePageForm(dbContext, logger);
                 Close();
                 homePageForm.Show();
             }

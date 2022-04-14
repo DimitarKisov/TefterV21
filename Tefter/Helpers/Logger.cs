@@ -1,6 +1,5 @@
 ﻿namespace Tefter.Helpers
 {
-    using Microsoft.Extensions.Configuration;
     using System;
     using System.IO;
 

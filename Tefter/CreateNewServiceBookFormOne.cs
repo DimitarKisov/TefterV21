@@ -218,7 +218,7 @@
         {
             try
             {
-                var homePageForm = new HomePageForm(dbContext);
+                var homePageForm = new HomePageForm(dbContext, logger);
                 Close();
                 homePageForm.Show();
             }

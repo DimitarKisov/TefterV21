@@ -4,17 +4,19 @@
     using System;
     using System.IO;
     using System.Windows.Forms;
+    using Tefter.Helpers;
 
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        private static Logger logger;
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(MyHandler);
 
             var configuration = new ConfigurationBuilder()
                                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -23,7 +25,16 @@
 
             var dbContext = new ApplicationDbContext(configuration);
 
-            Application.Run(new HomePageForm(dbContext));
+            logger = new Logger();
+
+            Application.Run(new HomePageForm(dbContext, logger));
+        }
+
+        static void MyHandler(object sender, UnhandledExceptionEventArgs args)
+        {
+            Exception e = (Exception)args.ExceptionObject;
+            MessageBox.Show("Възникна неочаквана грешка!");
+            logger.WriteLine($"Global Exception Handler: {e.StackTrace}");
         }
     }
 }
