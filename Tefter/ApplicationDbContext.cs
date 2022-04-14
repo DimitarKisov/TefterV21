@@ -9,15 +9,15 @@
     {
         //public IConfiguration configuration;
 
-        public ApplicationDbContext()
+        public ApplicationDbContext(IConfiguration configuration)
         {
-            //Configuration = ConfigurationBuilder();
+            this.Configuration = configuration;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //var configuration = ConfigurationBuilder(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-D6H1HDU\SQLEXPRESS;Database=TefterV21;Trusted_Connection=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
             base.OnConfiguring(optionsBuilder);
 
             //this.configuration = configuration;
@@ -26,7 +26,7 @@
             //laptopa = SNEAKYSOB\SQLEXPRESS
         }
 
-        //public IConfiguration Configuration { get; set; }
+        public IConfiguration Configuration { get; set; }
 
         public virtual DbSet<Car> Cars { get; set; }
 

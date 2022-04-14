@@ -17,10 +17,11 @@
         private readonly ApplicationDbContext dbContext;
         private readonly Logger logger;
 
-        public HomePageForm()
+        public HomePageForm(ApplicationDbContext dbContext)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            this.dbContext = dbContext;
 
             try
             {
@@ -33,7 +34,7 @@
                 //    //dbContext.Database.ExecuteSqlRaw("ALTER DATABASE TefterV21 COLLATE Cyrillic_General_CI_AS");
                 //}
 
-                dbContext = new ApplicationDbContext();
+                //dbContext = new ApplicationDbContext();
                 dbContext.Database.Migrate();
 
                 //var isDbCreated = DbAccess.ExecuteQuery(new SqlCommand { CommandText = "SELECT database_id FROM sys.databases WHERE Name = 'TefterV21'" }, connString);

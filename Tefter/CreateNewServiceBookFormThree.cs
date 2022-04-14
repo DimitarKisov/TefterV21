@@ -47,7 +47,7 @@
                     dbContext.Cars.Add(Car);
                     dbContext.SaveChanges();
 
-                    homePageForm = new HomePageForm();
+                    homePageForm = new HomePageForm(dbContext);
                     Close();
                     homePageForm.Show();
 
@@ -102,7 +102,7 @@
                 dbContext.Cars.Add(Car);
                 dbContext.SaveChanges();
 
-                homePageForm = new HomePageForm();
+                homePageForm = new HomePageForm(dbContext);
                 Close();
                 homePageForm.Show();
             }
