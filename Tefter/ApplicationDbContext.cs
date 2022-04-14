@@ -2,13 +2,10 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
-    using System.IO;
     using Tefter.DbEntities;
 
     public class ApplicationDbContext : DbContext
     {
-        //public IConfiguration configuration;
-
         public ApplicationDbContext(IConfiguration configuration)
         {
             this.Configuration = configuration;
@@ -16,14 +13,8 @@
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //var configuration = ConfigurationBuilder(optionsBuilder);
             optionsBuilder.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
             base.OnConfiguring(optionsBuilder);
-
-            //this.configuration = configuration;
-
-            //kompa = DESKTOP-D6H1HDU\SQLEXPRESS
-            //laptopa = SNEAKYSOB\SQLEXPRESS
         }
 
         public IConfiguration Configuration { get; set; }
@@ -58,14 +49,5 @@
                 .HasForeignKey(os => os.CarId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
-
-        //private static IConfiguration ConfigurationBuilder(DbContextOptionsBuilder optionsBuilder = null)
-        //{
-        //    var builder = new ConfigurationBuilder()
-        //                         .SetBasePath(Directory.GetCurrentDirectory())
-        //                         .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-        //    var configuration = builder.Build();
-        //    return configuration;
-        //}
     }
 }
