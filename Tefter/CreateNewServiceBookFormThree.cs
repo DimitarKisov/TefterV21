@@ -22,10 +22,11 @@
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             Location = new Point(0, 0);
+
             this.dbContext = dbContext;
             this.logger = logger;
 
-            Car = car;
+            this.Car = car;
         }
 
         public Car Car { get; set; }
@@ -34,99 +35,90 @@
 
         private void EndButton_Click(object sender, EventArgs e)
         {
-            try
+            HomePageForm homePageForm;
+
+            if (string.IsNullOrWhiteSpace(CurrentKilometers_TextBox.Text.Trim()) && string.IsNullOrWhiteSpace(Description_TextBox.Text.Trim()))
             {
-                var dateMadeChanges = DateMadeChanges_DatePicker.Value;
-                var kilometers = CurrentKilometers_TextBox.Text.Trim();
-                var serviceMade = Description_TextBox.Text.Trim();
-
-                HomePageForm homePageForm;
-
-                if (string.IsNullOrWhiteSpace(kilometers) && string.IsNullOrWhiteSpace(serviceMade))
+                try
                 {
-                    dbContext.Cars.Add(Car);
-                    dbContext.SaveChanges();
-
-                    homePageForm = new HomePageForm(dbContext, logger);
-                    Close();
-                    homePageForm.Show();
-
-                    return;
+                    this.dbContext.Cars.Add(Car);
+                    this.dbContext.SaveChanges();
                 }
-
-                var sb = new StringBuilder();
-                var emptyOrWrongFields = new List<string>();
-
-                if (string.IsNullOrWhiteSpace(kilometers))
+                catch (Exception ex)
                 {
-                    emptyOrWrongFields.Add("Км");
-                }
-
-                if (string.IsNullOrWhiteSpace(serviceMade))
-                {
-                    emptyOrWrongFields.Add("Извършена сервизна дейност");
-                }
-
-                if (emptyOrWrongFields.Count() > 0)
-                {
-                    sb.AppendLine("Моля попълнете следните полета: ");
-                    sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
-
-                    MessageBox.Show(sb.ToString());
-                    return;
-                }
-
-                var currentKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
-
-                if (!currentKilometersRegex.IsMatch(kilometers))
-                {
-                    emptyOrWrongFields.Add("Км");
-                }
-
-                if (emptyOrWrongFields.Count() > 0)
-                {
-                    sb.AppendLine("Моля въведете коректни данни за следните полета: ");
-                    sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
-
-                    MessageBox.Show(sb.ToString());
-                    return;
-                }
-
-                var toStringedDate = dateMadeChanges.ToString("dd.M.yyyy HH:mm:ss");
-                var jsonData = new OtherServicesJsonData(toStringedDate, kilometers, serviceMade);
-                var data = JsonConvert.SerializeObject(jsonData);
-                var otherServices = new OtherService(data);
-
-                Car.OtherServices.Add(otherServices);
-
-                dbContext.Cars.Add(Car);
-                dbContext.SaveChanges();
+                    logger.WriteLine($"CreateNewServiceBookFormThree.End_Button_Click: {ex}");
+                    MessageBox.Show("Възникна неочаквана грешка!");
+                };
 
                 homePageForm = new HomePageForm(dbContext, logger);
-                Close();
+                this.Close();
                 homePageForm.Show();
+
+                return;
             }
-            catch (Exception ex)
+
+            var sb = new StringBuilder();
+            var emptyOrWrongFields = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(CurrentKilometers_TextBox.Text.Trim()))
             {
-                logger.WriteLine($"CreateNewServiceBookFormThree.End_Button_Click: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
+                emptyOrWrongFields.Add("Км");
             }
+
+            if (string.IsNullOrWhiteSpace(Description_TextBox.Text.Trim()))
+            {
+                emptyOrWrongFields.Add("Извършена сервизна дейност");
+            }
+
+            if (emptyOrWrongFields.Count() > 0)
+            {
+                sb.AppendLine("Моля попълнете следните полета: ");
+                sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+
+                MessageBox.Show(sb.ToString());
+                return;
+            }
+
+            var currentKilometersRegex = new Regex("^([0-9]*)$|^([0-9]* [0-9]*)$");
+
+            if (!currentKilometersRegex.IsMatch(CurrentKilometers_TextBox.Text.Trim()))
+            {
+                emptyOrWrongFields.Add("Км");
+            }
+
+            if (emptyOrWrongFields.Count() > 0)
+            {
+                sb.AppendLine("Моля въведете коректни данни за следните полета: ");
+                sb.AppendLine(string.Join(", ", emptyOrWrongFields.Select(x => x)));
+
+                MessageBox.Show(sb.ToString());
+                return;
+            }
+
+            var kilometers = CurrentKilometers_TextBox.Text.Trim();
+            var serviceMade = Description_TextBox.Text.Trim();
+            var dateMadeChanges = DateMadeChanges_DatePicker.Value;
+
+            var toStringedDate = dateMadeChanges.ToString("dd.M.yyyy HH:mm:ss");
+            var jsonData = new OtherServicesJsonData(toStringedDate, kilometers, serviceMade);
+            var data = JsonConvert.SerializeObject(jsonData);
+            var otherServices = new OtherService(data);
+
+            this.Car.OtherServices.Add(otherServices);
+
+            this.dbContext.Cars.Add(Car);
+            this.dbContext.SaveChanges();
+
+            homePageForm = new HomePageForm(dbContext, logger);
+            this.Close();
+            homePageForm.Show();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Car.OilAndFilters.Remove(Car.OilAndFilters.Last());
-
-                Close();
-                RefToCreateNewServiceBookFormTwo.Show();
-            }
-            catch (Exception ex)
-            {
-                logger.WriteLine($"CreateNewServiceBookFormThree.BackButton_Click: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
-            }
+            this.Car.OilAndFilters.Remove(this.Car.OilAndFilters.Last());
+            this.Close();
+            this.RefToCreateNewServiceBookFormTwo.Show();
         }
     }
 }
