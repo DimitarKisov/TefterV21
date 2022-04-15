@@ -22,36 +22,20 @@
             this.rowIndex = rowIndex;
             this.logger = logger;
 
-            SearchAllNotes_DataGridView = searchAllNotes_DataGridView;
+            this.SearchAllNotes_DataGridView = searchAllNotes_DataGridView;
         }
 
         public DataGridView SearchAllNotes_DataGridView { get; set; }
 
         private void ReadNoteForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                var content = SearchAllNotes_DataGridView[columnIndex, rowIndex].Value.ToString();
-                ReadDescription_TextBox.Text = content;
-            }
-            catch (Exception ex)
-            {
-                logger.WriteLine($"ReadNoteForm.ReadNoteForm_Load: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
-            }
+            var content = SearchAllNotes_DataGridView[columnIndex, rowIndex].Value.ToString();
+            ReadDescription_TextBox.Text = content;
         }
 
         private void ReadNoteForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
-            {
-                SearchAllNotes_DataGridView[columnIndex, rowIndex].Value = ReadDescription_TextBox.Text;
-            }
-            catch (Exception ex)
-            {
-                logger.WriteLine($"ReadNoteForm.ReadNoteForm_FormClosing: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
-            }
+            SearchAllNotes_DataGridView[columnIndex, rowIndex].Value = ReadDescription_TextBox.Text;
         }
     }
 }
