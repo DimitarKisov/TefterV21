@@ -22,37 +22,20 @@
             this.rowIndex = rowIndex;
             this.logger = logger;
 
-            OtherServiceDataGridView = otherServiceDataGridView;
+            this.OtherServiceDataGridView = otherServiceDataGridView;
         }
 
         public DataGridView OtherServiceDataGridView { get; set; }
 
         private void ReadServicesMadeForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                var content = OtherServiceDataGridView[columnIndex, rowIndex].Value.ToString();
-                LoadContext_TextBox.Text = content;
-            }
-            catch (Exception ex)
-            {
-                logger.WriteLine($"ReadServicesMadeForm.ReadServicesMadeForm_Load: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
-            }
-            
+            var content = OtherServiceDataGridView[columnIndex, rowIndex].Value.ToString();
+            LoadContext_TextBox.Text = content;
         }
 
         private void ReadServicesMadeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
-            {
-                OtherServiceDataGridView[columnIndex, rowIndex].Value = LoadContext_TextBox.Text;
-            }
-            catch (Exception ex)
-            {
-                logger.WriteLine($"ReadServicesMadeForm.ReadServicesMadeForm_FormClosing: {ex}");
-                MessageBox.Show("Възникна неочаквана грешка!");
-            }
+            OtherServiceDataGridView[columnIndex, rowIndex].Value = LoadContext_TextBox.Text;
         }
     }
 }
