@@ -1,6 +1,7 @@
 ﻿namespace Tefter
 {
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.DependencyInjection;
     using System;
     using System.Drawing;
     using System.Text.RegularExpressions;
@@ -20,10 +21,9 @@
 
             this.dbContext = dbContext;
             this.logger = logger;
-            
+
             try
             {
-                
                 this.dbContext.Database.Migrate();
                 //dbContext.Database.ExecuteSqlRaw("ALTER DATABASE TefterV21 COLLATE Cyrillic_General_CI_AS");
             }
@@ -69,23 +69,35 @@
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
 
-            var searchForm = new SearchServiceBookFormOne(car, dbContext, logger);
+            var formTwo = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormTwo>();
+            formTwo.Car = car;
+
             this.Hide();
-            searchForm.Show();
+            formTwo.Show();
+
+            //var searchForm = new SearchServiceBookFormOne(car, dbContext, logger);
+            //this.Hide();
+            //searchForm.Show();
         }
 
         private void CreateNewServiceBook_Button_Click(object sender, EventArgs e)
         {
-            var createNewServiceBookFormOne = new CreateNewServiceBookFormOne(dbContext, logger);
-            this.Hide();
-            createNewServiceBookFormOne.Show();
+            var createNewServiceBookFormOne = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormOne>();
+            //this.Hide();
+            createNewServiceBookFormOne.ShowDialog();
+
+            //var createNewServiceBookFormOne = new CreateNewServiceBookFormOne(dbContext, logger);
+            //this.Hide();
+            //createNewServiceBookFormOne.Show();
         }
 
         private void SearchAllNotesForm_Click(object sender, EventArgs e)
         {
-            var searchAllNotesForm = new SearchAllNotesForm(dbContext, logger);
-            this.Hide();
-            searchAllNotesForm.Show();
+            //var searchAllNotesForm = new SearchAllNotesForm(dbContext, logger);
+
+            var searchAllNotesForm = Program.ServiceProvider.GetRequiredService<SearchAllNotesForm>();
+            //this.Hide();
+            searchAllNotesForm.ShowDialog();
         }
 
         private void Search_TextBox_Leave(object sender, EventArgs e)

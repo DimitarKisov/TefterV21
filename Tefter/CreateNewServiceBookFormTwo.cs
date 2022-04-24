@@ -17,7 +17,7 @@
         private ApplicationDbContext dbContext;
         private readonly Logger logger;
 
-        public CreateNewServiceBookFormTwo(Car car, ApplicationDbContext dbContext, Logger logger)
+        public CreateNewServiceBookFormTwo(/*Car car, */ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -26,7 +26,7 @@
             this.dbContext = dbContext;
             this.logger = logger;
 
-            this.Car = car;
+            //this.Car = car;
         }
 
         public Car Car { get; set; }

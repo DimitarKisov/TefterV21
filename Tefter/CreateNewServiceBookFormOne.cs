@@ -1,5 +1,6 @@
 ﻿namespace Tefter
 {
+    using Microsoft.Extensions.DependencyInjection;
     using System;
     using System.Collections.Generic;
     using System.Drawing;
@@ -94,7 +95,7 @@
             var workingVolumeCubicCmRegex = new Regex("^[0-9]*$");
             var phoneNumberRegex = new Regex("^([0-9]{10})$|([0-9{12}]{12})$");
             var egnRegex = new Regex("^[0-9]{10}$");
-            
+
             if (!brandRegex.IsMatch(Made_TextBox.Text.Trim()))
             {
                 emptyOrWrongFields.Add("Марка");
@@ -245,11 +246,13 @@
 
             car.CarExtras = carExtras;
 
-            var secondForm = new CreateNewServiceBookFormTwo(car, dbContext, logger);
-            secondForm.RefToHomePageForm = this;
+            //var createNewServiceBookFormTwo = new CreateNewServiceBookFormTwo(car, dbContext, logger);
+
+            var createNewServiceBookFormTwo = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormTwo>();
+            createNewServiceBookFormTwo.RefToHomePageForm = this;
 
             this.Hide();
-            secondForm.Show();
+            createNewServiceBookFormTwo.Show();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
