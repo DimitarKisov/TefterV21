@@ -17,7 +17,9 @@
         private readonly ApplicationDbContext dbContext;
         private readonly Logger logger;
 
-        public CreateNewServiceBookFormThree(Car car, ApplicationDbContext dbContext, Logger logger)
+        private bool isBackButtonClicked = false;
+
+        public CreateNewServiceBookFormThree(ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -25,8 +27,6 @@
 
             this.dbContext = dbContext;
             this.logger = logger;
-
-            this.Car = car;
         }
 
         public Car Car { get; set; }
@@ -50,9 +50,9 @@
                     MessageBox.Show("Възникна неочаквана грешка!");
                 };
 
-                homePageForm = new HomePageForm(dbContext, logger);
+                //homePageForm = new HomePageForm(dbContext, logger);
                 this.Close();
-                homePageForm.Show();
+                //homePageForm.Show();
 
                 return;
             }
@@ -109,16 +109,27 @@
             this.dbContext.Cars.Add(Car);
             this.dbContext.SaveChanges();
 
-            homePageForm = new HomePageForm(dbContext, logger);
+            //homePageForm = new HomePageForm(dbContext, logger);
+            //this.Close();
+            //homePageForm.Show();
+
             this.Close();
-            homePageForm.Show();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Car.OilAndFilters.Remove(this.Car.OilAndFilters.Last());
+            this.isBackButtonClicked = true;
             this.Close();
             this.RefToCreateNewServiceBookFormTwo.Show();
+        }
+
+        private void CreateNewServiceBookFormThree_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonClicked)
+            {
+                RefToCreateNewServiceBookFormTwo.Close();
+            }
         }
     }
 }

@@ -248,19 +248,21 @@
 
             //var createNewServiceBookFormTwo = new CreateNewServiceBookFormTwo(car, dbContext, logger);
 
-            var createNewServiceBookFormTwo = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormTwo>();
-            createNewServiceBookFormTwo.RefToHomePageForm = this;
-
-            this.Hide();
-            createNewServiceBookFormTwo.Show();
+            using (var createNewServiceBookFormTwo = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormTwo>())
+            {
+                createNewServiceBookFormTwo.RefToCreateNewServiceBookFormOne = this;
+                this.Hide();
+                createNewServiceBookFormTwo.Car = car;
+                createNewServiceBookFormTwo.ShowDialog();
+            }
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            var homePageForm = new HomePageForm(dbContext, logger);
-            this.Close();
-            homePageForm.Show();
-        }
+        //private void BackButton_Click(object sender, EventArgs e)
+        //{
+        //    var homePageForm = new HomePageForm(dbContext, logger);
+        //    this.Close();
+        //    homePageForm.Show();
+        //}
 
         private void CreateNewServiceBookFormOne_Load(object sender, EventArgs e)
         {

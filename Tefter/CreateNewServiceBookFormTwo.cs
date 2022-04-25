@@ -1,5 +1,6 @@
 ﻿namespace Tefter
 {
+    using Microsoft.Extensions.DependencyInjection;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -17,7 +18,9 @@
         private ApplicationDbContext dbContext;
         private readonly Logger logger;
 
-        public CreateNewServiceBookFormTwo(/*Car car, */ApplicationDbContext dbContext, Logger logger)
+        private bool isBackButtonClicked = false;
+
+        public CreateNewServiceBookFormTwo(ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -25,13 +28,11 @@
 
             this.dbContext = dbContext;
             this.logger = logger;
-
-            //this.Car = car;
         }
 
         public Car Car { get; set; }
 
-        public Form RefToHomePageForm { get; set; }
+        public Form RefToCreateNewServiceBookFormOne { get; set; }
 
         private void Open_CreateNewServiceBookFormThreeButton_Click(object sender, EventArgs e)
         {
@@ -102,23 +103,40 @@
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
 
-            var thirdForm = new CreateNewServiceBookFormThree(Car, dbContext, logger);
-            thirdForm.RefToCreateNewServiceBookFormTwo = this;
+            //var thirdForm = new CreateNewServiceBookFormThree(Car, dbContext, logger);
+            //thirdForm.RefToCreateNewServiceBookFormTwo = this;
 
-            this.Hide();
-            thirdForm.Show();
+            //this.Hide();
+            //thirdForm.Show();
+
+            using (var createNewSerivceBookFormThree = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormThree>())
+            {
+                createNewSerivceBookFormThree.RefToCreateNewServiceBookFormTwo = this;
+                this.Hide();
+                createNewSerivceBookFormThree.Car = this.Car;
+                createNewSerivceBookFormThree.ShowDialog();
+            }
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
+            this.isBackButtonClicked = true;
             this.Close();
-            this.RefToHomePageForm.Show();
+            this.RefToCreateNewServiceBookFormOne.Show();
         }
 
         private void CreateNewServiceBookFormThree_Load(object sender, EventArgs e)
         {
             OilAndFilters_PictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             CurrentKilometers_TextBox.Text = this.Car.Kilometers;
+        }
+
+        private void CreateNewServiceBookFormTwo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!isBackButtonClicked)
+            {
+                RefToCreateNewServiceBookFormOne.Close();
+            }
         }
     }
 }

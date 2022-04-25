@@ -17,13 +17,12 @@
         private readonly ApplicationDbContext dbContext;
         private readonly Logger logger;
 
-        public SearchServiceBookFormOne(Car car, ApplicationDbContext dbContext, Logger logger)
+        public SearchServiceBookFormOne(ApplicationDbContext dbContext, Logger logger)
         {
             InitializeComponent();
 
             this.dbContext = dbContext;
             this.logger = logger;
-            this.Car = car;
         }
 
         public Car Car { get; set; }

@@ -61,7 +61,7 @@
             this.ChangeOilAndFilters_Label.Location = new System.Drawing.Point(0, 0);
             this.ChangeOilAndFilters_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ChangeOilAndFilters_Label.Name = "ChangeOilAndFilters_Label";
-            this.ChangeOilAndFilters_Label.Size = new System.Drawing.Size(1152, 69);
+            this.ChangeOilAndFilters_Label.Size = new System.Drawing.Size(1165, 69);
             this.ChangeOilAndFilters_Label.TabIndex = 0;
             this.ChangeOilAndFilters_Label.Text = "СМЯНА НА МАСЛО И ФИЛТРИ";
             this.ChangeOilAndFilters_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -320,6 +320,7 @@
             this.Name = "CreateNewServiceBookFormTwo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Смяна на масло и филтри";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateNewServiceBookFormTwo_FormClosed);
             this.Load += new System.EventHandler(this.CreateNewServiceBookFormThree_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OilAndFilters_PictureBox)).EndInit();
             this.ResumeLayout(false);

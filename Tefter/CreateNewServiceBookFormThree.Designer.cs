@@ -47,8 +47,9 @@
             this.OtherService_Label.Dock = System.Windows.Forms.DockStyle.Top;
             this.OtherService_Label.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OtherService_Label.Location = new System.Drawing.Point(0, 0);
+            this.OtherService_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OtherService_Label.Name = "OtherService_Label";
-            this.OtherService_Label.Size = new System.Drawing.Size(934, 55);
+            this.OtherService_Label.Size = new System.Drawing.Size(1166, 69);
             this.OtherService_Label.TabIndex = 0;
             this.OtherService_Label.Text = "ДРУГИ СЕРВИЗНИ НАМЕСИ";
             this.OtherService_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,9 +64,10 @@
             this.BackButton.IconSize = 50;
             this.BackButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BackButton.Location = new System.Drawing.Point(0, 0);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(4);
             this.BackButton.Name = "BackButton";
             this.BackButton.Rotation = 0D;
-            this.BackButton.Size = new System.Drawing.Size(64, 55);
+            this.BackButton.Size = new System.Drawing.Size(80, 69);
             this.BackButton.TabIndex = 1;
             this.BackButton.TabStop = false;
             this.ToolTip.SetToolTip(this.BackButton, "Назад");
@@ -76,27 +78,30 @@
             // 
             this.DateMadeChanged_Label.AutoSize = true;
             this.DateMadeChanged_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateMadeChanged_Label.Location = new System.Drawing.Point(12, 118);
+            this.DateMadeChanged_Label.Location = new System.Drawing.Point(15, 148);
+            this.DateMadeChanged_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DateMadeChanged_Label.Name = "DateMadeChanged_Label";
-            this.DateMadeChanged_Label.Size = new System.Drawing.Size(79, 33);
+            this.DateMadeChanged_Label.Size = new System.Drawing.Size(99, 42);
             this.DateMadeChanged_Label.TabIndex = 50;
             this.DateMadeChanged_Label.Text = "Дата:";
             // 
             // DateMadeChanges_DatePicker
             // 
             this.DateMadeChanges_DatePicker.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateMadeChanges_DatePicker.Location = new System.Drawing.Point(137, 121);
+            this.DateMadeChanges_DatePicker.Location = new System.Drawing.Point(171, 151);
+            this.DateMadeChanges_DatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DateMadeChanges_DatePicker.Name = "DateMadeChanges_DatePicker";
-            this.DateMadeChanges_DatePicker.Size = new System.Drawing.Size(200, 30);
+            this.DateMadeChanges_DatePicker.Size = new System.Drawing.Size(249, 36);
             this.DateMadeChanges_DatePicker.TabIndex = 51;
             // 
             // CurrentKilometers_Label
             // 
             this.CurrentKilometers_Label.AutoSize = true;
             this.CurrentKilometers_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentKilometers_Label.Location = new System.Drawing.Point(473, 118);
+            this.CurrentKilometers_Label.Location = new System.Drawing.Point(591, 148);
+            this.CurrentKilometers_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CurrentKilometers_Label.Name = "CurrentKilometers_Label";
-            this.CurrentKilometers_Label.Size = new System.Drawing.Size(183, 33);
+            this.CurrentKilometers_Label.Size = new System.Drawing.Size(232, 42);
             this.CurrentKilometers_Label.TabIndex = 52;
             this.CurrentKilometers_Label.Text = "Изминати км:";
             this.CurrentKilometers_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,20 +109,22 @@
             // Description_Label
             // 
             this.Description_Label.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description_Label.Location = new System.Drawing.Point(273, 163);
+            this.Description_Label.Location = new System.Drawing.Point(341, 204);
+            this.Description_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Description_Label.Name = "Description_Label";
-            this.Description_Label.Size = new System.Drawing.Size(381, 35);
+            this.Description_Label.Size = new System.Drawing.Size(476, 44);
             this.Description_Label.TabIndex = 54;
             this.Description_Label.Text = "Извършена сервизна дейност:";
             // 
             // Description_TextBox
             // 
             this.Description_TextBox.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description_TextBox.Location = new System.Drawing.Point(1, 201);
+            this.Description_TextBox.Location = new System.Drawing.Point(1, 251);
+            this.Description_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Description_TextBox.Multiline = true;
             this.Description_TextBox.Name = "Description_TextBox";
             this.Description_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Description_TextBox.Size = new System.Drawing.Size(933, 337);
+            this.Description_TextBox.Size = new System.Drawing.Size(1165, 420);
             this.Description_TextBox.TabIndex = 2;
             // 
             // End_Button
@@ -125,9 +132,10 @@
             this.End_Button.BackColor = System.Drawing.Color.Gainsboro;
             this.End_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.End_Button.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.End_Button.Location = new System.Drawing.Point(0, 538);
+            this.End_Button.Location = new System.Drawing.Point(0, 671);
+            this.End_Button.Margin = new System.Windows.Forms.Padding(4);
             this.End_Button.Name = "End_Button";
-            this.End_Button.Size = new System.Drawing.Size(934, 37);
+            this.End_Button.Size = new System.Drawing.Size(1166, 46);
             this.End_Button.TabIndex = 3;
             this.End_Button.Text = "КРАЙ";
             this.End_Button.UseVisualStyleBackColor = false;
@@ -136,18 +144,19 @@
             // CurrentKilometers_TextBox
             // 
             this.CurrentKilometers_TextBox.Font = new System.Drawing.Font("Times New Roman", 19.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(709, 118);
+            this.CurrentKilometers_TextBox.Location = new System.Drawing.Point(886, 148);
+            this.CurrentKilometers_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CurrentKilometers_TextBox.Name = "CurrentKilometers_TextBox";
-            this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(170, 38);
+            this.CurrentKilometers_TextBox.Size = new System.Drawing.Size(212, 45);
             this.CurrentKilometers_TextBox.TabIndex = 1;
             // 
             // CreateNewServiceBookFormThree
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(934, 575);
+            this.ClientSize = new System.Drawing.Size(1165, 709);
             this.Controls.Add(this.CurrentKilometers_TextBox);
             this.Controls.Add(this.End_Button);
             this.Controls.Add(this.Description_TextBox);
@@ -158,10 +167,12 @@
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.OtherService_Label);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(950, 614);
-            this.MinimumSize = new System.Drawing.Size(500, 500);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1183, 756);
+            this.MinimumSize = new System.Drawing.Size(620, 613);
             this.Name = "CreateNewServiceBookFormThree";
             this.Text = "Други сервизни намеси";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateNewServiceBookFormThree_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

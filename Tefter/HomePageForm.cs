@@ -69,11 +69,11 @@
                 MessageBox.Show("Възникна неочаквана грешка!");
             }
 
-            var formTwo = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormTwo>();
-            formTwo.Car = car;
-
-            this.Hide();
-            formTwo.Show();
+            using (var searchServiceBookFormOne = Program.ServiceProvider.GetRequiredService<SearchServiceBookFormOne>())
+            {
+                searchServiceBookFormOne.Car = car;
+                searchServiceBookFormOne.ShowDialog();
+            };
 
             //var searchForm = new SearchServiceBookFormOne(car, dbContext, logger);
             //this.Hide();
@@ -82,13 +82,20 @@
 
         private void CreateNewServiceBook_Button_Click(object sender, EventArgs e)
         {
-            var createNewServiceBookFormOne = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormOne>();
-            //this.Hide();
-            createNewServiceBookFormOne.ShowDialog();
+            using (var createNewServiceBookFormOne = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormOne>())
+            {
+                createNewServiceBookFormOne.ShowDialog();
+            }
+
+            //var createNewServiceBookFormOne = Program.ServiceProvider.GetRequiredService<CreateNewServiceBookFormOne>();
+            ////this.Hide();
+            //createNewServiceBookFormOne.ShowDialog();
 
             //var createNewServiceBookFormOne = new CreateNewServiceBookFormOne(dbContext, logger);
             //this.Hide();
             //createNewServiceBookFormOne.Show();
+
+
         }
 
         private void SearchAllNotesForm_Click(object sender, EventArgs e)
